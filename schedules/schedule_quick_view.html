@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Orleans Football Schedule 2025</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.4;
+            color: #111;
+            background: #fafafa;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 60px 20px;
+            background: linear-gradient(135deg, #000 0%, #333 100%);
+            border-radius: 24px;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.1) 0%, transparent 50%);
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .header h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 300;
+            margin-bottom: 12px;
+            letter-spacing: -0.02em;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.8;
+            font-weight: 400;
+        }
+
+        .team-overview {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+
+        .team-card {
+            background: white;
+            border-radius: 20px;
+            padding: 32px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            border: 1px solid #f0f0f0;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .team-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+        }
+
+        .team-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 24px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .team-logo {
+            width: 64px;
+            height: 64px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: bold;
+            color: white;
+        }
+
+        .tulane-logo {
+            background: linear-gradient(135deg, #006A4E 0%, #004D36 100%);
+        }
+
+        .saints-logo {
+            background: linear-gradient(135deg, #D3BC8D 0%, #B8A082 100%);
+            color: #000;
+        }
+
+        .team-info h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 4px;
+            letter-spacing: -0.01em;
+        }
+
+        .team-info p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        .team-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 16px;
+        }
+
+        .detail-item {
+            background: #f8f9fa;
+            padding: 16px;
+            border-radius: 12px;
+            border-left: 3px solid #e9ecef;
+        }
+
+        .detail-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #666;
+            margin-bottom: 4px;
+        }
+
+        .detail-value {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #111;
+        }
+
+        .controls {
+            background: white;
+            padding: 24px 32px;
+            border-radius: 20px;
+            margin-bottom: 32px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            border: 1px solid #f0f0f0;
+        }
+
+        .controls-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 24px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .filter-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .filter-group label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #666;
+        }
+
+        select, .sort-buttons {
+            display: flex;
+            gap: 8px;
+        }
+
+        select {
+            padding: 12px 16px;
+            border: 1px solid #e0e0e0;
+            border-radius: 12px;
+            background: white;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #333;
+            transition: all 0.2s ease;
+        }
+
+        select:hover, select:focus {
+            border-color: #333;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(0,0,0,0.1);
+        }
+
+        .sort-btn {
+            padding: 12px 20px;
+            border: 1px solid #e0e0e0;
+            border-radius: 12px;
+            background: white;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #333;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .sort-btn:hover {
+            border-color: #333;
+            background: #f8f9fa;
+        }
+
+        .sort-btn.active {
+            background: #111;
+            color: white;
+            border-color: #111;
+        }
+
+        .games-container {
+            display: grid;
+            gap: 16px;
+        }
+
+        .game-card {
+            background: white;
+            border-radius: 20px;
+            padding: 0;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+            border: 1px solid #f0f0f0;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .game-card::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 6px;
+            background: var(--team-color);
+        }
+
+        .game-card.tulane::before {
+            background: linear-gradient(135deg, #006A4E 0%, #00B878 100%);
+        }
+
+        .game-card.saints::before {
+            background: linear-gradient(135deg, #D3BC8D 0%, #F4D03F 100%);
+        }
+
+        .game-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 48px rgba(0,0,0,0.15);
+            border-color: #e0e0e0;
+        }
+
+        .game-card-header {
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            padding: 20px 24px 16px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .game-card-body {
+            padding: 24px;
+        }
+
+        .game-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .game-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .team-badge {
+            padding: 8px 16px;
+            border-radius: 24px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .tulane-badge {
+            background: linear-gradient(135deg, #006A4E 0%, #00B878 100%);
+            color: white;
+        }
+
+        .saints-badge {
+            background: linear-gradient(135deg, #D3BC8D 0%, #F4D03F 100%);
+            color: #000;
+        }
+
+        .badge {
+            padding: 6px 12px;
+            border-radius: 16px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            border: 1px solid rgba(0,0,0,0.08);
+        }
+
+        .week-badge {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            display: none;
+        }
+
+        .location-badge.home {
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+            color: white;
+            border: none;
+        }
+
+        .location-badge.away {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            border: none;
+        }
+
+        .game-type-badge.conference {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+            border: none;
+        }
+
+        .game-type-badge.division {
+            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+            color: #000;
+            border: none;
+        }
+
+        .game-type-badge.non-conference {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            color: #333;
+            border: none;
+        }
+
+        .game-type-badge.regular {
+            background: linear-gradient(135deg, #96fbc4 0%, #f9f586 100%);
+            color: #333;
+            border: none;
+        }
+
+        .game-type-badge.preseason {
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            color: #333;
+            border: none;
+        }
+
+        .tv-info {
+            padding: 8px 16px;
+            background: linear-gradient(135deg, #000 0%, #333 100%);
+            color: white;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+
+        .game-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr 1fr;
+            gap: 32px;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .game-time {
+            text-align: left;
+            background: #f8f9fa;
+            padding: 16px;
+            border-radius: 12px;
+            border-left: 4px solid #667eea;
+        }
+
+        .date {
+            font-size: 0.85rem;
+            color: #666;
+            margin-bottom: 6px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+
+        .time {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #111;
+            letter-spacing: -0.01em;
+        }
+
+        .matchup {
+            text-align: center;
+            padding: 20px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            border-radius: 16px;
+            border: 2px solid #f0f0f0;
+        }
+
+        .vs-indicator {
+            font-size: 0.8rem;
+            color: #999;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .opponent {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: #111;
+            margin-bottom: 12px;
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+        }
+
+        .opponent-details {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .series-record {
+            font-size: 0.8rem;
+            color: #999;
+            font-style: italic;
+            padding: 6px 12px;
+            background: rgba(0,0,0,0.05);
+            border-radius: 8px;
+            display: inline-block;
+        }
+
+        .venue-info {
+            text-align: right;
+            background: #f8f9fa;
+            padding: 16px;
+            border-radius: 12px;
+            border-right: 4px solid #11998e;
+        }
+
+        .venue {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #111;
+            margin-bottom: 6px;
+            letter-spacing: -0.01em;
+        }
+
+        .city {
+            font-size: 0.85rem;
+            color: #666;
+            font-weight: 500;
+        }
+
+        .game-notes {
+            margin-top: 0;
+            padding: 16px 20px;
+            background: linear-gradient(135deg, #fff9e6 0%, #fff3cd 100%);
+            border-radius: 12px;
+            font-size: 0.9rem;
+            color: #856404;
+            font-style: italic;
+            border-left: 4px solid #ffc107;
+        }
+
+        .special-designation {
+            margin-top: 8px;
+            padding: 8px 12px;
+            background: linear-gradient(135deg, #ffd700 0%, #ffb300 100%);
+            color: #000;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .stats-overview {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin-top: 40px;
+            padding: 32px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            border: 1px solid #f0f0f0;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 20px;
+            border-radius: 12px;
+            background: #f8f9fa;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 300;
+            color: #111;
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: #666;
+            font-weight: 500;
+        }
+
+        .load-error {
+            background: #ffebee;
+            color: #c62828;
+            padding: 32px;
+            border-radius: 16px;
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 80px 20px;
+            color: #666;
+        }
+
+        @media (max-width: 1024px) {
+            .game-content {
+                grid-template-columns: 1fr;
+                gap: 16px;
+                text-align: center;
+            }
+
+            .venue-info {
+                text-align: center;
+            }
+
+            .game-time {
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 12px;
+            }
+
+            .team-overview {
+                grid-template-columns: 1fr;
+            }
+
+            .controls-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .header {
+                padding: 40px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-content">
+                <h1>New Orleans Football 2025</h1>
+                <p>Complete schedule for Saints & Green Wave</p>
+            </div>
+        </div>
+        
+        <div id="teamOverview"></div>
+
+        <div class="controls">
+            <div class="controls-grid">
+                <div class="filter-group">
+                    <label>Team</label>
+                    <select id="teamFilter">
+                        <option value="all">All Teams</option>
+                        <option value="tulane">Tulane Green Wave</option>
+                        <option value="saints">New Orleans Saints</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>Location</label>
+                    <select id="locationFilter">
+                        <option value="all">All Games</option>
+                        <option value="home">Home Games</option>
+                        <option value="away">Away Games</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>Game Type</label>
+                    <select id="gameTypeFilter">
+                        <option value="all">All Types</option>
+                        <option value="conference">Conference</option>
+                        <option value="division">Division</option>
+                        <option value="non_conference">Non-Conference</option>
+                        <option value="regular">Regular</option>
+                        <option value="preseason">Preseason</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        
+        <div id="content">
+            <div class="loading">
+                <h3>Loading schedule data...</h3>
+                <p>Please ensure the XML file is in the same folder as this HTML file.</p>
+            </div>
+        </div>
+
+        <div id="statsOverview"></div>
+    </div>
+
+    <script>
+        let scheduleData = null;
+        let currentTeamFilter = 'all';
+        let currentLocationFilter = 'all';
+        let currentGameTypeFilter = 'all';
+
+        async function loadSchedule() {
+            try {
+                const response = await fetch('schedule.xml');
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const xmlText = await response.text();
+                const parser = new DOMParser();
+                const xmlDoc = parser.parseFromString(xmlText, 'text/xml');
+                
+                const parseError = xmlDoc.querySelector('parsererror');
+                if (parseError) {
+                    throw new Error('XML parsing error');
+                }
+                
+                scheduleData = parseScheduleData(xmlDoc);
+                displayTeamOverview();
+                displaySchedule();
+                displayStatsOverview();
+                setupEventListeners();
+            } catch (error) {
+                console.error('Error loading schedule:', error);
+                document.getElementById('content').innerHTML = `
+                    <div class="load-error">
+                        <h3>⚠️ Unable to load schedule data</h3>
+                        <p>Please ensure the XML file "schedule.xml" is in the same folder as this HTML file.</p>
+                        <p>Error: ${error.message}</p>
+                    </div>
+                `;
+            }
+        }
+
+        function parseScheduleData(xmlDoc) {
+            const teams = {};
+            const teamElements = xmlDoc.querySelectorAll('team');
+            
+            teamElements.forEach(teamEl => {
+                const teamId = teamEl.getAttribute('id');
+                const teamData = {
+                    id: teamId,
+                    name: teamEl.querySelector('name')?.textContent || 'N/A',
+                    league: teamEl.querySelector('league')?.textContent || 'N/A',
+                    conference: teamEl.querySelector('conference')?.textContent || 'N/A',
+                    division: teamEl.querySelector('division')?.textContent || '',
+                    head_coach: teamEl.querySelector('head_coach')?.textContent || 'N/A',
+                    home_stadium: teamEl.querySelector('home_stadium')?.textContent || 'N/A',
+                    location: teamEl.querySelector('location')?.textContent || 'N/A',
+                    level: teamEl.querySelector('level')?.textContent || 'N/A',
+                    games: [],
+                    preseason_games: [],
+                    season_info: {},
+                    key_matchups: [],
+                    notes: []
+                };
+
+                // Parse regular games
+                const gamesSection = xmlDoc.querySelector(`games[team="${teamId}"]`);
+                if (gamesSection) {
+                    const gameElements = gamesSection.querySelectorAll('game');
+                    gameElements.forEach(gameEl => {
+                        const game = parseGame(gameEl);
+                        game.team = teamId;
+                        teamData.games.push(game);
+                    });
+                }
+
+                // Parse preseason games
+                const preseasonSection = xmlDoc.querySelector(`preseason_games[team="${teamId}"]`);
+                if (preseasonSection) {
+                    const preseasonElements = preseasonSection.querySelectorAll('game');
+                    preseasonElements.forEach(gameEl => {
+                        const game = parseGame(gameEl);
+                        game.game_type = 'preseason';
+                        game.team = teamId;
+                        teamData.preseason_games.push(game);
+                    });
+                }
+
+                // Parse season info
+                const seasonInfoEl = xmlDoc.querySelector(`season_info[team="${teamId}"]`);
+                if (seasonInfoEl) {
+                    Array.from(seasonInfoEl.children).forEach(child => {
+                        teamData.season_info[child.tagName] = child.textContent;
+                    });
+                }
+
+                teams[teamId] = teamData;
+            });
+
+            return teams;
+        }
+
+        function parseGame(gameEl) {
+            return {
+                week: gameEl.getAttribute('week') || 'N/A',
+                game_type: gameEl.getAttribute('game_type') || 'regular',
+                date: gameEl.querySelector('date')?.textContent || 'N/A',
+                day: gameEl.querySelector('day')?.textContent || 'N/A',
+                time: gameEl.querySelector('time')?.textContent || 'TBA',
+                opponent: gameEl.querySelector('opponent')?.textContent || 'N/A',
+                opponent_conference: gameEl.querySelector('opponent_conference')?.textContent || '',
+                location: gameEl.querySelector('location')?.textContent || 'N/A',
+                venue: gameEl.querySelector('venue')?.textContent || 'N/A',
+                city: gameEl.querySelector('city')?.textContent || '',
+                tv_network: gameEl.querySelector('tv_network')?.textContent || 'TBA',
+                series_record: gameEl.querySelector('series_record')?.textContent || '',
+                special_designation: gameEl.querySelector('special_designation')?.textContent || '',
+                notes: gameEl.querySelector('notes')?.textContent || ''
+            };
+        }
+
+        function displayTeamOverview() {
+            if (!scheduleData) return;
+
+            const teamOverview = document.getElementById('teamOverview');
+            let html = '<div class="team-overview">';
+
+            Object.values(scheduleData).forEach(team => {
+                const logoClass = team.id === 'tulane' ? 'tulane-logo' : 'saints-logo';
+                const logoText = team.id === 'tulane' ? 'TU' : '⚜️';
+
+                html += `
+                    <div class="team-card">
+                        <div class="team-header">
+                            <div class="team-logo ${logoClass}">${logoText}</div>
+                            <div class="team-info">
+                                <h2>${team.name}</h2>
+                                <p>${team.league} • ${team.conference}${team.division ? ` ${team.division}` : ''}</p>
+                            </div>
+                        </div>
+                        <div class="team-details">
+                            <div class="detail-item">
+                                <div class="detail-label">Head Coach</div>
+                                <div class="detail-value">${team.head_coach}</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">Home Stadium</div>
+                                <div class="detail-value">${team.home_stadium}</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">Level</div>
+                                <div class="detail-value">${team.level}</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">Location</div>
+                                <div class="detail-value">${team.location}</div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+
+            html += '</div>';
+            teamOverview.innerHTML = html;
+        }
+
+        function getAllGames() {
+            if (!scheduleData) return [];
+            
+            const allGames = [];
+            Object.values(scheduleData).forEach(team => {
+                [...team.games, ...team.preseason_games].forEach(game => {
+                    // Only include actual games, not bye weeks
+                    if (game.game_type !== 'bye') {
+                        allGames.push(game);
+                    }
+                });
+            });
+            
+            return allGames;
+        }
+
+        function parseDate(dateString) {
+            if (dateString === 'N/A' || dateString === 'TBD') return new Date('9999-12-31');
+            return new Date(dateString + ', 2025');
+        }
+
+        function sortGames(games) {
+            return games.slice().sort((a, b) => {
+                return parseDate(a.date) - parseDate(b.date);
+            });
+        }
+
+        function filterGames(games) {
+            return games.filter(game => {
+                const teamMatch = currentTeamFilter === 'all' || game.team === currentTeamFilter;
+                const locationMatch = currentLocationFilter === 'all' || 
+                                    (currentLocationFilter === 'home' && game.location.toLowerCase() === 'home') ||
+                                    (currentLocationFilter === 'away' && game.location.toLowerCase() === 'away');
+                const gameTypeMatch = currentGameTypeFilter === 'all' || game.game_type === currentGameTypeFilter;
+                
+                return teamMatch && locationMatch && gameTypeMatch;
+            });
+        }
+
+        function displaySchedule() {
+            if (!scheduleData) return;
+
+            const allGames = getAllGames();
+            const sortedGames = sortGames(allGames);
+            const filteredGames = filterGames(sortedGames);
+
+            let html = '<div class="games-container">';
+
+            filteredGames.forEach(game => {
+                const teamClass = game.team;
+                const teamBadgeClass = game.team === 'tulane' ? 'tulane-badge' : 'saints-badge';
+                const teamName = scheduleData[game.team].name;
+
+                html += `
+                    <div class="game-card ${teamClass}">
+                        <div class="game-card-header">
+                            <div class="game-header">
+                                <div class="game-meta">
+                                    <span class="team-badge ${teamBadgeClass}">${teamName}</span>
+                                    <span class="badge game-type-badge ${game.game_type}">${game.game_type.replace('_', ' ').toUpperCase()}</span>
+                                    ${game.special_designation ? `<span class="badge" style="background: linear-gradient(135deg, #ffd700 0%, #ffb300 100%); color: #000; border: none;">${game.special_designation}</span>` : ''}
+                                </div>
+                                <div class="tv-info">${game.tv_network}</div>
+                            </div>
+                        </div>
+                        
+                        <div class="game-card-body">
+                            <div class="game-content">
+                                <div class="game-time">
+                                    <div class="date">${game.day}, ${game.date}</div>
+                                    <div class="time">${game.time}</div>
+                                </div>
+                                
+                                <div class="matchup">
+                                    <div class="vs-indicator">vs</div>
+                                    <div class="opponent">${game.opponent}</div>
+                                    <div class="opponent-details">${game.opponent_conference}</div>
+                                    ${game.series_record ? `<div class="series-record">${game.series_record}</div>` : ''}
+                                </div>
+                                
+                                <div class="venue-info">
+                                    <div class="venue">${game.venue}</div>
+                                    ${game.city ? `<div class="city">${game.city}</div>` : ''}
+                                </div>
+                            </div>
+                            
+                            ${game.notes ? `<div class="game-notes">${game.notes}</div>` : ''}
+                        </div>
+                    </div>
+                `;
+            });
+
+            html += '</div>';
+            document.getElementById('content').innerHTML = html;
+        }
+
+        function displayStatsOverview() {
+            if (!scheduleData) return;
+
+            const allGames = getAllGames();
+            const totalGames = allGames.length;
+            const homeGames = allGames.filter(g => g.location && g.location.toLowerCase() === 'home').length;
+            const awayGames = allGames.filter(g => g.location && g.location.toLowerCase() === 'away').length;
+
+            const html = `
+                <div class="stats-overview">
+                    <div class="stat-item">
+                        <div class="stat-number">${totalGames}</div>
+                        <div class="stat-label">Total Games</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">${homeGames}</div>
+                        <div class="stat-label">Home Games</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">${awayGames}</div>
+                        <div class="stat-label">Away Games</div>
+                    </div>
+                </div>
+            `;
+
+            document.getElementById('statsOverview').innerHTML = html;
+        }
+
+        function applyFilters() {
+            displaySchedule();
+        }
+
+        function setupEventListeners() {
+            // Team filter
+            document.getElementById('teamFilter').addEventListener('change', (e) => {
+                currentTeamFilter = e.target.value;
+                applyFilters();
+            });
+
+            // Location filter
+            document.getElementById('locationFilter').addEventListener('change', (e) => {
+                currentLocationFilter = e.target.value;
+                applyFilters();
+            });
+
+            // Game type filter
+            document.getElementById('gameTypeFilter').addEventListener('change', (e) => {
+                currentGameTypeFilter = e.target.value;
+                applyFilters();
+            });
+        }
+
+        // Load the schedule when the page loads
+        window.addEventListener('DOMContentLoaded', loadSchedule);
+    </script>
+</body>
+</html>
