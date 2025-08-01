@@ -62,6 +62,7 @@ Topics:
 - JFK Assassination
 - Cubs on WGN, Louis Armstrong on WGN radio
 - Malort
+- Milan Lounge was the Cubs bar
 
 Club	League	Sport	Venue	Attendance	Founded	Championships	Last Championship
 Chicago Bears	NFL	Football	Soldier Field	61,142	1919	1 Super Bowl, 8 prior Championships	1985

@@ -1,1 +1,594 @@
-hello whirled
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Behind Enemy Lines | Walking Tours for Away Team Fans</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            line-height: 1.4;
+            color: #333;
+            background: #fff;
+            min-height: 100vh;
+            font-weight: 300;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        /* Header */
+        header {
+            background: #fff;
+            border-bottom: 1px solid #e8e8e8;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 600;
+            color: #000;
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 40px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #666;
+            font-weight: 400;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: #000;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: #f8f8f8;
+            text-align: center;
+            padding: 120px 0;
+        }
+
+        .hero h1 {
+            font-size: 72px;
+            font-weight: 200;
+            margin-bottom: 20px;
+            letter-spacing: -2px;
+            color: #000;
+        }
+
+        .hero .subtitle {
+            font-size: 20px;
+            font-weight: 300;
+            margin-bottom: 40px;
+            color: #666;
+            letter-spacing: 0.5px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #000;
+            color: #fff;
+            padding: 16px 32px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 12px;
+            border: 2px solid #000;
+        }
+
+        .cta-button:hover {
+            background: #fff;
+            color: #000;
+        }
+
+        /* About Section */
+        .about {
+            background: #fff;
+            padding: 120px 0;
+        }
+
+        .about-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .about h2 {
+            font-size: 48px;
+            font-weight: 200;
+            margin-bottom: 40px;
+            color: #000;
+            letter-spacing: -1px;
+            text-align: center;
+        }
+
+        .about p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            color: #555;
+            font-weight: 300;
+        }
+
+        /* Calendar Section */
+        .calendar-section {
+            background: #f8f8f8;
+            padding: 120px 0;
+        }
+
+        .calendar-section h2 {
+            text-align: center;
+            font-size: 48px;
+            font-weight: 200;
+            margin-bottom: 20px;
+            color: #000;
+            letter-spacing: -1px;
+        }
+
+        .calendar-section p {
+            text-align: center;
+            margin-bottom: 80px;
+            color: #666;
+            font-size: 16px;
+            font-weight: 300;
+        }
+
+        .games-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 20px;
+        }
+
+        .game-card {
+            background: #fff;
+            padding: 40px;
+            border: 1px solid #e8e8e8;
+            border-left: 4px solid #000;
+            transition: all 0.2s ease;
+        }
+
+        .game-card:hover {
+            border-color: #000;
+        }
+
+        /* Team Colors */
+        .northwestern { border-left-color: #4E2A84; }
+        .cardinals { border-left-color: #97233F; }
+        .duke { border-left-color: #001A57; }
+        .49ers { border-left-color: #AA0000; }
+        .giants { border-left-color: #0B2265; }
+        .pirates { border-left-color: #592F84; }
+        .patriots { border-left-color: #002244; }
+        .army { border-left-color: #B1AA7A; }
+        .buccaneers { border-left-color: #D50A0A; }
+        .owls { border-left-color: #C41E3A; }
+        .falcons { border-left-color: #A71930; }
+        .charlotte { border-left-color: #00543C; }
+        .panthers { border-left-color: #0085CA; }
+        .jets { border-left-color: #125740; }
+
+        .game-date {
+            font-size: 12px;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+            font-weight: 400;
+        }
+
+        .game-matchup {
+            font-size: 24px;
+            font-weight: 400;
+            color: #000;
+            margin-bottom: 12px;
+            letter-spacing: -0.5px;
+        }
+
+        .game-details {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 30px;
+            line-height: 1.5;
+            font-weight: 300;
+        }
+
+        .book-tour {
+            background: #000;
+            color: #fff;
+            border: 2px solid #000;
+            padding: 12px 24px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            width: 100%;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 11px;
+        }
+
+        .book-tour:hover {
+            background: #fff;
+            color: #000;
+        }
+
+        /* Features */
+        .features {
+            background: #fff;
+            padding: 120px 0;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 80px;
+        }
+
+        .feature {
+            text-align: center;
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: #000;
+            margin: 0 auto 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: #fff;
+        }
+
+        .feature h3 {
+            font-size: 24px;
+            font-weight: 400;
+            margin-bottom: 20px;
+            color: #000;
+            letter-spacing: -0.5px;
+        }
+
+        .feature p {
+            color: #666;
+            line-height: 1.5;
+            font-weight: 300;
+            font-size: 16px;
+        }
+
+        /* Footer */
+        footer {
+            background: #000;
+            color: #fff;
+            padding: 60px 0;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+
+        .footer-content p {
+            font-size: 14px;
+            font-weight: 300;
+            color: #999;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 40px;
+        }
+
+        .footer-links a {
+            color: #999;
+            text-decoration: none;
+            transition: color 0.2s ease;
+            font-size: 14px;
+            font-weight: 300;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .footer-links a:hover {
+            color: #fff;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 20px;
+            }
+            
+            .hero {
+                padding: 80px 0;
+            }
+            
+            .hero h1 {
+                font-size: 48px;
+            }
+            
+            .hero .subtitle {
+                font-size: 18px;
+            }
+            
+            .about, .calendar-section, .features {
+                padding: 80px 0;
+            }
+            
+            .about h2, .calendar-section h2 {
+                font-size: 36px;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .games-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            
+            .game-card {
+                padding: 30px;
+            }
+            
+            .features-grid {
+                gap: 60px;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="#" class="logo">Behind Enemy Lines</a>
+            <ul class="nav-links">
+                <li><a href="#tours">Tours</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#calendar">Calendar</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Behind Enemy Lines</h1>
+            <p class="subtitle">Walking Tours for Away Team Fans</p>
+            <a href="#calendar" class="cta-button">Book Your Tour</a>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <h2>Where Rivalry Meets Respect</h2>
+                <p>Sports is perhaps the last arena where passionate hatred is not only acceptable, but celebrated. The raw emotion, the tribal loyalty, the beautiful animosity that defines true fandom—it's what makes the game electric. Yet beneath every rivalry lies a deeper truth: we're all united by our love for the game itself.</p>
+                
+                <p>Our tours are led by die-hard fans of the home team who understand that behind enemy lines, commonalities emerge. We'll take you through the heart of hostile territory, sharing stories, traditions, and that special kind of friendly tête-à-tête that only happens when opposing fans meet on neutral ground. It's about understanding the passion that drives us all, even when we're wearing different colors.</p>
+                
+                <p>Because at the end of the day, whether you're screaming for the home team or the visitors, we're all just fans who fell in love with something bigger than ourselves. And sometimes, the best conversations happen with the "enemy."</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="calendar-section" id="calendar">
+        <div class="container">
+            <h2>Tour Calendar</h2>
+            <p style="text-align: center; margin-bottom: 3rem; color: #7f8c8d; font-size: 1.1rem;">All tours begin exactly 24 hours before kickoff</p>
+            
+            <div class="games-grid">
+                <!-- Northwestern Fans Tour -->
+                <div class="game-card northwestern">
+                    <div class="game-date">Friday, August 29 • 11:00 AM CT</div>
+                    <div class="game-matchup">Northwestern Wildcats Fans Tour</div>
+                    <div class="game-details">24 hours before Tulane vs Northwestern<br>Game: Saturday 11:00 AM • Yulman Stadium • ESPNU</div>
+                    <button class="book-tour" onclick="bookTour('Northwestern')">Book Northwestern Fans Tour</button>
+                </div>
+                
+                <!-- Cardinals Fans Tour -->
+                <div class="game-card cardinals">
+                    <div class="game-date">Saturday, September 6 • 12:00 PM CT</div>
+                    <div class="game-matchup">Arizona Cardinals Fans Tour</div>
+                    <div class="game-details">24 hours before Saints vs Cardinals<br>Game: Sunday 12:00 PM • Caesars Superdome • CBS</div>
+                    <button class="book-tour" onclick="bookTour('Cardinals')">Book Cardinals Fans Tour</button>
+                </div>
+                
+                <!-- Duke Fans Tour -->
+                <div class="game-card duke">
+                    <div class="game-date">Friday, September 12 • 7:00 PM CT</div>
+                    <div class="game-matchup">Duke Blue Devils Fans Tour</div>
+                    <div class="game-details">24 hours before Tulane vs Duke (Hall of Fame Game)<br>Game: Saturday 7:00 PM • Yulman Stadium • ESPN2</div>
+                    <button class="book-tour" onclick="bookTour('Duke')">Book Duke Fans Tour</button>
+                </div>
+                
+                <!-- 49ers Fans Tour -->
+                <div class="game-card 49ers">
+                    <div class="game-date">Saturday, September 13 • 12:00 PM CT</div>
+                    <div class="game-matchup">San Francisco 49ers Fans Tour</div>
+                    <div class="game-details">24 hours before Saints vs 49ers<br>Game: Sunday 12:00 PM • Caesars Superdome • FOX</div>
+                    <button class="book-tour" onclick="bookTour('49ers')">Book 49ers Fans Tour</button>
+                </div>
+                
+                <!-- Giants Fans Tour -->
+                <div class="game-card giants">
+                    <div class="game-date">Saturday, October 4 • 12:00 PM CT</div>
+                    <div class="game-matchup">New York Giants Fans Tour</div>
+                    <div class="game-details">24 hours before Saints vs Giants<br>Game: Sunday 12:00 PM • Caesars Superdome • CBS</div>
+                    <button class="book-tour" onclick="bookTour('Giants')">Book Giants Fans Tour</button>
+                </div>
+                
+                <!-- East Carolina Fans Tour -->
+                <div class="game-card pirates">
+                    <div class="game-date">Wednesday, October 8 • 6:30 PM CT</div>
+                    <div class="game-matchup">East Carolina Pirates Fans Tour</div>
+                    <div class="game-details">24 hours before Tulane vs East Carolina<br>Game: Thursday 6:30 PM • Yulman Stadium • ESPN</div>
+                    <button class="book-tour" onclick="bookTour('Pirates')">Book Pirates Fans Tour</button>
+                </div>
+                
+                <!-- Patriots Fans Tour -->
+                <div class="game-card patriots">
+                    <div class="game-date">Saturday, October 11 • 3:25 PM CT</div>
+                    <div class="game-matchup">New England Patriots Fans Tour</div>
+                    <div class="game-details">24 hours before Saints vs Patriots<br>Game: Sunday 3:25 PM • Caesars Superdome • CBS</div>
+                    <button class="book-tour" onclick="bookTour('Patriots')">Book Patriots Fans Tour</button>
+                </div>
+                
+                <!-- Army Fans Tour -->
+                <div class="game-card army">
+                    <div class="game-date">Friday, October 17 • TBA</div>
+                    <div class="game-matchup">Army Black Knights Fans Tour</div>
+                    <div class="game-details">24 hours before Tulane vs Army<br>Game: Saturday TBA • Yulman Stadium • TBA</div>
+                    <button class="book-tour" onclick="bookTour('Army')">Book Army Fans Tour</button>
+                </div>
+                
+                <!-- Buccaneers Fans Tour -->
+                <div class="game-card buccaneers">
+                    <div class="game-date">Saturday, October 25 • 3:05 PM CT</div>
+                    <div class="game-matchup">Tampa Bay Buccaneers Fans Tour</div>
+                    <div class="game-details">24 hours before Saints vs Buccaneers<br>Game: Sunday 3:05 PM • Caesars Superdome • FOX</div>
+                    <button class="book-tour" onclick="bookTour('Buccaneers')">Book Buccaneers Fans Tour</button>
+                </div>
+                
+                <!-- FAU Fans Tour -->
+                <div class="game-card owls">
+                    <div class="game-date">Friday, November 14 • TBA</div>
+                    <div class="game-matchup">Florida Atlantic Owls Fans Tour</div>
+                    <div class="game-details">24 hours before Tulane vs FAU (Homecoming)<br>Game: Saturday TBA • Yulman Stadium • TBA</div>
+                    <button class="book-tour" onclick="bookTour('Owls')">Book Owls Fans Tour</button>
+                </div>
+                
+                <!-- Falcons Fans Tour -->
+                <div class="game-card falcons">
+                    <div class="game-date">Saturday, November 22 • 3:25 PM CST</div>
+                    <div class="game-matchup">Atlanta Falcons Fans Tour</div>
+                    <div class="game-details">24 hours before Saints vs Falcons<br>Game: Sunday 3:25 PM • Caesars Superdome • FOX</div>
+                    <button class="book-tour" onclick="bookTour('Falcons')">Book Falcons Fans Tour</button>
+                </div>
+                
+                <!-- Charlotte Fans Tour -->
+                <div class="game-card charlotte">
+                    <div class="game-date">Friday, November 28 • TBA</div>
+                    <div class="game-matchup">Charlotte 49ers Fans Tour</div>
+                    <div class="game-details">24 hours before Tulane vs Charlotte (Season Finale)<br>Game: Saturday TBA • Yulman Stadium • TBA</div>
+                    <button class="book-tour" onclick="bookTour('Charlotte')">Book Charlotte Fans Tour</button>
+                </div>
+                
+                <!-- Panthers Fans Tour -->
+                <div class="game-card panthers">
+                    <div class="game-date">Saturday, December 13 • 3:25 PM CST</div>
+                    <div class="game-matchup">Carolina Panthers Fans Tour</div>
+                    <div class="game-details">24 hours before Saints vs Panthers<br>Game: Sunday 3:25 PM • Caesars Superdome • FOX</div>
+                    <button class="book-tour" onclick="bookTour('Panthers')">Book Panthers Fans Tour</button>
+                </div>
+                
+                <!-- Jets Fans Tour -->
+                <div class="game-card jets">
+                    <div class="game-date">Saturday, December 20 • 12:00 PM CST</div>
+                    <div class="game-matchup">New York Jets Fans Tour</div>
+                    <div class="game-details">24 hours before Saints vs Jets<br>Game: Sunday 12:00 PM • Caesars Superdome • CBS</div>
+                    <button class="book-tour" onclick="bookTour('Jets')">Book Jets Fans Tour</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature">
+                    <div class="feature-icon">🚶</div>
+                    <h3>Local Expertise</h3>
+                    <p>Led by passionate home team fans who know every story, tradition, and hidden gem in the city.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🤝</div>
+                    <h3>Friendly Rivalry</h3>
+                    <p>Experience the unique camaraderie that happens when opposing fans meet on neutral ground.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🏟️</div>
+                    <h3>Game Day Ready</h3>
+                    <p>Get insider tips on the best spots to eat, drink, and experience the local game day culture.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <p>&copy; The Game Bureau. All rights reserved.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#about">About</a>
+                    <a href="#tours">Tours</a>
+                    <a href="#calendar">Calendar</a>
+                    <a href="mailto:missioncontrol@thegamebureau.com">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple booking function
+        function bookTour(team) {
+            alert('Tour booking coming soon for ' + team + ' fans! Check back for availability.');
+        }
+
+        // Smooth scrolling for navigation links
+        document.addEventListener('DOMContentLoaded', function() {
+            var navLinks = document.querySelectorAll('a[href^="#"]');
+            for (var i = 0; i < navLinks.length; i++) {
+                navLinks[i].addEventListener('click', function(e) {
+                    e.preventDefault();
+                    var target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
