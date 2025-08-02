@@ -1,0 +1,123 @@
+<?xml version="1.0" ?>
+<games>
+  <game>
+    <matchup_id>401752803</matchup_id>
+    <date>2025-08-30</date>
+    <time>11:00 AM</time>
+    <home_uid>s:20~l:23~t:2655</home_uid>
+    <homename>Tulane</homename>
+    <away_uid>s:20~l:5~t:77</away_uid>
+    <awayname>Northwestern</awayname>
+    <neutral>no</neutral>
+  </game>
+  <game>
+    <matchup_id>2025-opp-0002-s:20~l:23~t:2655-1</matchup_id>
+    <date>2025-09-06</date>
+    <time>6:00 PM</time>
+    <home_uid>opp-0002</home_uid>
+    <homename>South Alabama</homename>
+    <away_uid>s:20~l:23~t:2655</away_uid>
+    <awayname>Tulane</awayname>
+    <neutral>no</neutral>
+  </game>
+  <game>
+    <matchup_id>2025-s:20~l:23~t:2655-opp-0003-1</matchup_id>
+    <date>2025-09-13</date>
+    <time>7:00 PM</time>
+    <home_uid>s:20~l:23~t:2655</home_uid>
+    <homename>Tulane</homename>
+    <away_uid>opp-0003</away_uid>
+    <awayname>Duke</awayname>
+    <neutral>no</neutral>
+  </game>
+  <game>
+    <matchup_id>2025-opp-0004-s:20~l:23~t:2655-1</matchup_id>
+    <date>2025-09-20</date>
+    <time>TBD</time>
+    <home_uid>opp-0004</home_uid>
+    <homename>Ole Miss</homename>
+    <away_uid>s:20~l:23~t:2655</away_uid>
+    <awayname>Tulane</awayname>
+    <neutral>no</neutral>
+  </game>
+  <game>
+    <matchup_id>2025-opp-0005-s:20~l:23~t:2655-1</matchup_id>
+    <date>2025-09-27</date>
+    <time>TBD</time>
+    <home_uid>opp-0005</home_uid>
+    <homename>Tulsa</homename>
+    <away_uid>s:20~l:23~t:2655</away_uid>
+    <awayname>Tulane</awayname>
+    <neutral>no</neutral>
+  </game>
+  <game>
+    <matchup_id>2025-s:20~l:23~t:2655-opp-0006-1</matchup_id>
+    <date>2025-10-09</date>
+    <time>TBD</time>
+    <home_uid>s:20~l:23~t:2655</home_uid>
+    <homename>Tulane</homename>
+    <away_uid>opp-0006</away_uid>
+    <awayname>East Carolina</awayname>
+    <neutral>no</neutral>
+  </game>
+  <game>
+    <matchup_id>2025-s:20~l:23~t:2655-opp-0007-1</matchup_id>
+    <date>2025-10-18</date>
+    <time>TBD</time>
+    <home_uid>s:20~l:23~t:2655</home_uid>
+    <homename>Tulane</homename>
+    <away_uid>opp-0007</away_uid>
+    <awayname>Army</awayname>
+    <neutral>no</neutral>
+  </game>
+  <game>
+    <matchup_id>2025-opp-0008-s:20~l:23~t:2655-1</matchup_id>
+    <date>2025-10-30</date>
+    <time>6:30 PM</time>
+    <home_uid>opp-0008</home_uid>
+    <homename>UTSA</homename>
+    <away_uid>s:20~l:23~t:2655</away_uid>
+    <awayname>Tulane</awayname>
+    <neutral>no</neutral>
+  </game>
+  <game>
+    <matchup_id>2025-opp-0009-s:20~l:23~t:2655-1</matchup_id>
+    <date>2025-11-07</date>
+    <time>8:00 PM</time>
+    <home_uid>opp-0009</home_uid>
+    <homename>Memphis</homename>
+    <away_uid>s:20~l:23~t:2655</away_uid>
+    <awayname>Tulane</awayname>
+    <neutral>no</neutral>
+  </game>
+  <game>
+    <matchup_id>2025-s:20~l:23~t:2655-opp-0010-1</matchup_id>
+    <date>2025-11-15</date>
+    <time>TBD</time>
+    <home_uid>s:20~l:23~t:2655</home_uid>
+    <homename>Tulane</homename>
+    <away_uid>opp-0010</away_uid>
+    <awayname>Florida Atlantic</awayname>
+    <neutral>no</neutral>
+  </game>
+  <game>
+    <matchup_id>2025-opp-0011-s:20~l:23~t:2655-1</matchup_id>
+    <date>2025-11-22</date>
+    <time>TBD</time>
+    <home_uid>opp-0011</home_uid>
+    <homename>Temple</homename>
+    <away_uid>s:20~l:23~t:2655</away_uid>
+    <awayname>Tulane</awayname>
+    <neutral>no</neutral>
+  </game>
+  <game>
+    <matchup_id>2025-s:20~l:23~t:2655-opp-0012-1</matchup_id>
+    <date>2025-11-29</date>
+    <time>TBD</time>
+    <home_uid>s:20~l:23~t:2655</home_uid>
+    <homename>Tulane</homename>
+    <away_uid>opp-0012</away_uid>
+    <awayname>Charlotte</awayname>
+    <neutral>no</neutral>
+  </game>
+</games>

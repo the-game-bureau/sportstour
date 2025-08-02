@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Viewer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background: #ffffff;
+            color: #333333;
+            line-height: 1.5;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .header {
+            margin-bottom: 40px;
+            border-bottom: 1px solid #e0e0e0;
+            padding-bottom: 20px;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 300;
+            color: #000000;
+            margin-bottom: 8px;
+            letter-spacing: -0.02em;
+        }
+
+        .header p {
+            color: #666666;
+            font-size: 1rem;
+            font-weight: 400;
+        }
+
+        .filters {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+            padding: 20px 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .filter-group label {
+            display: block;
+            font-weight: 500;
+            color: #333333;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .filter-group select {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid #cccccc;
+            background: #ffffff;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: border-color 0.2s ease;
+        }
+
+        .filter-group select:focus {
+            outline: none;
+            border-color: #000000;
+        }
+
+        .controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            padding: 20px 0;
+        }
+
+        .results-count {
+            color: #666666;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .clear-filters {
+            background: #000000;
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        .clear-filters:hover {
+            background: #333333;
+        }
+
+        .teams-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+
+        .team-card {
+            background: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 24px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .team-card:hover {
+            border-color: #000000;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .team-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .team-info h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #000000;
+            margin-bottom: 6px;
+            letter-spacing: -0.01em;
+            line-height: 1.2;
+        }
+
+        .team-sport {
+            color: #888888;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 4px;
+        }
+
+        .team-league-info {
+            color: #666666;
+            font-size: 0.85rem;
+            font-weight: 400;
+            margin-bottom: 8px;
+            line-height: 1.3;
+        }
+
+        .color-blocks {
+            display: flex;
+            gap: 6px;
+            flex-shrink: 0;
+        }
+
+        .color-block {
+            width: 24px;
+            height: 24px;
+            border: 2px solid #ffffff;
+            border-radius: 4px;
+            position: relative;
+            cursor: help;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+        }
+
+        .color-block .tooltip {
+            visibility: hidden;
+            background-color: #333333;
+            color: #ffffff;
+            text-align: center;
+            border-radius: 4px;
+            padding: 6px 10px;
+            position: absolute;
+            z-index: 1;
+            bottom: 130%;
+            left: 50%;
+            margin-left: -45px;
+            font-size: 0.75rem;
+            white-space: nowrap;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .color-block .tooltip::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: #333333 transparent transparent transparent;
+        }
+
+        .color-block:hover .tooltip {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .venue-info {
+            background: #f8f9fa;
+            border-radius: 6px;
+            padding: 16px;
+            margin-top: 16px;
+        }
+
+        .venue-name {
+            font-weight: 600;
+            color: #000000;
+            font-size: 0.9rem;
+            margin-bottom: 4px;
+        }
+
+        .metro-info {
+            margin-top: 4px;
+            font-size: 0.8rem;
+            color: #666666;
+        }
+
+        .metro-label {
+            font-weight: 500;
+            color: #888888;
+        }
+
+        .team-metadata {
+            margin-top: 16px;
+            padding-top: 12px;
+            border-top: 1px solid #f0f0f0;
+            text-align: center;
+            font-size: 0.7rem;
+            color: #999999;
+            font-family: 'Courier New', monospace;
+            line-height: 1.4;
+        }
+
+        .more-button {
+            background: #000000;
+            color: #ffffff;
+            border: none;
+            padding: 15px 30px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+            display: block;
+            margin: 0 auto;
+            border-radius: 4px;
+        }
+
+        .more-button:hover:not(:disabled) {
+            background: #333333;
+        }
+
+        .more-button:disabled {
+            background: #cccccc;
+            cursor: not-allowed;
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 60px 0;
+            color: #666666;
+        }
+
+        .no-results h3 {
+            font-size: 1.5rem;
+            font-weight: 300;
+            color: #333333;
+            margin-bottom: 10px;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 60px 0;
+            color: #666666;
+            font-size: 1.1rem;
+        }
+
+        .error {
+            text-align: center;
+            padding: 60px 0;
+            color: #cc0000;
+            font-size: 1.1rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px 15px;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .filters {
+                grid-template-columns: 1fr;
+            }
+            
+            .teams-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .controls {
+                flex-direction: column;
+                gap: 15px;
+                align-items: stretch;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Team Viewer</h1>
+            <p>by Kevin Kolb</p>
+        </div>
+        
+        <div class="filters">
+            <div class="filter-group">
+                <label for="fanbaseFilter">Fanbase Epicenter</label>
+                <select id="fanbaseFilter">
+                    <option value="">All Epicenters</option>
+                </select>
+            </div>
+            
+            <div class="filter-group">
+                <label for="sportFilter">Sport</label>
+                <select id="sportFilter">
+                    <option value="">All Sports</option>
+                </select>
+            </div>
+            
+            <div class="filter-group">
+                <label for="leagueFilter">League</label>
+                <select id="leagueFilter">
+                    <option value="">All Leagues</option>
+                </select>
+            </div>
+            
+            <div class="filter-group">
+                <label for="conferenceFilter">Conference</label>
+                <select id="conferenceFilter">
+                    <option value="">All Conferences</option>
+                </select>
+            </div>
+            
+            <div class="filter-group">
+                <label for="divisionFilter">Division</label>
+                <select id="divisionFilter">
+                    <option value="">All Divisions</option>
+                </select>
+            </div>
+            
+            <div class="filter-group">
+                <label for="teamFilter">Team</label>
+                <select id="teamFilter">
+                    <option value="">All Teams</option>
+                </select>
+            </div>
+        </div>
+        
+        <div class="controls">
+            <div class="results-count" id="resultsCount">Loading...</div>
+            <button class="clear-filters" onclick="clearFilters()">Clear Filters</button>
+        </div>
+        
+        <div id="loadingIndicator" class="loading">
+            Loading teams data...
+        </div>
+        
+        <div id="errorIndicator" class="error" style="display: none;">
+        </div>
+        
+        <div class="teams-grid" id="teamsGrid" style="display: none;">
+            <!-- Teams will be populated here -->
+        </div>
+        
+        <button class="more-button" id="moreButton" onclick="loadMore()" style="display: none;">
+            Show More
+        </button>
+    </div>
+
+    <script>
+        let allTeams = [];
+        let filteredTeams = [];
+        let displayedCount = 0;
+        const itemsPerPage = 10;
+
+        async function loadTeamsData() {
+            try {
+                const response = await fetch('teams.xml');
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                
+                const xmlText = await response.text();
+                const parser = new DOMParser();
+                const xmlDoc = parser.parseFromString(xmlText, 'text/xml');
+                
+                const parseError = xmlDoc.querySelector('parsererror');
+                if (parseError) {
+                    throw new Error('XML parsing error: ' + parseError.textContent);
+                }
+                
+                const teams = xmlDoc.getElementsByTagName('team');
+                
+                allTeams = [];
+                for (let i = 0; i < teams.length; i++) {
+                    const team = teams[i];
+                    const teamData = {
+                        teamname: getTextContent(team, 'teamname'),
+                        sport: getTextContent(team, 'sport'),
+                        city: getTextContent(team, 'city'),
+                        state: getTextContent(team, 'state'),
+                        abbreviation: getTextContent(team, 'abbreviation'),
+                        espnId: getTextContent(team, 'espnId'),
+                        uid: getTextContent(team, 'uid'),
+                        slug: getTextContent(team, 'slug'),
+                        primaryColor: getTextContent(team, 'primaryColor'),
+                        secondaryColor: getTextContent(team, 'secondaryColor'),
+                        mascot: getTextContent(team, 'mascot'),
+                        homeVenue: getTextContent(team, 'homeVenue'),
+                        venueCity: getTextContent(team, 'venueCity'),
+                        capacity: getTextContent(team, 'capacity'),
+                        largestMetro: getTextContent(team, 'largestMetro'),
+                        league: getTextContent(team, 'league'),
+                        conference: getTextContent(team, 'conference'),
+                        division: getTextContent(team, 'division')
+                    };
+                    allTeams.push(teamData);
+                }
+
+                allTeams.sort((a, b) => a.teamname.localeCompare(b.teamname));
+                
+                populateFilters();
+                applyFilters();
+                
+                document.getElementById('loadingIndicator').style.display = 'none';
+                document.getElementById('teamsGrid').style.display = 'grid';
+                document.getElementById('moreButton').style.display = 'block';
+                
+            } catch (error) {
+                console.error('Error loading teams data:', error);
+                
+                allTeams = [{
+                    teamname: 'New Orleans Saints',
+                    sport: 'Football',
+                    city: 'New Orleans',
+                    state: 'LA',
+                    abbreviation: 'NO',
+                    espnId: '18',
+                    uid: 's:20~l:28~t:18',
+                    slug: 'new-orleans-saints',
+                    primaryColor: '#D3BC8D',
+                    secondaryColor: '#101820',
+                    mascot: 'Gumbo',
+                    homeVenue: 'Caesars Superdome',
+                    venueCity: 'New Orleans',
+                    capacity: '73208',
+                    largestMetro: 'New Orleans',
+                    league: 'NFL',
+                    conference: 'NFC',
+                    division: 'NFC South'
+                }];
+                
+                populateFilters();
+                applyFilters();
+                
+                document.getElementById('loadingIndicator').style.display = 'none';
+                document.getElementById('teamsGrid').style.display = 'grid';
+                document.getElementById('moreButton').style.display = 'block';
+                
+                const errorDiv = document.getElementById('errorIndicator');
+                errorDiv.style.display = 'block';
+                errorDiv.innerHTML = `
+                    <h3>Unable to load full teams database</h3>
+                    <p>Showing fallback data: New Orleans Saints</p>
+                    <p style="font-size: 0.9rem; margin-top: 10px;">Error: ${error.message}</p>
+                `;
+                
+                setTimeout(() => {
+                    errorDiv.style.display = 'none';
+                }, 5000);
+            }
+        }
+
+        function getTextContent(parent, tagName) {
+            const element = parent.getElementsByTagName(tagName)[0];
+            return element ? element.textContent.trim() : '';
+        }
+
+        function populateFilters() {
+            const currentFanbase = document.getElementById('fanbaseFilter').value;
+            const currentSport = document.getElementById('sportFilter').value;
+            const currentLeague = document.getElementById('leagueFilter').value;
+            const currentConference = document.getElementById('conferenceFilter').value;
+            const currentDivision = document.getElementById('divisionFilter').value;
+            
+            let availableTeams = allTeams;
+            
+            if (currentFanbase) {
+                availableTeams = availableTeams.filter(team => (team.largestMetro || team.city) === currentFanbase);
+            }
+            
+            if (currentSport) {
+                availableTeams = availableTeams.filter(team => team.sport === currentSport);
+            }
+            
+            if (currentLeague) {
+                availableTeams = availableTeams.filter(team => team.league === currentLeague);
+            }
+            
+            if (currentConference) {
+                availableTeams = availableTeams.filter(team => team.conference === currentConference);
+            }
+            
+            if (currentDivision) {
+                availableTeams = availableTeams.filter(team => team.division === currentDivision);
+            }
+
+            const fanbaseEpicenters = [...new Set(allTeams.map(team => team.largestMetro || team.city))].filter(Boolean).sort();
+            const sports = [...new Set(availableTeams.map(team => team.sport))].sort();
+            const leagues = [...new Set(availableTeams.map(team => team.league))].filter(Boolean).sort();
+            const conferences = [...new Set(availableTeams.map(team => team.conference))].filter(Boolean).sort();
+            const divisions = [...new Set(availableTeams.map(team => team.division))].filter(Boolean).sort();
+            const teamNames = [...new Set(availableTeams.map(team => team.teamname))].filter(Boolean).sort();
+
+            populateSelect('fanbaseFilter', fanbaseEpicenters, currentFanbase);
+            populateSelect('sportFilter', sports, currentSport);
+            populateSelect('leagueFilter', leagues, currentLeague);
+            populateSelect('conferenceFilter', conferences, currentConference);
+            populateSelect('divisionFilter', divisions, currentDivision);
+            populateSelect('teamFilter', teamNames, document.getElementById('teamFilter').value);
+        }
+
+        function populateSelect(selectId, options, currentValue) {
+            const select = document.getElementById(selectId);
+            
+            while (select.children.length > 1) {
+                select.removeChild(select.lastChild);
+            }
+            
+            options.forEach(option => {
+                if (option) {
+                    const optionElement = document.createElement('option');
+                    optionElement.value = option;
+                    optionElement.textContent = option;
+                    select.appendChild(optionElement);
+                }
+            });
+            
+            if (options.includes(currentValue)) {
+                select.value = currentValue;
+            } else if (currentValue && !options.includes(currentValue)) {
+                select.value = '';
+            }
+        }
+
+        function onFilterChange(changedFilterId) {
+            if (changedFilterId === 'fanbaseFilter') {
+                document.getElementById('sportFilter').value = '';
+                document.getElementById('leagueFilter').value = '';
+                document.getElementById('conferenceFilter').value = '';
+                document.getElementById('divisionFilter').value = '';
+                document.getElementById('teamFilter').value = '';
+            } else if (changedFilterId === 'sportFilter') {
+                document.getElementById('leagueFilter').value = '';
+                document.getElementById('conferenceFilter').value = '';
+                document.getElementById('divisionFilter').value = '';
+                document.getElementById('teamFilter').value = '';
+            } else if (changedFilterId === 'leagueFilter') {
+                document.getElementById('conferenceFilter').value = '';
+                document.getElementById('divisionFilter').value = '';
+                document.getElementById('teamFilter').value = '';
+            } else if (changedFilterId === 'conferenceFilter') {
+                document.getElementById('divisionFilter').value = '';
+                document.getElementById('teamFilter').value = '';
+            } else if (changedFilterId === 'divisionFilter') {
+                document.getElementById('teamFilter').value = '';
+            }
+            
+            populateFilters();
+            applyFilters();
+        }
+
+        function applyFilters() {
+            const fanbaseFilter = document.getElementById('fanbaseFilter').value;
+            const sportFilter = document.getElementById('sportFilter').value;
+            const leagueFilter = document.getElementById('leagueFilter').value;
+            const conferenceFilter = document.getElementById('conferenceFilter').value;
+            const divisionFilter = document.getElementById('divisionFilter').value;
+            const teamFilter = document.getElementById('teamFilter').value;
+
+            filteredTeams = allTeams.filter(team => {
+                return (!fanbaseFilter || (team.largestMetro || team.city) === fanbaseFilter) &&
+                       (!sportFilter || team.sport === sportFilter) &&
+                       (!leagueFilter || team.league === leagueFilter) &&
+                       (!conferenceFilter || team.conference === conferenceFilter) &&
+                       (!divisionFilter || team.division === divisionFilter) &&
+                       (!teamFilter || team.teamname === teamFilter);
+            });
+
+            displayedCount = 0;
+            document.getElementById('teamsGrid').innerHTML = '';
+            loadMore();
+            updateResultsCount();
+        }
+
+        function loadMore() {
+            const teamsGrid = document.getElementById('teamsGrid');
+            const moreButton = document.getElementById('moreButton');
+            
+            const endIndex = Math.min(displayedCount + itemsPerPage, filteredTeams.length);
+            
+            for (let i = displayedCount; i < endIndex; i++) {
+                const team = filteredTeams[i];
+                const teamCard = createTeamCard(team);
+                teamsGrid.appendChild(teamCard);
+            }
+            
+            displayedCount = endIndex;
+            
+            if (displayedCount >= filteredTeams.length) {
+                moreButton.style.display = 'none';
+            } else {
+                moreButton.style.display = 'block';
+            }
+        }
+
+        function createTeamCard(team) {
+            const card = document.createElement('div');
+            card.className = 'team-card';
+            
+            const formatCapacity = (capacity) => {
+                if (!capacity) return 'N/A';
+                return parseInt(capacity).toLocaleString();
+            };
+
+            card.innerHTML = `
+                <div class="team-header">
+                    <div class="team-info">
+                        <div class="team-sport">${team.sport}</div>
+                        <h3>${team.teamname}</h3>
+                        <div class="team-league-info">${team.league} • ${team.conference} • ${team.division} • ${team.city}, ${team.state}</div>
+                    </div>
+                    <div class="color-blocks">
+                        <div class="color-block" style="background-color: ${team.primaryColor}">
+                            <span class="tooltip">${team.primaryColor}</span>
+                        </div>
+                        <div class="color-block" style="background-color: ${team.secondaryColor}">
+                            <span class="tooltip">${team.secondaryColor}</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="venue-info">
+                    <div class="venue-name">${team.homeVenue} • ${team.venueCity} • ${formatCapacity(team.capacity)}</div>
+                    <div class="metro-info"><span class="metro-label">Fanbase Epicenter:</span> ${team.largestMetro || team.city}</div>
+                </div>
+                
+                <div class="team-metadata">
+                    ${team.slug || 'N/A'} • ${team.uid || 'N/A'} • ${team.espnId || 'N/A'}
+                </div>
+            `;
+            
+            return card;
+        }
+
+        function updateResultsCount() {
+            const count = filteredTeams.length;
+            const total = allTeams.length;
+            document.getElementById('resultsCount').textContent = 
+                `Showing ${Math.min(displayedCount, count)} of ${count} teams (${total} total)`;
+        }
+
+        function clearFilters() {
+            document.getElementById('fanbaseFilter').value = '';
+            document.getElementById('sportFilter').value = '';
+            document.getElementById('leagueFilter').value = '';
+            document.getElementById('conferenceFilter').value = '';
+            document.getElementById('divisionFilter').value = '';
+            document.getElementById('teamFilter').value = '';
+            populateFilters();
+            applyFilters();
+        }
+
+        document.getElementById('fanbaseFilter').addEventListener('change', () => onFilterChange('fanbaseFilter'));
+        document.getElementById('sportFilter').addEventListener('change', () => onFilterChange('sportFilter'));
+        document.getElementById('leagueFilter').addEventListener('change', () => onFilterChange('leagueFilter'));
+        document.getElementById('conferenceFilter').addEventListener('change', () => onFilterChange('conferenceFilter'));
+        document.getElementById('divisionFilter').addEventListener('change', () => onFilterChange('divisionFilter'));
+        document.getElementById('teamFilter').addEventListener('change', () => onFilterChange('teamFilter'));
+
+        document.addEventListener('DOMContentLoaded', loadTeamsData);
+    </script>
+</body>
+</html>

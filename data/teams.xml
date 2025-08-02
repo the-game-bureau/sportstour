@@ -1,0 +1,1257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<teams>
+  <sport name="Football">
+    <!-- NFL Teams -->
+    <team>
+      <teamname>Buffalo Bills</teamname>
+      <sport>Football</sport>
+      <city>Buffalo</city>
+      <state>NY</state>
+      <abbreviation>BUF</abbreviation>
+      <espnId>2</espnId>
+      <uid>s:20~l:28~t:2</uid>
+      <slug>buffalo-bills</slug>
+      <primaryColor>#00338D</primaryColor>
+      <secondaryColor>#C60C30</secondaryColor>
+      <mascot>Billy Buffalo</mascot>
+      <homeVenue>Highmark Stadium</homeVenue>
+      <venueCity>Orchard Park</venueCity>
+      <capacity>71608</capacity>
+      <rivalries>New England Patriots, Miami Dolphins, New York Jets</rivalries>
+      <league>NFL</league>
+      <conference>AFC</conference>
+      <division>AFC East</division>
+      <largestMetro>Buffalo</largestMetro>
+    </team>
+    <team>
+      <teamname>Miami Dolphins</teamname>
+      <sport>Football</sport>
+      <city>Miami</city>
+      <state>FL</state>
+      <abbreviation>MIA</abbreviation>
+      <espnId>15</espnId>
+      <uid>s:20~l:28~t:15</uid>
+      <slug>miami-dolphins</slug>
+      <primaryColor>#008E97</primaryColor>
+      <secondaryColor>#FC4C02</secondaryColor>
+      <mascot>T.D.</mascot>
+      <homeVenue>Hard Rock Stadium</homeVenue>
+      <venueCity>Miami Gardens</venueCity>
+      <capacity>65326</capacity>
+      <rivalries>New England Patriots, Buffalo Bills, New York Jets</rivalries>
+      <league>NFL</league>
+      <conference>AFC</conference>
+      <division>AFC East</division>
+      <largestMetro>Miami-Fort Lauderdale</largestMetro>
+    </team>
+    <team>
+      <teamname>New England Patriots</teamname>
+      <sport>Football</sport>
+      <city>Foxborough</city>
+      <state>MA</state>
+      <abbreviation>NE</abbreviation>
+      <espnId>17</espnId>
+      <uid>s:20~l:28~t:17</uid>
+      <slug>new-england-patriots</slug>
+      <primaryColor>#002244</primaryColor>
+      <secondaryColor>#C60C30</secondaryColor>
+      <mascot>Pat Patriot</mascot>
+      <homeVenue>Gillette Stadium</homeVenue>
+      <venueCity>Foxborough</venueCity>
+      <capacity>65878</capacity>
+      <rivalries>Buffalo Bills, Miami Dolphins, New York Jets, Indianapolis Colts</rivalries>
+      <league>NFL</league>
+      <conference>AFC</conference>
+      <division>AFC East</division>
+      <largestMetro>Boston</largestMetro>
+    </team>
+    <team>
+      <teamname>New York Jets</teamname>
+      <sport>Football</sport>
+      <city>East Rutherford</city>
+      <state>NJ</state>
+      <abbreviation>NYJ</abbreviation>
+      <espnId>20</espnId>
+      <uid>s:20~l:28~t:20</uid>
+      <slug>new-york-jets</slug>
+      <primaryColor>#125740</primaryColor>
+      <secondaryColor>#FFFFFF</secondaryColor>
+      <mascot>None</mascot>
+      <homeVenue>MetLife Stadium</homeVenue>
+      <venueCity>East Rutherford</venueCity>
+      <capacity>82500</capacity>
+      <rivalries>New England Patriots, Buffalo Bills, Miami Dolphins, New York Giants</rivalries>
+      <league>NFL</league>
+      <conference>AFC</conference>
+      <division>AFC East</division>
+      <largestMetro>New York City</largestMetro>
+    </team>
+    <team>
+      <teamname>Baltimore Ravens</teamname>
+      <sport>Football</sport>
+      <city>Baltimore</city>
+      <state>MD</state>
+      <abbreviation>BAL</abbreviation>
+      <espnId>33</espnId>
+      <uid>s:20~l:28~t:33</uid>
+      <slug>baltimore-ravens</slug>
+      <primaryColor>#241773</primaryColor>
+      <secondaryColor>#000000</secondaryColor>
+      <mascot>Poe</mascot>
+      <homeVenue>M&amp;T Bank Stadium</homeVenue>
+      <venueCity>Baltimore</venueCity>
+      <capacity>71008</capacity>
+      <rivalries>Pittsburgh Steelers, Cleveland Browns, Cincinnati Bengals</rivalries>
+      <league>NFL</league>
+      <conference>AFC</conference>
+      <division>AFC North</division>
+      <largestMetro>Baltimore</largestMetro>
+    </team>
+    <team>
+      <teamname>Cincinnati Bengals</teamname>
+      <sport>Football</sport>
+      <city>Cincinnati</city>
+      <state>OH</state>
+      <abbreviation>CIN</abbreviation>
+      <espnId>4004</espnId>
+      <uid>s:20~l:28~t:4</uid>
+      <slug>cincinnati-bengals</slug>
+      <primaryColor>#FB4F14</primaryColor>
+      <secondaryColor>#000000</secondaryColor>
+      <mascot>Who Dey</mascot>
+      <homeVenue>Paycor Stadium</homeVenue>
+      <venueCity>Cincinnati</venueCity>
+      <capacity>65515</capacity>
+      <rivalries>Pittsburgh Steelers, Cleveland Browns, Baltimore Ravens</rivalries>
+      <league>NFL</league>
+      <conference>AFC</conference>
+      <division>AFC North</division>
+      <largestMetro>Cincinnati</largestMetro>
+    </team>
+    <team>
+      <teamname>Cleveland Browns</teamname>
+      <sport>Football</sport>
+      <city>Cleveland</city>
+      <state>OH</state>
+      <abbreviation>CLE</abbreviation>
+      <espnId>5</espnId>
+      <uid>s:20~l:28~t:5</uid>
+      <slug>cleveland-browns</slug>
+      <primaryColor>#311D00</primaryColor>
+      <secondaryColor>#FF3C00</secondaryColor>
+      <mascot>Brownie the Elf</mascot>
+      <homeVenue>FirstEnergy Stadium</homeVenue>
+      <venueCity>Cleveland</venueCity>
+      <capacity>67431</capacity>
+      <rivalries>Pittsburgh Steelers, Baltimore Ravens, Cincinnati Bengals</rivalries>
+      <league>NFL</league>
+      <conference>AFC</conference>
+      <division>AFC North</division>
+      <largestMetro>Cleveland</largestMetro>
+    </team>
+    <team>
+      <teamname>Pittsburgh Steelers</teamname>
+      <sport>Football</sport>
+      <city>Pittsburgh</city>
+      <state>PA</state>
+      <abbreviation>PIT</abbreviation>
+      <espnId>23</espnId>
+      <uid>s:20~l:28~t:23</uid>
+      <slug>pittsburgh-steelers</slug>
+      <primaryColor>#FFB612</primaryColor>
+      <secondaryColor>#101820</secondaryColor>
+      <mascot>Steely McBeam</mascot>
+      <homeVenue>Acrisure Stadium</homeVenue>
+      <venueCity>Pittsburgh</venueCity>
+      <capacity>68400</capacity>
+      <rivalries>Baltimore Ravens, Cleveland Browns, Cincinnati Bengals</rivalries>
+      <league>NFL</league>
+      <conference>AFC</conference>
+      <division>AFC North</division>
+      <largestMetro>Pittsburgh</largestMetro>
+    </team>
+    <team>
+      <teamname>Houston Texans</teamname>
+      <sport>Football</sport>
+      <city>Houston</city>
+      <state>TX</state>
+      <abbreviation>HOU</abbreviation>
+      <espnId>34</espnId>
+      <uid>s:20~l:28~t:34</uid>
+      <slug>houston-texans</slug>
+      <primaryColor>#03202F</primaryColor>
+      <secondaryColor>#A71930</secondaryColor>
+      <mascot>Toro</mascot>
+      <homeVenue>NRG Stadium</homeVenue>
+      <venueCity>Houston</venueCity>
+      <capacity>72220</capacity>
+      <rivalries>Indianapolis Colts, Tennessee Titans, Jacksonville Jaguars</rivalries>
+      <league>NFL</league>
+      <conference>AFC</conference>
+      <division>AFC South</division>
+      <largestMetro>Houston-The Woodlands</largestMetro>
+    </team>
+    <team>
+      <teamname>Indianapolis Colts</teamname>
+      <sport>Football</sport>
+      <city>Indianapolis</city>
+      <state>IN</state>
+      <abbreviation>IND</abbreviation>
+      <espnId>11</espnId>
+      <uid>s:20~l:28~t:11</uid>
+      <slug>indianapolis-colts</slug>
+      <primaryColor>#002C5F</primaryColor>
+      <secondaryColor>#A2AAAD</secondaryColor>
+      <mascot>Blue</mascot>
+      <homeVenue>Lucas Oil Stadium</homeVenue>
+      <venueCity>Indianapolis</venueCity>
+      <capacity>70000</capacity>
+      <rivalries>Houston Texans, Tennessee Titans, New England Patriots</rivalries>
+      <league>NFL</league>
+      <conference>AFC</conference>
+      <division>AFC South</division>
+      <largestMetro>Indianapolis-Carmel</largestMetro>
+    </team>
+    <team>
+      <teamname>Jacksonville Jaguars</teamname>
+      <sport>Football</sport>
+      <city>Jacksonville</city>
+      <state>FL</state>
+      <abbreviation>JAX</abbreviation>
+      <espnId>30</espnId>
+      <uid>s:20~l:28~t:30</uid>
+      <slug>jacksonville-jaguars</slug>
+      <primaryColor>#006778</primaryColor>
+      <secondaryColor>#D7A22A</secondaryColor>
+      <mascot>Jaxson de Ville</mascot>
+      <homeVenue>TIAA Bank Field</homeVenue>
+      <venueCity>Jacksonville</venueCity>
+      <capacity>67814</capacity>
+      <rivalries>Tennessee Titans, Indianapolis Colts, Houston Texans</rivalries>
+      <league>NFL</league>
+      <conference>AFC</conference>
+      <division>AFC South</division>
+      <largestMetro>Jacksonville</largestMetro>
+    </team>
+    <team>
+      <teamname>Tennessee Titans</teamname>
+      <sport>Football</sport>
+      <city>Nashville</city>
+      <state>TN</state>
+      <abbreviation>TEN</abbreviation>
+      <espnId>10010</espnId>
+      <uid>s:20~l:28~t:10</uid>
+      <slug>tennessee-titans</slug>
+      <primaryColor>#0C2340</primaryColor>
+      <secondaryColor>#4B92DB</secondaryColor>
+      <mascot>T-Rac</mascot>
+      <homeVenue>Nissan Stadium</homeVenue>
+      <venueCity>Nashville</venueCity>
+      <capacity>69143</capacity>
+      <rivalries>Jacksonville Jaguars, Indianapolis Colts, Houston Texans</rivalries>
+      <league>NFL</league>
+      <conference>AFC</conference>
+      <division>AFC South</division>
+      <largestMetro>Nashville-Davidson</largestMetro>
+    </team>
+    <team>
+      <teamname>Denver Broncos</teamname>
+      <sport>Football</sport>
+      <city>Denver</city>
+      <state>CO</state>
+      <abbreviation>DEN</abbreviation>
+      <espnId>7</espnId>
+      <uid>s:20~l:28~t:7</uid>
+      <slug>denver-broncos</slug>
+      <primaryColor>#FB4F14</primaryColor>
+      <secondaryColor>#002244</secondaryColor>
+      <mascot>Miles</mascot>
+      <homeVenue>Empower Field at Mile High</homeVenue>
+      <venueCity>Denver</venueCity>
+      <capacity>76125</capacity>
+      <rivalries>Kansas City Chiefs, Las Vegas Raiders, Los Angeles Chargers</rivalries>
+      <league>NFL</league>
+      <conference>AFC</conference>
+      <division>AFC West</division>
+      <largestMetro>Denver-Aurora-Lakewood</largestMetro>
+    </team>
+    <team>
+      <teamname>Kansas City Chiefs</teamname>
+      <sport>Football</sport>
+      <city>Kansas City</city>
+      <state>MO</state>
+      <abbreviation>KC</abbreviation>
+      <espnId>12</espnId>
+      <uid>s:20~l:28~t:12</uid>
+      <slug>kansas-city-chiefs</slug>
+      <primaryColor>#E31837</primaryColor>
+      <secondaryColor>#FFB81C</secondaryColor>
+      <mascot>KC Wolf</mascot>
+      <homeVenue>GEHA Field at Arrowhead Stadium</homeVenue>
+      <venueCity>Kansas City</venueCity>
+      <capacity>76416</capacity>
+      <rivalries>Denver Broncos, Las Vegas Raiders, Los Angeles Chargers</rivalries>
+      <league>NFL</league>
+      <conference>AFC</conference>
+      <division>AFC West</division>
+      <largestMetro>Kansas City</largestMetro>
+    </team>
+    <team>
+      <teamname>Las Vegas Raiders</teamname>
+      <sport>Football</sport>
+      <city>Las Vegas</city>
+      <state>NV</state>
+      <abbreviation>LV</abbreviation>
+      <espnId>13</espnId>
+      <uid>s:20~l:28~t:13</uid>
+      <slug>las-vegas-raiders</slug>
+      <primaryColor>#000000</primaryColor>
+      <secondaryColor>#A5ACAF</secondaryColor>
+      <mascot>Raider Rusher</mascot>
+      <homeVenue>Allegiant Stadium</homeVenue>
+      <venueCity>Las Vegas</venueCity>
+      <capacity>65000</capacity>
+      <rivalries>Kansas City Chiefs, Denver Broncos, Los Angeles Chargers</rivalries>
+      <league>NFL</league>
+      <conference>AFC</conference>
+      <division>AFC West</division>
+      <largestMetro>Las Vegas-Henderson-Paradise</largestMetro>
+    </team>
+    <team>
+      <teamname>Los Angeles Chargers</teamname>
+      <sport>Football</sport>
+      <city>Los Angeles</city>
+      <state>CA</state>
+      <abbreviation>LAC</abbreviation>
+      <espnId>24</espnId>
+      <uid>s:20~l:28~t:24</uid>
+      <slug>los-angeles-chargers</slug>
+      <primaryColor>#0080C6</primaryColor>
+      <secondaryColor>#FFC20E</secondaryColor>
+      <mascot>Boltman</mascot>
+      <homeVenue>SoFi Stadium</homeVenue>
+      <venueCity>Inglewood</venueCity>
+      <capacity>70240</capacity>
+      <rivalries>Kansas City Chiefs, Denver Broncos, Las Vegas Raiders</rivalries>
+      <league>NFL</league>
+      <conference>AFC</conference>
+      <division>AFC West</division>
+      <largestMetro>Los Angeles</largestMetro>
+    </team>
+    <team>
+      <teamname>Dallas Cowboys</teamname>
+      <sport>Football</sport>
+      <city>Arlington</city>
+      <state>TX</state>
+      <abbreviation>DAL</abbreviation>
+      <espnId>6006</espnId>
+      <uid>s:20~l:28~t:6</uid>
+      <slug>dallas-cowboys</slug>
+      <primaryColor>#003594</primaryColor>
+      <secondaryColor>#041E42</secondaryColor>
+      <mascot>Rowdy</mascot>
+      <homeVenue>AT&amp;T Stadium</homeVenue>
+      <venueCity>Arlington</venueCity>
+      <capacity>80000</capacity>
+      <rivalries>Philadelphia Eagles, Washington Commanders, New York Giants</rivalries>
+      <league>NFL</league>
+      <conference>NFC</conference>
+      <division>NFC East</division>
+      <largestMetro>Dallas-Fort Worth-Arlington</largestMetro>
+    </team>
+    <team>
+      <teamname>New York Giants</teamname>
+      <sport>Football</sport>
+      <city>East Rutherford</city>
+      <state>NJ</state>
+      <abbreviation>NYG</abbreviation>
+      <espnId>19</espnId>
+      <uid>s:20~l:28~t:19</uid>
+      <slug>new-york-giants</slug>
+      <primaryColor>#0B2265</primaryColor>
+      <secondaryColor>#A71930</secondaryColor>
+      <mascot>None</mascot>
+      <homeVenue>MetLife Stadium</homeVenue>
+      <venueCity>East Rutherford</venueCity>
+      <capacity>82500</capacity>
+      <rivalries>Philadelphia Eagles, Dallas Cowboys, Washington Commanders, New York Jets</rivalries>
+      <league>NFL</league>
+      <conference>NFC</conference>
+      <division>NFC East</division>
+      <largestMetro>New York City</largestMetro>
+    </team>
+    <team>
+      <teamname>Philadelphia Eagles</teamname>
+      <sport>Football</sport>
+      <city>Philadelphia</city>
+      <state>PA</state>
+      <abbreviation>PHI</abbreviation>
+      <espnId>21</espnId>
+      <uid>s:20~l:28~t:21</uid>
+      <slug>philadelphia-eagles</slug>
+      <primaryColor>#004C54</primaryColor>
+      <secondaryColor>#A5ACAF</secondaryColor>
+      <mascot>Swoop</mascot>
+      <homeVenue>Lincoln Financial Field</homeVenue>
+      <venueCity>Philadelphia</venueCity>
+      <capacity>69596</capacity>
+      <rivalries>Dallas Cowboys, New York Giants, Washington Commanders</rivalries>
+      <league>NFL</league>
+      <conference>NFC</conference>
+      <division>NFC East</division>
+      <largestMetro>Philadelphia-Camden-Vineland</largestMetro>
+    </team>
+    <team>
+      <teamname>Washington Commanders</teamname>
+      <sport>Football</sport>
+      <city>Landover</city>
+      <state>MD</state>
+      <abbreviation>WSH</abbreviation>
+      <espnId>28</espnId>
+      <uid>s:20~l:28~t:28</uid>
+      <slug>washington-commanders</slug>
+      <primaryColor>#5A1414</primaryColor>
+      <secondaryColor>#FFB612</secondaryColor>
+      <mascot>Major Tuddy</mascot>
+      <homeVenue>Northwest Stadium</homeVenue>
+      <venueCity>Landover</venueCity>
+      <capacity>67617</capacity>
+      <rivalries>Dallas Cowboys, Philadelphia Eagles, New York Giants</rivalries>
+      <league>NFL</league>
+      <conference>NFC</conference>
+      <division>NFC East</division>
+      <largestMetro>Washington-Arlington-Alexandria</largestMetro>
+    </team>
+    <team>
+      <teamname>Chicago Bears</teamname>
+      <sport>Football</sport>
+      <city>Chicago</city>
+      <state>IL</state>
+      <abbreviation>CHI</abbreviation>
+      <espnId>3</espnId>
+      <uid>s:20~l:28~t:3</uid>
+      <slug>chicago-bears</slug>
+      <primaryColor>#0B162A</primaryColor>
+      <secondaryColor>#C83803</secondaryColor>
+      <mascot>Staley Da Bear</mascot>
+      <homeVenue>Soldier Field</homeVenue>
+      <venueCity>Chicago</venueCity>
+      <capacity>61500</capacity>
+      <rivalries>Green Bay Packers, Detroit Lions, Minnesota Vikings</rivalries>
+      <league>NFL</league>
+      <conference>NFC</conference>
+      <division>NFC North</division>
+      <largestMetro>Chicago-Naperville-Elgin</largestMetro>
+    </team>
+    <team>
+      <teamname>Detroit Lions</teamname>
+      <sport>Football</sport>
+      <city>Detroit</city>
+      <state>MI</state>
+      <abbreviation>DET</abbreviation>
+      <espnId>8</espnId>
+      <uid>s:20~l:28~t:8</uid>
+      <slug>detroit-lions</slug>
+      <primaryColor>#0076B6</primaryColor>
+      <secondaryColor>#B0B7BC</secondaryColor>
+      <mascot>Roary</mascot>
+      <homeVenue>Ford Field</homeVenue>
+      <venueCity>Detroit</venueCity>
+      <capacity>65000</capacity>
+      <rivalries>Green Bay Packers, Chicago Bears, Minnesota Vikings</rivalries>
+      <league>NFL</league>
+      <conference>NFC</conference>
+      <division>NFC North</division>
+      <largestMetro>Detroit-Warren-Flint</largestMetro>
+    </team>
+    <team>
+      <teamname>Green Bay Packers</teamname>
+      <sport>Football</sport>
+      <city>Green Bay</city>
+      <state>WI</state>
+      <abbreviation>GB</abbreviation>
+      <espnId>9</espnId>
+      <uid>s:20~l:28~t:9</uid>
+      <slug>green-bay-packers</slug>
+      <primaryColor>#203731</primaryColor>
+      <secondaryColor>#FFB612</secondaryColor>
+      <mascot>None</mascot>
+      <homeVenue>Lambeau Field</homeVenue>
+      <venueCity>Green Bay</venueCity>
+      <capacity>81441</capacity>
+      <rivalries>Chicago Bears, Detroit Lions, Minnesota Vikings</rivalries>
+      <league>NFL</league>
+      <conference>NFC</conference>
+      <division>NFC North</division>
+      <largestMetro>Green Bay</largestMetro>
+    </team>
+    <team>
+      <teamname>Minnesota Vikings</teamname>
+      <sport>Football</sport>
+      <city>Minneapolis</city>
+      <state>MN</state>
+      <abbreviation>MIN</abbreviation>
+      <espnId>16016</espnId>
+      <uid>s:20~l:28~t:16</uid>
+      <slug>minnesota-vikings</slug>
+      <primaryColor>#4F2683</primaryColor>
+      <secondaryColor>#FFC62F</secondaryColor>
+      <mascot>Viktor</mascot>
+      <homeVenue>U.S. Bank Stadium</homeVenue>
+      <venueCity>Minneapolis</venueCity>
+      <capacity>66860</capacity>
+      <rivalries>Green Bay Packers, Chicago Bears, Detroit Lions</rivalries>
+      <league>NFL</league>
+      <conference>NFC</conference>
+      <division>NFC North</division>
+      <largestMetro>Minneapolis-St. Paul-Bloomington</largestMetro>
+    </team>
+    <team>
+      <teamname>Atlanta Falcons</teamname>
+      <sport>Football</sport>
+      <city>Atlanta</city>
+      <state>GA</state>
+      <abbreviation>ATL</abbreviation>
+      <espnId>1</espnId>
+      <uid>s:20~l:28~t:1</uid>
+      <slug>atlanta-falcons</slug>
+      <primaryColor>#A71930</primaryColor>
+      <secondaryColor>#000000</secondaryColor>
+      <mascot>Freddie Falcon</mascot>
+      <homeVenue>Mercedes-Benz Stadium</homeVenue>
+      <venueCity>Atlanta</venueCity>
+      <capacity>71000</capacity>
+      <rivalries>New Orleans Saints, Carolina Panthers, Tampa Bay Buccaneers</rivalries>
+      <league>NFL</league>
+      <conference>NFC</conference>
+      <division>NFC South</division>
+      <largestMetro>Atlanta-Sandy Springs-Alpharetta</largestMetro>
+    </team>
+    <team>
+      <teamname>Carolina Panthers</teamname>
+      <sport>Football</sport>
+      <city>Charlotte</city>
+      <state>NC</state>
+      <abbreviation>CAR</abbreviation>
+      <espnId>29</espnId>
+      <uid>s:20~l:28~t:29</uid>
+      <slug>carolina-panthers</slug>
+      <primaryColor>#0085CA</primaryColor>
+      <secondaryColor>#101820</secondaryColor>
+      <mascot>Sir Purr</mascot>
+      <homeVenue>Bank of America Stadium</homeVenue>
+      <venueCity>Charlotte</venueCity>
+      <capacity>75523</capacity>
+      <rivalries>New Orleans Saints, Atlanta Falcons, Tampa Bay Buccaneers</rivalries>
+      <league>NFL</league>
+      <conference>NFC</conference>
+      <division>NFC South</division>
+      <largestMetro>Charlotte-Concord-Gastonia</largestMetro>
+    </team>
+    <team>
+      <teamname>New Orleans Saints</teamname>
+      <sport>Football</sport>
+      <city>New Orleans</city>
+      <state>LA</state>
+      <abbreviation>NO</abbreviation>
+      <espnId>18</espnId>
+      <uid>s:20~l:28~t:18</uid>
+      <slug>new-orleans-saints</slug>
+      <primaryColor>#D3BC8D</primaryColor>
+      <secondaryColor>#101820</secondaryColor>
+      <mascot>Gumbo</mascot>
+      <homeVenue>Caesars Superdome</homeVenue>
+      <venueCity>New Orleans</venueCity>
+      <capacity>73208</capacity>
+      <rivalries>Atlanta Falcons, Carolina Panthers, Tampa Bay Buccaneers</rivalries>
+      <league>NFL</league>
+      <conference>NFC</conference>
+      <division>NFC South</division>
+      <largestMetro>New Orleans-Metairie</largestMetro>
+    </team>
+    <team>
+      <teamname>Tampa Bay Buccaneers</teamname>
+      <sport>Football</sport>
+      <city>Tampa</city>
+      <state>FL</state>
+      <abbreviation>TB</abbreviation>
+      <espnId>27</espnId>
+      <uid>s:20~l:28~t:27</uid>
+      <slug>tampa-bay-buccaneers</slug>
+      <primaryColor>#D50A0A</primaryColor>
+      <secondaryColor>#FF7900</secondaryColor>
+      <mascot>Captain Fear</mascot>
+      <homeVenue>Raymond James Stadium</homeVenue>
+      <venueCity>Tampa</venueCity>
+      <capacity>65618</capacity>
+      <rivalries>New Orleans Saints, Atlanta Falcons, Carolina Panthers</rivalries>
+      <league>NFL</league>
+      <conference>NFC</conference>
+      <division>NFC South</division>
+      <largestMetro>Tampa-St. Petersburg</largestMetro>
+    </team>
+    <team>
+      <teamname>Arizona Cardinals</teamname>
+      <sport>Football</sport>
+      <city>Glendale</city>
+      <state>AZ</state>
+      <abbreviation>ARI</abbreviation>
+      <espnId>22</espnId>
+      <uid>s:20~l:28~t:22</uid>
+      <slug>arizona-cardinals</slug>
+      <primaryColor>#97233F</primaryColor>
+      <secondaryColor>#000000</secondaryColor>
+      <mascot>Big Red</mascot>
+      <homeVenue>State Farm Stadium</homeVenue>
+      <venueCity>Glendale</venueCity>
+      <capacity>63400</capacity>
+      <rivalries>Seattle Seahawks, San Francisco 49ers, Los Angeles Rams</rivalries>
+      <league>NFL</league>
+      <conference>NFC</conference>
+      <division>NFC West</division>
+      <largestMetro>Phoenix-Mesa</largestMetro>
+    </team>
+    <team>
+      <teamname>Los Angeles Rams</teamname>
+      <sport>Football</sport>
+      <city>Los Angeles</city>
+      <state>CA</state>
+      <abbreviation>LAR</abbreviation>
+      <espnId>14</espnId>
+      <uid>s:20~l:28~t:14</uid>
+      <slug>los-angeles-rams</slug>
+      <primaryColor>#003594</primaryColor>
+      <secondaryColor>#FFA300</secondaryColor>
+      <mascot>Rampage</mascot>
+      <homeVenue>SoFi Stadium</homeVenue>
+      <venueCity>Inglewood</venueCity>
+      <capacity>70240</capacity>
+      <rivalries>San Francisco 49ers, Seattle Seahawks, Arizona Cardinals</rivalries>
+      <league>NFL</league>
+      <conference>NFC</conference>
+      <division>NFC West</division>
+      <largestMetro>Los Angeles</largestMetro>
+    </team>
+    <team>
+      <teamname>San Francisco 49ers</teamname>
+      <sport>Football</sport>
+      <city>Santa Clara</city>
+      <state>CA</state>
+      <abbreviation>SF</abbreviation>
+      <espnId>25</espnId>
+      <uid>s:20~l:28~t:25</uid>
+      <slug>san-francisco-49ers</slug>
+      <primaryColor>#AA0000</primaryColor>
+      <secondaryColor>#B3995D</secondaryColor>
+      <mascot>Sourdough Sam</mascot>
+      <homeVenue>Levi's Stadium</homeVenue>
+      <venueCity>Santa Clara</venueCity>
+      <capacity>68500</capacity>
+      <rivalries>Los Angeles Rams, Seattle Seahawks, Arizona Cardinals</rivalries>
+      <league>NFL</league>
+      <conference>NFC</conference>
+      <division>NFC West</division>
+      <largestMetro>San Francisco-Oakland-Berkeley</largestMetro>
+    </team>
+    <team>
+      <teamname>Seattle Seahawks</teamname>
+      <sport>Football</sport>
+      <city>Seattle</city>
+      <state>WA</state>
+      <abbreviation>SEA</abbreviation>
+      <espnId>26</espnId>
+      <uid>s:20~l:28~t:26</uid>
+      <slug>seattle-seahawks</slug>
+      <primaryColor>#002244</primaryColor>
+      <secondaryColor>#69BE28</secondaryColor>
+      <mascot>Blitz</mascot>
+      <homeVenue>Lumen Field</homeVenue>
+      <venueCity>Seattle</venueCity>
+      <capacity>68740</capacity>
+      <rivalries>San Francisco 49ers, Arizona Cardinals, Los Angeles Rams</rivalries>
+      <league>NFL</league>
+      <conference>NFC</conference>
+      <division>NFC West</division>
+      <largestMetro>Seattle-Tacoma-Bellevue</largestMetro>
+    </team>
+
+    <!-- NCAA Football Teams -->
+    <team>
+      <teamname>Tulane Green Wave</teamname>
+      <sport>Football</sport>
+      <city>New Orleans</city>
+      <state>LA</state>
+      <abbreviation>TULANE</abbreviation>
+      <espnId>2655</espnId>
+      <uid>s:20~l:23~t:2655</uid>
+      <slug>tulane-green-wave</slug>
+      <primaryColor>#00703C</primaryColor>
+      <secondaryColor>#85714D</secondaryColor>
+      <mascot>Riptide the Pelican</mascot>
+      <homeVenue>Yulman Stadium</homeVenue>
+      <venueCity>New Orleans</venueCity>
+      <capacity>30000</capacity>
+      <rivalries>LSU Tigers, Southern Miss Golden Eagles, SMU Mustangs</rivalries>
+      <league>NCAA</league>
+      <conference>American Conference</conference>
+      <division>FBS</division>
+      <largestMetro>New Orleans-Metairie</largestMetro>
+    </team>
+    <team>
+      <teamname>East Carolina Pirates</teamname>
+      <sport>Football</sport>
+      <city>Greenville</city>
+      <state>NC</state>
+      <abbreviation>ECU</abbreviation>
+      <espnId>151</espnId>
+      <uid>s:20~l:23~t:151</uid>
+      <slug>east-carolina-pirates</slug>
+      <primaryColor>#592F84</primaryColor>
+      <secondaryColor>#FFD100</secondaryColor>
+      <mascot>PeeDee the Pirate</mascot>
+      <homeVenue>Dowdy-Ficklen Stadium</homeVenue>
+      <venueCity>Greenville</venueCity>
+      <capacity>50000</capacity>
+      <rivalries>NC State Wolfpack, App State Mountaineers, Memphis Tigers</rivalries>
+      <league>NCAA</league>
+      <conference>American Conference</conference>
+      <division>FBS</division>
+      <largestMetro>Greenville</largestMetro>
+    </team>
+    <team>
+      <teamname>Memphis Tigers</teamname>
+      <sport>Football</sport>
+      <city>Memphis</city>
+      <state>TN</state>
+      <abbreviation>MEM</abbreviation>
+      <espnId>235</espnId>
+      <uid>s:20~l:23~t:235</uid>
+      <slug>memphis-tigers</slug>
+      <primaryColor>#003594</primaryColor>
+      <secondaryColor>#8A8B8C</secondaryColor>
+      <mascot>Pouncer</mascot>
+      <homeVenue>Simmons Bank Liberty Stadium</homeVenue>
+      <venueCity>Memphis</venueCity>
+      <capacity>58318</capacity>
+      <rivalries>Tulane Green Wave, UAB Blazers, SMU Mustangs</rivalries>
+      <league>NCAA</league>
+      <conference>American Conference</conference>
+      <division>FBS</division>
+      <largestMetro>Memphis</largestMetro>
+    </team>
+    <team>
+      <teamname>UTSA Roadrunners</teamname>
+      <sport>Football</sport>
+      <city>San Antonio</city>
+      <state>TX</state>
+      <abbreviation>UTSA</abbreviation>
+      <espnId>2636</espnId>
+      <uid>s:20~l:23~t:2636</uid>
+      <slug>utsa-roadrunners</slug>
+      <primaryColor>#F15A22</primaryColor>
+      <secondaryColor>#0C2340</secondaryColor>
+      <mascot>Rowdy</mascot>
+      <homeVenue>Alamodome</homeVenue>
+      <venueCity>San Antonio</venueCity>
+      <capacity>64000</capacity>
+      <rivalries>UTEP Miners, Rice Owls, North Texas Mean Green</rivalries>
+      <league>NCAA</league>
+      <conference>American Conference</conference>
+      <division>FBS</division>
+      <largestMetro>San Antonio-New Braunfels</largestMetro>
+    </team>
+    <team>
+      <teamname>Temple Owls</teamname>
+      <sport>Football</sport>
+      <city>Philadelphia</city>
+      <state>PA</state>
+      <abbreviation>TEM</abbreviation>
+      <espnId>218</espnId>
+      <uid>s:20~l:23~t:218</uid>
+      <slug>temple-owls</slug>
+      <primaryColor>#A41E35</primaryColor>
+      <secondaryColor>#FFFFFF</secondaryColor>
+      <mascot>Hooter</mascot>
+      <homeVenue>Lincoln Financial Field</homeVenue>
+      <venueCity>Philadelphia</venueCity>
+      <capacity>69596</capacity>
+      <rivalries>Navy Midshipmen, Army Black Knights, Cincinnati Bearcats</rivalries>
+      <league>NCAA</league>
+      <conference>American Conference</conference>
+      <division>FBS</division>
+      <largestMetro>Philadelphia-Camden-Vineland</largestMetro>
+    </team>
+    <team>
+      <teamname>Charlotte 49ers</teamname>
+      <sport>Football</sport>
+      <city>Charlotte</city>
+      <state>NC</state>
+      <abbreviation>CHAR</abbreviation>
+      <espnId>2429</espnId>
+      <uid>s:20~l:23~t:2429</uid>
+      <slug>charlotte-49ers</slug>
+      <primaryColor>#00543C</primaryColor>
+      <secondaryColor>#C4B370</secondaryColor>
+      <mascot>Norm the Niner</mascot>
+      <homeVenue>Jerry Richardson Stadium</homeVenue>
+      <venueCity>Charlotte</venueCity>
+      <capacity>15314</capacity>
+      <rivalries>App State Mountaineers, Marshall Thundering Herd, Old Dominion Monarchs</rivalries>
+      <league>NCAA</league>
+      <conference>American Conference</conference>
+      <division>FBS</division>
+      <largestMetro>Charlotte-Concord-Gastonia</largestMetro>
+    </team>
+    <team>
+      <teamname>Florida Atlantic Owls</teamname>
+      <sport>Football</sport>
+      <city>Boca Raton</city>
+      <state>FL</state>
+      <abbreviation>FAU</abbreviation>
+      <espnId>2226</espnId>
+      <uid>s:20~l:23~t:2226</uid>
+      <slug>florida-atlantic-owls</slug>
+      <primaryColor>#C8102E</primaryColor>
+      <secondaryColor>#003366</secondaryColor>
+      <mascot>Owlsley</mascot>
+      <homeVenue>FAU Stadium</homeVenue>
+      <venueCity>Boca Raton</venueCity>
+      <capacity>29571</capacity>
+      <rivalries>FIU Panthers, UAB Blazers, Charlotte 49ers</rivalries>
+      <league>NCAA</league>
+      <conference>American Conference</conference>
+      <division>FBS</division>
+      <largestMetro>Miami-Fort Lauderdale-West Palm Beach</largestMetro>
+    </team>
+    <team>
+      <teamname>Tulsa Golden Hurricane</teamname>
+      <sport>Football</sport>
+      <city>Tulsa</city>
+      <state>OK</state>
+      <abbreviation>TULSA</abbreviation>
+      <espnId>202</espnId>
+      <uid>s:20~l:23~t:202</uid>
+      <slug>tulsa-golden-hurricane</slug>
+      <primaryColor>#002D72</primaryColor>
+      <secondaryColor>#FFC72C</secondaryColor>
+      <mascot>Captain Cane</mascot>
+      <homeVenue>Chapman Stadium</homeVenue>
+      <venueCity>Tulsa</venueCity>
+      <capacity>30000</capacity>
+      <rivalries>Houston Cougars, SMU Mustangs, Rice Owls</rivalries>
+      <league>NCAA</league>
+      <conference>American Conference</conference>
+      <division>FBS</division>
+      <largestMetro>Tulsa</largestMetro>
+    </team>
+    <team>
+      <teamname>Army Black Knights</teamname>
+      <sport>Football</sport>
+      <city>West Point</city>
+      <state>NY</state>
+      <abbreviation>ARMY</abbreviation>
+      <espnId>349</espnId>
+      <uid>s:20~l:23~t:349</uid>
+      <slug>army-black-knights</slug>
+      <primaryColor>#B1AA7A</primaryColor>
+      <secondaryColor>#000000</secondaryColor>
+      <mascot>The Army Mule</mascot>
+      <homeVenue>Michie Stadium</homeVenue>
+      <venueCity>West Point</venueCity>
+      <capacity>38000</capacity>
+      <rivalries>Navy Midshipmen, Air Force Falcons, Notre Dame Fighting Irish</rivalries>
+      <league>NCAA</league>
+      <conference>American Conference</conference>
+      <division>FBS</division>
+      <largestMetro>New York-Newark-Jersey City</largestMetro>
+    </team>
+    <team>
+      <teamname>Northwestern Wildcats</teamname>
+      <sport>Football</sport>
+      <city>Evanston</city>
+      <state>IL</state>
+      <abbreviation>NW</abbreviation>
+      <espnId>77</espnId>
+      <uid>s:20~l:5~t:77</uid>
+      <slug>northwestern-wildcats</slug>
+      <primaryColor>#4E2A84</primaryColor>
+      <secondaryColor>#FFFFFF</secondaryColor>
+      <mascot>Willie the Wildcat</mascot>
+      <homeVenue>Ryan Field</homeVenue>
+      <venueCity>Evanston</venueCity>
+      <capacity>47130</capacity>
+      <rivalries>Illinois Fighting Illini, Iowa Hawkeyes, Wisconsin Badgers</rivalries>
+      <league>NCAA</league>
+      <conference>Big Ten</conference>
+      <division>FBS</division>
+      <largestMetro>Chicago-Naperville-Elgin</largestMetro>
+    </team>
+    <team>
+      <teamname>Duke Blue Devils</teamname>
+      <sport>Football</sport>
+      <city>Durham</city>
+      <state>NC</state>
+      <abbreviation>DUKE</abbreviation>
+      <espnId>150</espnId>
+      <uid>s:20~l:1~t:150</uid>
+      <slug>duke-blue-devils</slug>
+      <primaryColor>#001A57</primaryColor>
+      <secondaryColor>#FFFFFF</secondaryColor>
+      <mascot>Blue Devil</mascot>
+      <homeVenue>Wallace Wade Stadium</homeVenue>
+      <venueCity>Durham</venueCity>
+      <capacity>40004</capacity>
+      <rivalries>North Carolina Tar Heels, NC State Wolfpack, Wake Forest Demon Deacons</rivalries>
+      <league>NCAA</league>
+      <conference>ACC</conference>
+      <division>FBS</division>
+      <largestMetro>Durham-Chapel Hill</largestMetro>
+    </team>
+    <team>
+      <teamname>Ole Miss Rebels</teamname>
+      <sport>Football</sport>
+      <city>Oxford</city>
+      <state>MS</state>
+      <abbreviation>MISS</abbreviation>
+      <espnId>145</espnId>
+      <uid>s:20~l:8~t:145</uid>
+      <slug>ole-miss-rebels</slug>
+      <primaryColor>#CE1126</primaryColor>
+      <secondaryColor>#14213D</secondaryColor>
+      <mascot>Rebel Bear</mascot>
+      <homeVenue>Vaught-Hemingway Stadium</homeVenue>
+      <venueCity>Oxford</venueCity>
+      <capacity>64038</capacity>
+      <rivalries>Mississippi State Bulldogs, LSU Tigers, Alabama Crimson Tide</rivalries>
+      <league>NCAA</league>
+      <conference>SEC</conference>
+      <division>FBS</division>
+      <largestMetro>Jackson</largestMetro>
+    </team>
+    <team>
+      <teamname>LSU Tigers</teamname>
+      <sport>Football</sport>
+      <city>Baton Rouge</city>
+      <state>LA</state>
+      <abbreviation>LSU</abbreviation>
+      <espnId>99</espnId>
+      <uid>s:20~l:8~t:99</uid>
+      <slug>lsu-tigers</slug>
+      <primaryColor>#461D7C</primaryColor>
+      <secondaryColor>#FDD023</secondaryColor>
+      <mascot>Mike the Tiger</mascot>
+      <homeVenue>Tiger Stadium</homeVenue>
+      <venueCity>Baton Rouge</venueCity>
+      <capacity>102321</capacity>
+      <rivalries>Alabama Crimson Tide, Ole Miss Rebels, Tulane Green Wave</rivalries>
+      <league>NCAA</league>
+      <conference>SEC</conference>
+      <division>FBS</division>
+      <largestMetro>Baton Rouge</largestMetro>
+    </team>
+    <team>
+      <teamname>South Alabama Jaguars</teamname>
+      <sport>Football</sport>
+      <city>Mobile</city>
+      <state>AL</state>
+      <abbreviation>USA</abbreviation>
+      <espnId>6</espnId>
+      <uid>s:20~l:37~t:6</uid>
+      <slug>south-alabama-jaguars</slug>
+      <primaryColor>#003594</primaryColor>
+      <secondaryColor>#D50A0A</secondaryColor>
+      <mascot>South Paw</mascot>
+      <homeVenue>Hancock Whitney Stadium</homeVenue>
+      <venueCity>Mobile</venueCity>
+      <capacity>25000</capacity>
+      <rivalries>Troy Trojans, App State Mountaineers, Coastal Carolina Chanticleers</rivalries>
+      <league>NCAA</league>
+      <conference>Sun Belt</conference>
+      <division>FBS</division>
+      <largestMetro>Mobile</largestMetro>
+    </team>
+    <team>
+      <teamname>Notre Dame Fighting Irish</teamname>
+      <sport>Football</sport>
+      <city>Notre Dame</city>
+      <state>IN</state>
+      <abbreviation>ND</abbreviation>
+      <espnId>87</espnId>
+      <uid>s:20~l:43~t:87</uid>
+      <slug>notre-dame-fighting-irish</slug>
+      <primaryColor>#0C2340</primaryColor>
+      <secondaryColor>#C9B037</secondaryColor>
+      <mascot>The Leprechaun</mascot>
+      <homeVenue>Notre Dame Stadium</homeVenue>
+      <venueCity>Notre Dame</venueCity>
+      <capacity>77622</capacity>
+      <rivalries>USC Trojans, Navy Midshipmen, Stanford Cardinal</rivalries>
+      <league>NCAA</league>
+      <conference>Independent</conference>
+      <division>FBS</division>
+      <largestMetro>South Bend</largestMetro>
+    </team>
+  </sport>
+
+  <sport name="Baseball">
+    <!-- MLB Teams -->
+    <team>
+      <teamname>New York Yankees</teamname>
+      <sport>Baseball</sport>
+      <city>New York</city>
+      <state>NY</state>
+      <abbreviation>NYY</abbreviation>
+      <espnId>10</espnId>
+      <uid>s:1~l:10~t:10</uid>
+      <slug>new-york-yankees</slug>
+      <primaryColor>#132448</primaryColor>
+      <secondaryColor>#C4CED4</secondaryColor>
+      <mascot>None</mascot>
+      <homeVenue>Yankee Stadium</homeVenue>
+      <venueCity>Bronx</venueCity>
+      <capacity>54251</capacity>
+      <rivalries>Boston Red Sox, New York Mets, Tampa Bay Rays</rivalries>
+      <league>MLB</league>
+      <conference>American League</conference>
+      <division>AL East</division>
+      <largestMetro>New York City</largestMetro>
+    </team>
+    <team>
+      <teamname>Chicago White Sox</teamname>
+      <sport>Baseball</sport>
+      <city>Chicago</city>
+      <state>IL</state>
+      <abbreviation>CWS</abbreviation>
+      <espnId>4</espnId>
+      <uid>s:1~l:10~t:4</uid>
+      <slug>chicago-white-sox</slug>
+      <primaryColor>#27251F</primaryColor>
+      <secondaryColor>#C4CED4</secondaryColor>
+      <mascot>Southpaw</mascot>
+      <homeVenue>Guaranteed Rate Field</homeVenue>
+      <venueCity>Chicago</venueCity>
+      <capacity>40615</capacity>
+      <rivalries>Chicago Cubs, Minnesota Twins, Detroit Tigers</rivalries>
+      <league>MLB</league>
+      <conference>American League</conference>
+      <division>AL Central</division>
+      <largestMetro>Chicago-Naperville-Elgin</largestMetro>
+    </team>
+    <team>
+      <teamname>Chicago Cubs</teamname>
+      <sport>Baseball</sport>
+      <city>Chicago</city>
+      <state>IL</state>
+      <abbreviation>CHC</abbreviation>
+      <espnId>16</espnId>
+      <uid>s:1~l:10~t:16</uid>
+      <slug>chicago-cubs</slug>
+      <primaryColor>#0E3386</primaryColor>
+      <secondaryColor>#CC3433</secondaryColor>
+      <mascot>Clark the Cub</mascot>
+      <homeVenue>Wrigley Field</homeVenue>
+      <venueCity>Chicago</venueCity>
+      <capacity>41649</capacity>
+      <rivalries>Chicago White Sox, St. Louis Cardinals, Milwaukee Brewers</rivalries>
+      <league>MLB</league>
+      <conference>National League</conference>
+      <division>NL Central</division>
+      <largestMetro>Chicago-Naperville-Elgin</largestMetro>
+    </team>
+    <team>
+      <teamname>New York Mets</teamname>
+      <sport>Baseball</sport>
+      <city>New York</city>
+      <state>NY</state>
+      <abbreviation>NYM</abbreviation>
+      <espnId>23</espnId>
+      <uid>s:1~l:10~t:23</uid>
+      <slug>new-york-mets</slug>
+      <primaryColor>#002D72</primaryColor>
+      <secondaryColor>#FFB81C</secondaryColor>
+      <mascot>Mr. Met</mascot>
+      <homeVenue>Citi Field</homeVenue>
+      <venueCity>Queens</venueCity>
+      <capacity>41800</capacity>
+      <rivalries>New York Yankees, Atlanta Braves, Philadelphia Phillies</rivalries>
+      <league>MLB</league>
+      <conference>National League</conference>
+      <division>NL East</division>
+      <largestMetro>New York City</largestMetro>
+    </team>
+    <team>
+      <teamname>Los Angeles Dodgers</teamname>
+      <sport>Baseball</sport>
+      <city>Los Angeles</city>
+      <state>CA</state>
+      <abbreviation>LAD</abbreviation>
+      <espnId>12</espnId>
+      <uid>s:1~l:10~t:12</uid>
+      <slug>los-angeles-dodgers</slug>
+      <primaryColor>#005A8C</primaryColor>
+      <secondaryColor>#FFB81C</secondaryColor>
+      <mascot>None</mascot>
+      <homeVenue>Dodger Stadium</homeVenue>
+      <venueCity>Los Angeles</venueCity>
+      <capacity>56000</capacity>
+      <rivalries>San Francisco Giants, San Diego Padres, Arizona Diamondbacks</rivalries>
+      <league>MLB</league>
+      <conference>National League</conference>
+      <division>NL West</division>
+      <largestMetro>Los Angeles</largestMetro>
+    </team>
+    <team>
+      <teamname>San Francisco Giants</teamname>
+      <sport>Baseball</sport>
+      <city>San Francisco</city>
+      <state>CA</state>
+      <abbreviation>SFG</abbreviation>
+      <espnId>24</espnId>
+      <uid>s:1~l:10~t:24</uid>
+      <slug>san-francisco-giants</slug>
+      <primaryColor>#FDB927</primaryColor>
+      <secondaryColor>#003B5C</secondaryColor>
+      <mascot>None</mascot>
+      <homeVenue>Oracle Park</homeVenue>
+      <venueCity>San Francisco</venueCity>
+      <capacity>41915</capacity>
+      <rivalries>Los Angeles Dodgers, Oakland Athletics, San Diego Padres</rivalries>
+      <league>MLB</league>
+      <conference>National League</conference>
+      <division>NL West</division>
+      <largestMetro>San Francisco-Oakland-Hayward</largestMetro>
+    </team>
+    <team>
+      <teamname>San Diego Padres</teamname>
+      <sport>Baseball</sport>
+      <city>San Diego</city>
+      <state>CA</state>
+      <abbreviation>SD</abbreviation>
+      <espnId>15</espnId>
+      <uid>s:1~l:10~t:15</uid>
+      <slug>san-diego-padres</slug>
+      <primaryColor>#002F6C</primaryColor>
+      <secondaryColor>#FFC72C</secondaryColor>
+      <mascot>Swinging Friar</mascot>
+      <homeVenue>Petco Park</homeVenue>
+      <venueCity>San Diego</venueCity>
+      <capacity>40200</capacity>
+      <rivalries>Los Angeles Dodgers, San Francisco Giants, Arizona Diamondbacks</rivalries>
+      <league>MLB</league>
+      <conference>National League</conference>
+      <division>NL West</division>
+      <largestMetro>San Diego-Carlsbad</largestMetro>
+    </team>
+    <team>
+      <teamname>Oakland Athletics</teamname>
+      <sport>Baseball</sport>
+      <city>Oakland</city>
+      <state>CA</state>
+      <abbreviation>OAK</abbreviation>
+      <espnId>8</espnId>
+      <uid>s:1~l:10~t:8</uid>
+      <slug>oakland-athletics</slug>
+      <primaryColor>#003831</primaryColor>
+      <secondaryColor>#B5AC37</secondaryColor>
+      <mascot>None</mascot>
+      <homeVenue>RingCentral Coliseum</homeVenue>
+      <venueCity>Oakland</venueCity>
+      <capacity>63500</capacity>
+      <rivalries>San Francisco Giants, Los Angeles Angels, Seattle Mariners</rivalries>
+      <league>MLB</league>
+      <conference>American League</conference>
+      <division>AL West</division>
+      <largestMetro>San Francisco-Oakland-Hayward</largestMetro>
+    </team>
+    <team>
+      <teamname>Los Angeles Angels</teamname>
+      <sport>Baseball</sport>
+      <city>Anaheim</city>
+      <state>CA</state>
+      <abbreviation>LAA</abbreviation>
+      <espnId>13</espnId>
+      <uid>s:1~l:10~t:13</uid>
+      <slug>los-angeles-angels</slug>
+      <primaryColor>#0072CE</primaryColor>
+      <secondaryColor>#BA161E</secondaryColor>
+      <mascot>Angels Win</mascot>
+      <homeVenue>Angel Stadium</homeVenue>
+      <venueCity>Anaheim</venueCity>
+      <capacity>45517</capacity>
+      <rivalries>Oakland Athletics, Texas Rangers, Seattle Mariners</rivalries>
+      <league>MLB</league>
+      <conference>American League</conference>
+      <division>AL West</division>
+      <largestMetro>Los Angeles-Long Beach-Anaheim</largestMetro>
+    </team>
+    <team>
+      <teamname>Seattle Mariners</teamname>
+      <sport>Baseball</sport>
+      <city>Seattle</city>
+      <state>WA</state>
+      <abbreviation>SEA</abbreviation>
+      <espnId>19</espnId>
+      <uid>s:1~l:10~t:19</uid>
+      <slug>seattle-mariners</slug>
+      <primaryColor>#0C2C56</primaryColor>
+      <secondaryColor>#87A96B</secondaryColor>
+      <mascot>Mariner Moose</mascot>
+      <homeVenue>T-Mobile Park</homeVenue>
+      <venueCity>Seattle</venueCity>
+      <capacity>47300</capacity>
+      <rivalries>Oakland Athletics, Los Angeles Angels, Texas Rangers</rivalries>
+      <league>MLB</league>
+      <conference>American League</conference>
+      <division>AL West</division>
+      <largestMetro>Seattle-Tacoma-Bellevue</largestMetro>
+    </team>
+
+    <!-- NCAA Baseball Teams -->
+    <team>
+      <teamname>Tulane Green Wave</teamname>
+      <sport>Baseball</sport>
+      <city>New Orleans</city>
+      <state>LA</state>
+      <abbreviation>TULANE</abbreviation>
+      <espnId>2655</espnId>
+      <uid>s:2~l:23~t:2655</uid>
+      <slug>tulane-green-wave</slug>
+      <primaryColor>#00703C</primaryColor>
+      <secondaryColor>#85714D</secondaryColor>
+      <mascot>Riptide the Pelican</mascot>
+      <homeVenue>Greer Field at Turchin Stadium</homeVenue>
+      <venueCity>New Orleans</venueCity>
+      <capacity>5000</capacity>
+      <rivalries>LSU Tigers, Rice Owls, Southern Miss Golden Eagles</rivalries>
+      <league>NCAA</league>
+      <conference>American Conference</conference>
+      <division>Division I</division>
+      <largestMetro>New Orleans-Metairie</largestMetro>
+    </team>
+  </sport>
+
+  <sport name="Women's Volleyball">
+    <!-- NCAA Volleyball Teams -->
+    <team>
+      <teamname>IUP Crimson Hawks</teamname>
+      <sport>Women's Volleyball</sport>
+      <city>Indiana</city>
+      <state>PA</state>
+      <abbreviation>IUP</abbreviation>
+      <espnId>314</espnId>
+      <uid>s:50~l:40~t:314</uid>
+      <slug>iup-crimson-hawks</slug>
+      <primaryColor>#A41E35</primaryColor>
+      <secondaryColor>#FFFFFF</secondaryColor>
+      <mascot>Crimson Hawk</mascot>
+      <homeVenue>Kovalchick Complex</homeVenue>
+      <venueCity>Indiana</venueCity>
+      <capacity>2500</capacity>
+      <rivalries>California University, Slippery Rock, Clarion University</rivalries>
+      <league>NCAA</league>
+      <conference>PSAC</conference>
+      <division>Division II</division>
+      <largestMetro>Pittsburgh</largestMetro>
+    </team>
+  </sport>
+</teams>
