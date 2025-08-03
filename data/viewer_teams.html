@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Team Viewer</title>
     <style>
+        /* ===== RESET & BASE STYLES ===== */
         * {
             margin: 0;
             padding: 0;
@@ -18,12 +19,14 @@
             line-height: 1.5;
         }
 
+        /* ===== LAYOUT CONTAINER ===== */
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 40px 20px;
         }
 
+        /* ===== HEADER SECTION ===== */
         .header {
             margin-bottom: 40px;
             border-bottom: 1px solid #e0e0e0;
@@ -44,33 +47,43 @@
             font-weight: 400;
         }
 
+        /* ===== FILTER SYSTEM ===== */
         .filters {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 16px;
             margin-bottom: 40px;
             padding: 20px 0;
             border-bottom: 1px solid #e0e0e0;
+            align-items: end;
+        }
+
+        .filter-group {
+            display: flex;
+            flex-direction: column;
         }
 
         .filter-group label {
             display: block;
             font-weight: 500;
             color: #333333;
-            margin-bottom: 8px;
-            font-size: 0.9rem;
+            margin-bottom: 6px;
+            font-size: 0.8rem;
             text-transform: uppercase;
             letter-spacing: 0.05em;
+            line-height: 1.2;
         }
 
         .filter-group select {
             width: 100%;
-            padding: 12px 16px;
+            padding: 10px 12px;
             border: 1px solid #cccccc;
             background: #ffffff;
-            font-size: 1rem;
+            font-size: 0.9rem;
             font-family: inherit;
             transition: border-color 0.2s ease;
+            border-radius: 2px;
+            height: 40px;
         }
 
         .filter-group select:focus {
@@ -78,38 +91,33 @@
             border-color: #000000;
         }
 
-        .controls {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 30px;
-            padding: 20px 0;
-        }
-
-        .results-count {
-            color: #666666;
-            font-size: 0.9rem;
-            font-weight: 500;
-        }
-
+        /* Clear Filters Button */
         .clear-filters {
             background: #000000;
             color: #ffffff;
             border: none;
-            padding: 10px 20px;
-            font-size: 0.9rem;
+            padding: 0 16px;
+            font-size: 0.8rem;
             font-weight: 500;
             text-transform: uppercase;
             letter-spacing: 0.05em;
             cursor: pointer;
             transition: background-color 0.2s ease;
+            border-radius: 2px;
+            height: 40px;
+            white-space: nowrap;
         }
 
         .clear-filters:hover {
             background: #333333;
         }
 
-        .teams-grid {
+        /* ===== CONTROLS SECTION ===== */
+        .controls {
+        }
+
+        /* ===== TEAM CARDS GRID ===== */
+        .team-cards {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
             gap: 24px;
@@ -132,7 +140,8 @@
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
 
-        .team-header {
+        /* Team Card Header */
+        .team-card-header {
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
@@ -167,6 +176,7 @@
             line-height: 1.3;
         }
 
+        /* Team Color Blocks */
         .color-blocks {
             display: flex;
             gap: 6px;
@@ -217,8 +227,8 @@
             opacity: 1;
         }
 
+        /* Team Venue Information */
         .venue-info {
-            background: #f8f9fa;
             border-radius: 6px;
             padding: 16px;
             margin-top: 16px;
@@ -226,7 +236,6 @@
 
         .venue-name {
             font-weight: 600;
-            color: #000000;
             font-size: 0.9rem;
             margin-bottom: 4px;
         }
@@ -234,14 +243,13 @@
         .metro-info {
             margin-top: 4px;
             font-size: 0.8rem;
-            color: #666666;
         }
 
         .metro-label {
             font-weight: 500;
-            color: #888888;
         }
 
+        /* Team Metadata */
         .team-metadata {
             margin-top: 16px;
             padding-top: 12px;
@@ -253,7 +261,15 @@
             line-height: 1.4;
         }
 
-        .more-button {
+        /* ===== RESULTS COUNT ===== */
+        .results-count {
+            color: #666666;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        /* ===== PAGINATION BUTTON ===== */
+        .show-more-button {
             background: #000000;
             color: #ffffff;
             border: none;
@@ -269,15 +285,16 @@
             border-radius: 4px;
         }
 
-        .more-button:hover:not(:disabled) {
+        .show-more-button:hover:not(:disabled) {
             background: #333333;
         }
 
-        .more-button:disabled {
+        .show-more-button:disabled {
             background: #cccccc;
             cursor: not-allowed;
         }
 
+        /* ===== STATE INDICATORS ===== */
         .no-results {
             text-align: center;
             padding: 60px 0;
@@ -305,6 +322,7 @@
             font-size: 1.1rem;
         }
 
+        /* ===== RESPONSIVE DESIGN ===== */
         @media (max-width: 768px) {
             .container {
                 padding: 20px 15px;
@@ -316,28 +334,33 @@
             
             .filters {
                 grid-template-columns: 1fr;
+                gap: 16px;
             }
             
-            .teams-grid {
+            .clear-filters {
+                margin-top: 16px;
+                justify-self: start;
+                width: auto;
+                min-width: 120px;
+            }
+            
+            .team-cards {
                 grid-template-columns: 1fr;
-            }
-            
-            .controls {
-                flex-direction: column;
-                gap: 15px;
-                align-items: stretch;
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="header">
+        <!-- ===== APPLICATION HEADER ===== -->
+        <header class="header">
             <h1>Team Viewer</h1>
             <p>by Kevin Kolb</p>
-        </div>
+        </header>
         
-        <div class="filters">
+        <!-- ===== FILTER SYSTEM ===== -->
+        <section class="filters">
+            <!-- Fanbase Epicenter Filter -->
             <div class="filter-group">
                 <label for="fanbaseFilter">Fanbase Epicenter</label>
                 <select id="fanbaseFilter">
@@ -345,6 +368,7 @@
                 </select>
             </div>
             
+            <!-- Sport Filter -->
             <div class="filter-group">
                 <label for="sportFilter">Sport</label>
                 <select id="sportFilter">
@@ -352,6 +376,7 @@
                 </select>
             </div>
             
+            <!-- League Filter -->
             <div class="filter-group">
                 <label for="leagueFilter">League</label>
                 <select id="leagueFilter">
@@ -359,6 +384,7 @@
                 </select>
             </div>
             
+            <!-- Conference Filter -->
             <div class="filter-group">
                 <label for="conferenceFilter">Conference</label>
                 <select id="conferenceFilter">
@@ -366,6 +392,7 @@
                 </select>
             </div>
             
+            <!-- Division Filter -->
             <div class="filter-group">
                 <label for="divisionFilter">Division</label>
                 <select id="divisionFilter">
@@ -373,19 +400,23 @@
                 </select>
             </div>
             
+            <!-- Team Filter -->
             <div class="filter-group">
                 <label for="teamFilter">Team</label>
                 <select id="teamFilter">
                     <option value="">All Teams</option>
                 </select>
             </div>
-        </div>
+            
+            <!-- Clear Filters Action -->
+            <button class="clear-filters" onclick="clearFilters()">Clear</button>
+        </section>
         
+        <!-- ===== EMPTY CONTROLS SECTION ===== -->
         <div class="controls">
-            <div class="results-count" id="resultsCount">Loading...</div>
-            <button class="clear-filters" onclick="clearFilters()">Clear Filters</button>
         </div>
         
+        <!-- ===== APPLICATION STATE INDICATORS ===== -->
         <div id="loadingIndicator" class="loading">
             Loading teams data...
         </div>
@@ -393,32 +424,79 @@
         <div id="errorIndicator" class="error" style="display: none;">
         </div>
         
-        <div class="teams-grid" id="teamsGrid" style="display: none;">
-            <!-- Teams will be populated here -->
-        </div>
+        <!-- ===== TEAM CARDS DISPLAY ===== -->
+        <section class="team-cards" id="teamCards" style="display: none;">
+            <!-- Team cards will be dynamically populated here -->
+        </section>
         
-        <button class="more-button" id="moreButton" onclick="loadMore()" style="display: none;">
+        <!-- ===== RESULTS COUNT ===== -->
+        <div class="results-count" id="resultsCount" style="text-align: center; margin-bottom: 20px; display: none;">Loading...</div>
+        
+        <!-- ===== PAGINATION CONTROL ===== -->
+        <button class="show-more-button" id="showMoreButton" onclick="loadMore()" style="display: none;">
             Show More
         </button>
     </div>
 
     <script>
+        /* ===== APPLICATION STATE ===== */
         let allTeams = [];
         let filteredTeams = [];
         let displayedCount = 0;
         const itemsPerPage = 10;
 
+        /* ===== UTILITY FUNCTIONS ===== */
+        
+        /**
+         * Determines if a hex color is light or dark for contrast calculation
+         * @param {string} color - Hex color code
+         * @returns {boolean} - True if color is light
+         */
+        function isLightColor(color) {
+            const hex = color.replace('#', '');
+            const r = parseInt(hex.substr(0, 2), 16);
+            const g = parseInt(hex.substr(2, 2), 16);
+            const b = parseInt(hex.substr(4, 2), 16);
+            
+            // Calculate luminance using standard formula
+            const luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
+            return luminance > 0.5;
+        }
+
+        /**
+         * Gets contrasting text color for given background
+         * @param {string} backgroundColor - Hex color code
+         * @returns {string} - Contrasting color (black or white)
+         */
+        function getContrastColor(backgroundColor) {
+            return isLightColor(backgroundColor) ? '#000000' : '#ffffff';
+        }
+
+        /* ===== DATA LOADING ===== */
+        
+        /**
+         * Loads team data from XML file with fallback data
+         */
         async function loadTeamsData() {
             try {
+                // Attempt to fetch teams.xml file
                 const response = await fetch('teams.xml');
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }
                 
                 const xmlText = await response.text();
+                
+                // Check if we received HTML instead of XML
+                if (xmlText.trim().startsWith('<!DOCTYPE html') || xmlText.includes('<html')) {
+                    throw new Error('Received HTML instead of XML - teams.xml file not found');
+                }
+                
+                // Parse XML data
                 const parser = new DOMParser();
                 const xmlDoc = parser.parseFromString(xmlText, 'text/xml');
                 
+                // Check for XML parsing errors
                 const parseError = xmlDoc.querySelector('parsererror');
                 if (parseError) {
                     throw new Error('XML parsing error: ' + parseError.textContent);
@@ -426,6 +504,11 @@
                 
                 const teams = xmlDoc.getElementsByTagName('team');
                 
+                if (teams.length === 0) {
+                    throw new Error('No team data found in XML file');
+                }
+                
+                // Parse team data from XML
                 allTeams = [];
                 for (let i = 0; i < teams.length; i++) {
                     const team = teams[i];
@@ -440,6 +523,7 @@
                         slug: getTextContent(team, 'slug'),
                         primaryColor: getTextContent(team, 'primaryColor'),
                         secondaryColor: getTextContent(team, 'secondaryColor'),
+                        tertiaryColor: getTextContent(team, 'tertiaryColor'),
                         mascot: getTextContent(team, 'mascot'),
                         homeVenue: getTextContent(team, 'homeVenue'),
                         venueCity: getTextContent(team, 'venueCity'),
@@ -452,18 +536,25 @@
                     allTeams.push(teamData);
                 }
 
+                // Sort teams alphabetically
                 allTeams.sort((a, b) => a.teamname.localeCompare(b.teamname));
                 
+                // Initialize application
                 populateFilters();
                 applyFilters();
                 
+                // Show application interface
                 document.getElementById('loadingIndicator').style.display = 'none';
-                document.getElementById('teamsGrid').style.display = 'grid';
-                document.getElementById('moreButton').style.display = 'block';
+                document.getElementById('teamCards').style.display = 'grid';
+                document.getElementById('resultsCount').style.display = 'block';
+                document.getElementById('showMoreButton').style.display = 'block';
+                
+                console.log(`Successfully loaded ${allTeams.length} teams from XML`);
                 
             } catch (error) {
                 console.error('Error loading teams data:', error);
                 
+                // Use fallback data - New Orleans teams for demonstration
                 allTeams = [{
                     teamname: 'New Orleans Saints',
                     sport: 'Football',
@@ -475,6 +566,7 @@
                     slug: 'new-orleans-saints',
                     primaryColor: '#D3BC8D',
                     secondaryColor: '#101820',
+                    tertiaryColor: '#FFFFFF',
                     mascot: 'Gumbo',
                     homeVenue: 'Caesars Superdome',
                     venueCity: 'New Orleans',
@@ -483,41 +575,81 @@
                     league: 'NFL',
                     conference: 'NFC',
                     division: 'NFC South'
+                }, {
+                    teamname: 'Tulane Green Wave',
+                    sport: 'Football',
+                    city: 'New Orleans',
+                    state: 'LA',
+                    abbreviation: 'TULANE',
+                    espnId: '2655',
+                    uid: 's:20~l:23~t:2655',
+                    slug: 'tulane-green-wave',
+                    primaryColor: '#00703C',
+                    secondaryColor: '#85714D',
+                    tertiaryColor: '#FFFFFF',
+                    mascot: 'Riptide the Pelican',
+                    homeVenue: 'Yulman Stadium',
+                    venueCity: 'New Orleans',
+                    capacity: '30000',
+                    largestMetro: 'New Orleans-Metairie',
+                    league: 'NCAA',
+                    conference: 'American Conference',
+                    division: 'FBS'
                 }];
                 
+                // Initialize with fallback data
                 populateFilters();
                 applyFilters();
                 
+                // Show application interface
                 document.getElementById('loadingIndicator').style.display = 'none';
-                document.getElementById('teamsGrid').style.display = 'grid';
-                document.getElementById('moreButton').style.display = 'block';
+                document.getElementById('teamCards').style.display = 'grid';
+                document.getElementById('resultsCount').style.display = 'block';
+                document.getElementById('showMoreButton').style.display = 'block';
                 
+                // Show error message
                 const errorDiv = document.getElementById('errorIndicator');
                 errorDiv.style.display = 'block';
                 errorDiv.innerHTML = `
-                    <h3>Unable to load full teams database</h3>
-                    <p>Showing fallback data: New Orleans Saints</p>
-                    <p style="font-size: 0.9rem; margin-top: 10px;">Error: ${error.message}</p>
+                    <h3>teams.xml file not found</h3>
+                    <p>Using fallback data: New Orleans Saints & Tulane Green Wave</p>
+                    <p style="font-size: 0.9rem; margin-top: 10px;">To use your full database, place your teams.xml file in the same directory as this HTML file.</p>
+                    <p style="font-size: 0.8rem; margin-top: 5px; color: #999;">Error: ${error.message}</p>
                 `;
                 
+                // Auto-hide error message after 5 seconds
                 setTimeout(() => {
                     errorDiv.style.display = 'none';
                 }, 5000);
             }
         }
 
+        /**
+         * Extracts text content from XML element
+         * @param {Element} parent - Parent XML element
+         * @param {string} tagName - Tag name to extract
+         * @returns {string} - Text content or empty string
+         */
         function getTextContent(parent, tagName) {
             const element = parent.getElementsByTagName(tagName)[0];
             return element ? element.textContent.trim() : '';
         }
 
+        /* ===== FILTER SYSTEM ===== */
+        
+        /**
+         * Populates all filter dropdowns based on current selections
+         */
         function populateFilters() {
+            // Store current filter values
             const currentFanbase = document.getElementById('fanbaseFilter').value;
             const currentSport = document.getElementById('sportFilter').value;
             const currentLeague = document.getElementById('leagueFilter').value;
             const currentConference = document.getElementById('conferenceFilter').value;
             const currentDivision = document.getElementById('divisionFilter').value;
+            const currentTeam = document.getElementById('teamFilter').value;
             
+            // Filter available teams based on current selections
             let availableTeams = allTeams;
             
             if (currentFanbase) {
@@ -540,28 +672,38 @@
                 availableTeams = availableTeams.filter(team => team.division === currentDivision);
             }
 
+            // Generate unique sorted options for each filter
             const fanbaseEpicenters = [...new Set(allTeams.map(team => team.largestMetro || team.city))].filter(Boolean).sort();
-            const sports = [...new Set(availableTeams.map(team => team.sport))].sort();
+            const sports = [...new Set(availableTeams.map(team => team.sport))].filter(Boolean).sort();
             const leagues = [...new Set(availableTeams.map(team => team.league))].filter(Boolean).sort();
             const conferences = [...new Set(availableTeams.map(team => team.conference))].filter(Boolean).sort();
             const divisions = [...new Set(availableTeams.map(team => team.division))].filter(Boolean).sort();
             const teamNames = [...new Set(availableTeams.map(team => team.teamname))].filter(Boolean).sort();
 
+            // Populate each select with appropriate options
             populateSelect('fanbaseFilter', fanbaseEpicenters, currentFanbase);
             populateSelect('sportFilter', sports, currentSport);
             populateSelect('leagueFilter', leagues, currentLeague);
             populateSelect('conferenceFilter', conferences, currentConference);
             populateSelect('divisionFilter', divisions, currentDivision);
-            populateSelect('teamFilter', teamNames, document.getElementById('teamFilter').value);
+            populateSelect('teamFilter', teamNames, currentTeam);
         }
 
+        /**
+         * Populates a select element with options
+         * @param {string} selectId - ID of select element
+         * @param {Array} options - Array of option values
+         * @param {string} currentValue - Currently selected value
+         */
         function populateSelect(selectId, options, currentValue) {
             const select = document.getElementById(selectId);
             
+            // Clear all options except the first default option
             while (select.children.length > 1) {
                 select.removeChild(select.lastChild);
             }
             
+            // Add new options
             options.forEach(option => {
                 if (option) {
                     const optionElement = document.createElement('option');
@@ -571,41 +713,58 @@
                 }
             });
             
-            if (options.includes(currentValue)) {
+            // Set the current value if it exists in options, otherwise reset to default
+            if (currentValue && options.includes(currentValue)) {
                 select.value = currentValue;
-            } else if (currentValue && !options.includes(currentValue)) {
+            } else {
                 select.value = '';
             }
         }
 
+        /**
+         * Handles filter change events with cascading logic
+         * @param {string} changedFilterId - ID of the filter that changed
+         */
         function onFilterChange(changedFilterId) {
+            // Clear dependent filters when a higher-level filter changes
             if (changedFilterId === 'fanbaseFilter') {
+                // Clear all subsequent filters
                 document.getElementById('sportFilter').value = '';
                 document.getElementById('leagueFilter').value = '';
                 document.getElementById('conferenceFilter').value = '';
                 document.getElementById('divisionFilter').value = '';
                 document.getElementById('teamFilter').value = '';
             } else if (changedFilterId === 'sportFilter') {
+                // Clear league and below
                 document.getElementById('leagueFilter').value = '';
                 document.getElementById('conferenceFilter').value = '';
                 document.getElementById('divisionFilter').value = '';
                 document.getElementById('teamFilter').value = '';
             } else if (changedFilterId === 'leagueFilter') {
+                // Clear conference and below
                 document.getElementById('conferenceFilter').value = '';
                 document.getElementById('divisionFilter').value = '';
                 document.getElementById('teamFilter').value = '';
             } else if (changedFilterId === 'conferenceFilter') {
+                // Clear division and below
                 document.getElementById('divisionFilter').value = '';
                 document.getElementById('teamFilter').value = '';
             } else if (changedFilterId === 'divisionFilter') {
+                // Clear team only
                 document.getElementById('teamFilter').value = '';
             }
+            // Note: teamFilter doesn't clear anything since it's the most specific
             
+            // Repopulate filters and apply the new filtering
             populateFilters();
             applyFilters();
         }
 
+        /**
+         * Applies current filter selections to team data
+         */
         function applyFilters() {
+            // Get current filter values
             const fanbaseFilter = document.getElementById('fanbaseFilter').value;
             const sportFilter = document.getElementById('sportFilter').value;
             const leagueFilter = document.getElementById('leagueFilter').value;
@@ -613,6 +772,7 @@
             const divisionFilter = document.getElementById('divisionFilter').value;
             const teamFilter = document.getElementById('teamFilter').value;
 
+            // Filter teams based on all current selections
             filteredTeams = allTeams.filter(team => {
                 return (!fanbaseFilter || (team.largestMetro || team.city) === fanbaseFilter) &&
                        (!sportFilter || team.sport === sportFilter) &&
@@ -622,44 +782,85 @@
                        (!teamFilter || team.teamname === teamFilter);
             });
 
+            // Reset display and load initial results
             displayedCount = 0;
-            document.getElementById('teamsGrid').innerHTML = '';
+            document.getElementById('teamCards').innerHTML = '';
             loadMore();
             updateResultsCount();
         }
 
+        /**
+         * Clears all filter selections
+         */
+        function clearFilters() {
+            // Reset all filter dropdowns to their default "All" options
+            document.getElementById('fanbaseFilter').value = '';
+            document.getElementById('sportFilter').value = '';
+            document.getElementById('leagueFilter').value = '';
+            document.getElementById('conferenceFilter').value = '';
+            document.getElementById('divisionFilter').value = '';
+            document.getElementById('teamFilter').value = '';
+            
+            // Repopulate filters to reset available options and apply filters
+            populateFilters();
+            applyFilters();
+        }
+
+        /* ===== TEAM DISPLAY ===== */
+        
+        /**
+         * Loads more teams into the display (pagination)
+         */
         function loadMore() {
-            const teamsGrid = document.getElementById('teamsGrid');
-            const moreButton = document.getElementById('moreButton');
+            const teamCardsContainer = document.getElementById('teamCards');
+            const showMoreButton = document.getElementById('showMoreButton');
             
             const endIndex = Math.min(displayedCount + itemsPerPage, filteredTeams.length);
             
+            // Create and append team cards
             for (let i = displayedCount; i < endIndex; i++) {
                 const team = filteredTeams[i];
                 const teamCard = createTeamCard(team);
-                teamsGrid.appendChild(teamCard);
+                teamCardsContainer.appendChild(teamCard);
             }
             
             displayedCount = endIndex;
             
+            // Update the results count after loading more items
+            updateResultsCount();
+            
+            // Hide/show "Show More" button based on remaining items
             if (displayedCount >= filteredTeams.length) {
-                moreButton.style.display = 'none';
+                showMoreButton.style.display = 'none';
             } else {
-                moreButton.style.display = 'block';
+                showMoreButton.style.display = 'block';
             }
         }
 
+        /**
+         * Creates a team card element
+         * @param {Object} team - Team data object
+         * @returns {Element} - Team card DOM element
+         */
         function createTeamCard(team) {
             const card = document.createElement('div');
             card.className = 'team-card';
             
+            /**
+             * Formats capacity number with commas
+             * @param {string} capacity - Raw capacity string
+             * @returns {string} - Formatted capacity or 'N/A'
+             */
             const formatCapacity = (capacity) => {
                 if (!capacity) return 'N/A';
                 return parseInt(capacity).toLocaleString();
             };
 
+            // Use tertiary color for text, fallback to contrast calculation if not available
+            const textColor = team.tertiaryColor || getContrastColor(team.primaryColor);
+
             card.innerHTML = `
-                <div class="team-header">
+                <div class="team-card-header">
                     <div class="team-info">
                         <div class="team-sport">${team.sport}</div>
                         <h3>${team.teamname}</h3>
@@ -675,9 +876,9 @@
                     </div>
                 </div>
                 
-                <div class="venue-info">
-                    <div class="venue-name">${team.homeVenue} • ${team.venueCity} • ${formatCapacity(team.capacity)}</div>
-                    <div class="metro-info"><span class="metro-label">Fanbase Epicenter:</span> ${team.largestMetro || team.city}</div>
+                <div class="venue-info" style="background-color: ${team.primaryColor}; color: ${textColor};">
+                    <div class="venue-name" style="color: ${textColor};">${team.homeVenue} • ${team.venueCity} • ${formatCapacity(team.capacity)}</div>
+                    <div class="metro-info" style="color: ${textColor};"><span class="metro-label" style="color: ${textColor};">Fanbase Epicenter:</span> ${team.largestMetro || team.city}</div>
                 </div>
                 
                 <div class="team-metadata">
@@ -688,24 +889,23 @@
             return card;
         }
 
+        /* ===== UI UPDATES ===== */
+        
+        /**
+         * Updates the results count display
+         */
         function updateResultsCount() {
-            const count = filteredTeams.length;
-            const total = allTeams.length;
+            const totalFiltered = filteredTeams.length;
+            const totalDisplayed = Math.min(displayedCount, totalFiltered);
+            const totalInDatabase = allTeams.length;
+            
             document.getElementById('resultsCount').textContent = 
-                `Showing ${Math.min(displayedCount, count)} of ${count} teams (${total} total)`;
+                `Showing ${totalDisplayed} of ${totalFiltered} teams (${totalInDatabase} total)`;
         }
 
-        function clearFilters() {
-            document.getElementById('fanbaseFilter').value = '';
-            document.getElementById('sportFilter').value = '';
-            document.getElementById('leagueFilter').value = '';
-            document.getElementById('conferenceFilter').value = '';
-            document.getElementById('divisionFilter').value = '';
-            document.getElementById('teamFilter').value = '';
-            populateFilters();
-            applyFilters();
-        }
-
+        /* ===== EVENT LISTENERS ===== */
+        
+        // Attach filter change event listeners
         document.getElementById('fanbaseFilter').addEventListener('change', () => onFilterChange('fanbaseFilter'));
         document.getElementById('sportFilter').addEventListener('change', () => onFilterChange('sportFilter'));
         document.getElementById('leagueFilter').addEventListener('change', () => onFilterChange('leagueFilter'));
@@ -713,6 +913,9 @@
         document.getElementById('divisionFilter').addEventListener('change', () => onFilterChange('divisionFilter'));
         document.getElementById('teamFilter').addEventListener('change', () => onFilterChange('teamFilter'));
 
+        /* ===== APPLICATION INITIALIZATION ===== */
+        
+        // Initialize application when DOM is ready
         document.addEventListener('DOMContentLoaded', loadTeamsData);
     </script>
 </body>

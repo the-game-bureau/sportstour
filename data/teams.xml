@@ -8,11 +8,10 @@
       <city>Buffalo</city>
       <state>NY</state>
       <abbreviation>BUF</abbreviation>
-      <espnId>2</espnId>
-      <uid>s:20~l:28~t:2</uid>
       <slug>buffalo-bills</slug>
       <primaryColor>#00338D</primaryColor>
       <secondaryColor>#C60C30</secondaryColor>
+      <tertiaryColor>#FFFFFF</tertiaryColor>
       <mascot>Billy Buffalo</mascot>
       <homeVenue>Highmark Stadium</homeVenue>
       <venueCity>Orchard Park</venueCity>
@@ -29,11 +28,10 @@
       <city>Miami</city>
       <state>FL</state>
       <abbreviation>MIA</abbreviation>
-      <espnId>15</espnId>
-      <uid>s:20~l:28~t:15</uid>
       <slug>miami-dolphins</slug>
       <primaryColor>#008E97</primaryColor>
       <secondaryColor>#FC4C02</secondaryColor>
+      <tertiaryColor>#FFFFFF</tertiaryColor>
       <mascot>T.D.</mascot>
       <homeVenue>Hard Rock Stadium</homeVenue>
       <venueCity>Miami Gardens</venueCity>
@@ -50,11 +48,10 @@
       <city>Foxborough</city>
       <state>MA</state>
       <abbreviation>NE</abbreviation>
-      <espnId>17</espnId>
-      <uid>s:20~l:28~t:17</uid>
       <slug>new-england-patriots</slug>
       <primaryColor>#002244</primaryColor>
       <secondaryColor>#C60C30</secondaryColor>
+      <tertiaryColor>#FFFFFF</tertiaryColor>
       <mascot>Pat Patriot</mascot>
       <homeVenue>Gillette Stadium</homeVenue>
       <venueCity>Foxborough</venueCity>
@@ -71,11 +68,10 @@
       <city>East Rutherford</city>
       <state>NJ</state>
       <abbreviation>NYJ</abbreviation>
-      <espnId>20</espnId>
-      <uid>s:20~l:28~t:20</uid>
       <slug>new-york-jets</slug>
       <primaryColor>#125740</primaryColor>
       <secondaryColor>#FFFFFF</secondaryColor>
+      <tertiaryColor>#FFFFFF</tertiaryColor>
       <mascot>None</mascot>
       <homeVenue>MetLife Stadium</homeVenue>
       <venueCity>East Rutherford</venueCity>
@@ -92,11 +88,10 @@
       <city>Baltimore</city>
       <state>MD</state>
       <abbreviation>BAL</abbreviation>
-      <espnId>33</espnId>
-      <uid>s:20~l:28~t:33</uid>
       <slug>baltimore-ravens</slug>
       <primaryColor>#241773</primaryColor>
       <secondaryColor>#000000</secondaryColor>
+      <tertiaryColor>#FFFFFF</tertiaryColor>
       <mascot>Poe</mascot>
       <homeVenue>M&amp;T Bank Stadium</homeVenue>
       <venueCity>Baltimore</venueCity>
@@ -113,11 +108,10 @@
       <city>Cincinnati</city>
       <state>OH</state>
       <abbreviation>CIN</abbreviation>
-      <espnId>4004</espnId>
-      <uid>s:20~l:28~t:4</uid>
       <slug>cincinnati-bengals</slug>
       <primaryColor>#FB4F14</primaryColor>
       <secondaryColor>#000000</secondaryColor>
+      <tertiaryColor>#000000</tertiaryColor>
       <mascot>Who Dey</mascot>
       <homeVenue>Paycor Stadium</homeVenue>
       <venueCity>Cincinnati</venueCity>
@@ -134,11 +128,10 @@
       <city>Cleveland</city>
       <state>OH</state>
       <abbreviation>CLE</abbreviation>
-      <espnId>5</espnId>
-      <uid>s:20~l:28~t:5</uid>
       <slug>cleveland-browns</slug>
       <primaryColor>#311D00</primaryColor>
       <secondaryColor>#FF3C00</secondaryColor>
+      <tertiaryColor>#FFFFFF</tertiaryColor>
       <mascot>Brownie the Elf</mascot>
       <homeVenue>FirstEnergy Stadium</homeVenue>
       <venueCity>Cleveland</venueCity>
@@ -155,11 +148,10 @@
       <city>Pittsburgh</city>
       <state>PA</state>
       <abbreviation>PIT</abbreviation>
-      <espnId>23</espnId>
-      <uid>s:20~l:28~t:23</uid>
       <slug>pittsburgh-steelers</slug>
       <primaryColor>#FFB612</primaryColor>
       <secondaryColor>#101820</secondaryColor>
+      <tertiaryColor>#000000</tertiaryColor>
       <mascot>Steely McBeam</mascot>
       <homeVenue>Acrisure Stadium</homeVenue>
       <venueCity>Pittsburgh</venueCity>
@@ -176,11 +168,10 @@
       <city>Houston</city>
       <state>TX</state>
       <abbreviation>HOU</abbreviation>
-      <espnId>34</espnId>
-      <uid>s:20~l:28~t:34</uid>
       <slug>houston-texans</slug>
       <primaryColor>#03202F</primaryColor>
       <secondaryColor>#A71930</secondaryColor>
+      <tertiaryColor>#FFFFFF</tertiaryColor>
       <mascot>Toro</mascot>
       <homeVenue>NRG Stadium</homeVenue>
       <venueCity>Houston</venueCity>
@@ -197,11 +188,10 @@
       <city>Indianapolis</city>
       <state>IN</state>
       <abbreviation>IND</abbreviation>
-      <espnId>11</espnId>
-      <uid>s:20~l:28~t:11</uid>
       <slug>indianapolis-colts</slug>
       <primaryColor>#002C5F</primaryColor>
       <secondaryColor>#A2AAAD</secondaryColor>
+      <tertiaryColor>#FFFFFF</tertiaryColor>
       <mascot>Blue</mascot>
       <homeVenue>Lucas Oil Stadium</homeVenue>
       <venueCity>Indianapolis</venueCity>
@@ -218,11 +208,10 @@
       <city>Jacksonville</city>
       <state>FL</state>
       <abbreviation>JAX</abbreviation>
-      <espnId>30</espnId>
-      <uid>s:20~l:28~t:30</uid>
       <slug>jacksonville-jaguars</slug>
       <primaryColor>#006778</primaryColor>
       <secondaryColor>#D7A22A</secondaryColor>
+      <tertiaryColor>#FFFFFF</tertiaryColor>
       <mascot>Jaxson de Ville</mascot>
       <homeVenue>TIAA Bank Field</homeVenue>
       <venueCity>Jacksonville</venueCity>
@@ -239,11 +228,10 @@
       <city>Nashville</city>
       <state>TN</state>
       <abbreviation>TEN</abbreviation>
-      <espnId>10010</espnId>
-      <uid>s:20~l:28~t:10</uid>
       <slug>tennessee-titans</slug>
       <primaryColor>#0C2340</primaryColor>
       <secondaryColor>#4B92DB</secondaryColor>
+      <tertiaryColor>#FFFFFF</tertiaryColor>
       <mascot>T-Rac</mascot>
       <homeVenue>Nissan Stadium</homeVenue>
       <venueCity>Nashville</venueCity>
@@ -260,11 +248,10 @@
       <city>Denver</city>
       <state>CO</state>
       <abbreviation>DEN</abbreviation>
-      <espnId>7</espnId>
-      <uid>s:20~l:28~t:7</uid>
       <slug>denver-broncos</slug>
       <primaryColor>#FB4F14</primaryColor>
       <secondaryColor>#002244</secondaryColor>
+      <tertiaryColor>#002244</tertiaryColor>
       <mascot>Miles</mascot>
       <homeVenue>Empower Field at Mile High</homeVenue>
       <venueCity>Denver</venueCity>
@@ -281,11 +268,10 @@
       <city>Kansas City</city>
       <state>MO</state>
       <abbreviation>KC</abbreviation>
-      <espnId>12</espnId>
-      <uid>s:20~l:28~t:12</uid>
       <slug>kansas-city-chiefs</slug>
       <primaryColor>#E31837</primaryColor>
       <secondaryColor>#FFB81C</secondaryColor>
+      <tertiaryColor>#FFFFFF</tertiaryColor>
       <mascot>KC Wolf</mascot>
       <homeVenue>GEHA Field at Arrowhead Stadium</homeVenue>
       <venueCity>Kansas City</venueCity>
@@ -302,11 +288,10 @@
       <city>Las Vegas</city>
       <state>NV</state>
       <abbreviation>LV</abbreviation>
-      <espnId>13</espnId>
-      <uid>s:20~l:28~t:13</uid>
       <slug>las-vegas-raiders</slug>
       <primaryColor>#000000</primaryColor>
       <secondaryColor>#A5ACAF</secondaryColor>
+      <tertiaryColor>#FFFFFF</tertiaryColor>
       <mascot>Raider Rusher</mascot>
       <homeVenue>Allegiant Stadium</homeVenue>
       <venueCity>Las Vegas</venueCity>
@@ -323,11 +308,10 @@
       <city>Los Angeles</city>
       <state>CA</state>
       <abbreviation>LAC</abbreviation>
-      <espnId>24</espnId>
-      <uid>s:20~l:28~t:24</uid>
       <slug>los-angeles-chargers</slug>
       <primaryColor>#0080C6</primaryColor>
       <secondaryColor>#FFC20E</secondaryColor>
+      <tertiaryColor>#FFFFFF</tertiaryColor>
       <mascot>Boltman</mascot>
       <homeVenue>SoFi Stadium</homeVenue>
       <venueCity>Inglewood</venueCity>
@@ -344,11 +328,10 @@
       <city>Arlington</city>
       <state>TX</state>
       <abbreviation>DAL</abbreviation>
-      <espnId>6006</espnId>
-      <uid>s:20~l:28~t:6</uid>
       <slug>dallas-cowboys</slug>
       <primaryColor>#003594</primaryColor>
       <secondaryColor>#041E42</secondaryColor>
+      <tertiaryColor>#FFFFFF</tertiaryColor>
       <mascot>Rowdy</mascot>
       <homeVenue>AT&amp;T Stadium</homeVenue>
       <venueCity>Arlington</venueCity>
@@ -365,11 +348,10 @@
       <city>East Rutherford</city>
       <state>NJ</state>
       <abbreviation>NYG</abbreviation>
-      <espnId>19</espnId>
-      <uid>s:20~l:28~t:19</uid>
       <slug>new-york-giants</slug>
       <primaryColor>#0B2265</primaryColor>
       <secondaryColor>#A71930</secondaryColor>
+      <tertiaryColor>#FFFFFF</tertiaryColor>
       <mascot>None</mascot>
       <homeVenue>MetLife Stadium</homeVenue>
       <venueCity>East Rutherford</venueCity>
@@ -386,11 +368,10 @@
       <city>Philadelphia</city>
       <state>PA</state>
       <abbreviation>PHI</abbreviation>
-      <espnId>21</espnId>
-      <uid>s:20~l:28~t:21</uid>
       <slug>philadelphia-eagles</slug>
       <primaryColor>#004C54</primaryColor>
       <secondaryColor>#A5ACAF</secondaryColor>
+      <tertiaryColor>#FFFFFF</tertiaryColor>
       <mascot>Swoop</mascot>
       <homeVenue>Lincoln Financial Field</homeVenue>
       <venueCity>Philadelphia</venueCity>
@@ -407,11 +388,10 @@
       <city>Landover</city>
       <state>MD</state>
       <abbreviation>WSH</abbreviation>
-      <espnId>28</espnId>
-      <uid>s:20~l:28~t:28</uid>
       <slug>washington-commanders</slug>
       <primaryColor>#5A1414</primaryColor>
       <secondaryColor>#FFB612</secondaryColor>
+      <tertiaryColor>#FFFFFF</tertiaryColor>
       <mascot>Major Tuddy</mascot>
       <homeVenue>Northwest Stadium</homeVenue>
       <venueCity>Landover</venueCity>
@@ -428,11 +408,10 @@
       <city>Chicago</city>
       <state>IL</state>
       <abbreviation>CHI</abbreviation>
-      <espnId>3</espnId>
-      <uid>s:20~l:28~t:3</uid>
       <slug>chicago-bears</slug>
       <primaryColor>#0B162A</primaryColor>
       <secondaryColor>#C83803</secondaryColor>
+      <tertiaryColor>#FFFFFF</tertiaryColor>
       <mascot>Staley Da Bear</mascot>
       <homeVenue>Soldier Field</homeVenue>
       <venueCity>Chicago</venueCity>
@@ -449,11 +428,10 @@
       <city>Detroit</city>
       <state>MI</state>
       <abbreviation>DET</abbreviation>
-      <espnId>8</espnId>
-      <uid>s:20~l:28~t:8</uid>
       <slug>detroit-lions</slug>
       <primaryColor>#0076B6</primaryColor>
       <secondaryColor>#B0B7BC</secondaryColor>
+      <tertiaryColor>#FFFFFF</tertiaryColor>
       <mascot>Roary</mascot>
       <homeVenue>Ford Field</homeVenue>
       <venueCity>Detroit</venueCity>
@@ -470,11 +448,10 @@
       <city>Green Bay</city>
       <state>WI</state>
       <abbreviation>GB</abbreviation>
-      <espnId>9</espnId>
-      <uid>s:20~l:28~t:9</uid>
       <slug>green-bay-packers</slug>
       <primaryColor>#203731</primaryColor>
       <secondaryColor>#FFB612</secondaryColor>
+      <tertiaryColor>#FFFFFF</tertiaryColor>
       <mascot>None</mascot>
       <homeVenue>Lambeau Field</homeVenue>
       <venueCity>Green Bay</venueCity>
@@ -491,11 +468,10 @@
       <city>Minneapolis</city>
       <state>MN</state>
       <abbreviation>MIN</abbreviation>
-      <espnId>16016</espnId>
-      <uid>s:20~l:28~t:16</uid>
       <slug>minnesota-vikings</slug>
       <primaryColor>#4F2683</primaryColor>
       <secondaryColor>#FFC62F</secondaryColor>
+      <tertiaryColor>#FFFFFF</tertiaryColor>
       <mascot>Viktor</mascot>
       <homeVenue>U.S. Bank Stadium</homeVenue>
       <venueCity>Minneapolis</venueCity>
@@ -512,11 +488,10 @@
       <city>Atlanta</city>
       <state>GA</state>
       <abbreviation>ATL</abbreviation>
-      <espnId>1</espnId>
-      <uid>s:20~l:28~t:1</uid>
       <slug>atlanta-falcons</slug>
       <primaryColor>#A71930</primaryColor>
       <secondaryColor>#000000</secondaryColor>
+      <tertiaryColor>#FFFFFF</tertiaryColor>
       <mascot>Freddie Falcon</mascot>
       <homeVenue>Mercedes-Benz Stadium</homeVenue>
       <venueCity>Atlanta</venueCity>
@@ -533,11 +508,10 @@
       <city>Charlotte</city>
       <state>NC</state>
       <abbreviation>CAR</abbreviation>
-      <espnId>29</espnId>
-      <uid>s:20~l:28~t:29</uid>
       <slug>carolina-panthers</slug>
       <primaryColor>#0085CA</primaryColor>
       <secondaryColor>#101820</secondaryColor>
+      <tertiaryColor>#101820</tertiaryColor>
       <mascot>Sir Purr</mascot>
       <homeVenue>Bank of America Stadium</homeVenue>
       <venueCity>Charlotte</venueCity>
@@ -554,11 +528,10 @@
       <city>New Orleans</city>
       <state>LA</state>
       <abbreviation>NO</abbreviation>
-      <espnId>18</espnId>
-      <uid>s:20~l:28~t:18</uid>
       <slug>new-orleans-saints</slug>
       <primaryColor>#D3BC8D</primaryColor>
       <secondaryColor>#101820</secondaryColor>
+      <tertiaryColor>#000000</tertiaryColor>
       <mascot>Gumbo</mascot>
       <homeVenue>Caesars Superdome</homeVenue>
       <venueCity>New Orleans</venueCity>
@@ -575,11 +548,10 @@
       <city>Tampa</city>
       <state>FL</state>
       <abbreviation>TB</abbreviation>
-      <espnId>27</espnId>
-      <uid>s:20~l:28~t:27</uid>
       <slug>tampa-bay-buccaneers</slug>
       <primaryColor>#D50A0A</primaryColor>
       <secondaryColor>#FF7900</secondaryColor>
+      <tertiaryColor>#FFFFFF</tertiaryColor>
       <mascot>Captain Fear</mascot>
       <homeVenue>Raymond James Stadium</homeVenue>
       <venueCity>Tampa</venueCity>
@@ -596,11 +568,10 @@
       <city>Glendale</city>
       <state>AZ</state>
       <abbreviation>ARI</abbreviation>
-      <espnId>22</espnId>
-      <uid>s:20~l:28~t:22</uid>
       <slug>arizona-cardinals</slug>
       <primaryColor>#97233F</primaryColor>
       <secondaryColor>#000000</secondaryColor>
+      <tertiaryColor>#FFFFFF</tertiaryColor>
       <mascot>Big Red</mascot>
       <homeVenue>State Farm Stadium</homeVenue>
       <venueCity>Glendale</venueCity>
@@ -617,11 +588,10 @@
       <city>Los Angeles</city>
       <state>CA</state>
       <abbreviation>LAR</abbreviation>
-      <espnId>14</espnId>
-      <uid>s:20~l:28~t:14</uid>
       <slug>los-angeles-rams</slug>
       <primaryColor>#003594</primaryColor>
       <secondaryColor>#FFA300</secondaryColor>
+      <tertiaryColor>#FFFFFF</tertiaryColor>
       <mascot>Rampage</mascot>
       <homeVenue>SoFi Stadium</homeVenue>
       <venueCity>Inglewood</venueCity>
@@ -638,11 +608,10 @@
       <city>Santa Clara</city>
       <state>CA</state>
       <abbreviation>SF</abbreviation>
-      <espnId>25</espnId>
-      <uid>s:20~l:28~t:25</uid>
       <slug>san-francisco-49ers</slug>
       <primaryColor>#AA0000</primaryColor>
       <secondaryColor>#B3995D</secondaryColor>
+      <tertiaryColor>#FFFFFF</tertiaryColor>
       <mascot>Sourdough Sam</mascot>
       <homeVenue>Levi's Stadium</homeVenue>
       <venueCity>Santa Clara</venueCity>
@@ -659,11 +628,10 @@
       <city>Seattle</city>
       <state>WA</state>
       <abbreviation>SEA</abbreviation>
-      <espnId>26</espnId>
-      <uid>s:20~l:28~t:26</uid>
       <slug>seattle-seahawks</slug>
       <primaryColor>#002244</primaryColor>
       <secondaryColor>#69BE28</secondaryColor>
+      <tertiaryColor>#FFFFFF</tertiaryColor>
       <mascot>Blitz</mascot>
       <homeVenue>Lumen Field</homeVenue>
       <venueCity>Seattle</venueCity>
@@ -674,7 +642,6 @@
       <division>NFC West</division>
       <largestMetro>Seattle-Tacoma-Bellevue</largestMetro>
     </team>
-
     <!-- NCAA Football Teams -->
     <team>
       <teamname>Tulane Green Wave</teamname>
@@ -682,11 +649,10 @@
       <city>New Orleans</city>
       <state>LA</state>
       <abbreviation>TULANE</abbreviation>
-      <espnId>2655</espnId>
-      <uid>s:20~l:23~t:2655</uid>
       <slug>tulane-green-wave</slug>
       <primaryColor>#00703C</primaryColor>
       <secondaryColor>#85714D</secondaryColor>
+      <tertiaryColor>#FFFFFF</tertiaryColor>
       <mascot>Riptide the Pelican</mascot>
       <homeVenue>Yulman Stadium</homeVenue>
       <venueCity>New Orleans</venueCity>
@@ -703,11 +669,10 @@
       <city>Greenville</city>
       <state>NC</state>
       <abbreviation>ECU</abbreviation>
-      <espnId>151</espnId>
-      <uid>s:20~l:23~t:151</uid>
       <slug>east-carolina-pirates</slug>
       <primaryColor>#592F84</primaryColor>
       <secondaryColor>#FFD100</secondaryColor>
+      <tertiaryColor>#FFFFFF</tertiaryColor>
       <mascot>PeeDee the Pirate</mascot>
       <homeVenue>Dowdy-Ficklen Stadium</homeVenue>
       <venueCity>Greenville</venueCity>
@@ -724,11 +689,10 @@
       <city>Memphis</city>
       <state>TN</state>
       <abbreviation>MEM</abbreviation>
-      <espnId>235</espnId>
-      <uid>s:20~l:23~t:235</uid>
       <slug>memphis-tigers</slug>
       <primaryColor>#003594</primaryColor>
       <secondaryColor>#8A8B8C</secondaryColor>
+      <tertiaryColor>#FFFFFF</tertiaryColor>
       <mascot>Pouncer</mascot>
       <homeVenue>Simmons Bank Liberty Stadium</homeVenue>
       <venueCity>Memphis</venueCity>
@@ -745,11 +709,10 @@
       <city>San Antonio</city>
       <state>TX</state>
       <abbreviation>UTSA</abbreviation>
-      <espnId>2636</espnId>
-      <uid>s:20~l:23~t:2636</uid>
       <slug>utsa-roadrunners</slug>
       <primaryColor>#F15A22</primaryColor>
       <secondaryColor>#0C2340</secondaryColor>
+      <tertiaryColor>#000000</tertiaryColor>
       <mascot>Rowdy</mascot>
       <homeVenue>Alamodome</homeVenue>
       <venueCity>San Antonio</venueCity>
@@ -766,11 +729,10 @@
       <city>Philadelphia</city>
       <state>PA</state>
       <abbreviation>TEM</abbreviation>
-      <espnId>218</espnId>
-      <uid>s:20~l:23~t:218</uid>
       <slug>temple-owls</slug>
       <primaryColor>#A41E35</primaryColor>
       <secondaryColor>#FFFFFF</secondaryColor>
+      <tertiaryColor>#FFFFFF</tertiaryColor>
       <mascot>Hooter</mascot>
       <homeVenue>Lincoln Financial Field</homeVenue>
       <venueCity>Philadelphia</venueCity>
@@ -787,11 +749,10 @@
       <city>Charlotte</city>
       <state>NC</state>
       <abbreviation>CHAR</abbreviation>
-      <espnId>2429</espnId>
-      <uid>s:20~l:23~t:2429</uid>
       <slug>charlotte-49ers</slug>
       <primaryColor>#00543C</primaryColor>
       <secondaryColor>#C4B370</secondaryColor>
+      <tertiaryColor>#FFFFFF</tertiaryColor>
       <mascot>Norm the Niner</mascot>
       <homeVenue>Jerry Richardson Stadium</homeVenue>
       <venueCity>Charlotte</venueCity>
@@ -808,11 +769,10 @@
       <city>Boca Raton</city>
       <state>FL</state>
       <abbreviation>FAU</abbreviation>
-      <espnId>2226</espnId>
-      <uid>s:20~l:23~t:2226</uid>
       <slug>florida-atlantic-owls</slug>
       <primaryColor>#C8102E</primaryColor>
       <secondaryColor>#003366</secondaryColor>
+      <tertiaryColor>#FFFFFF</tertiaryColor>
       <mascot>Owlsley</mascot>
       <homeVenue>FAU Stadium</homeVenue>
       <venueCity>Boca Raton</venueCity>
@@ -829,11 +789,10 @@
       <city>Tulsa</city>
       <state>OK</state>
       <abbreviation>TULSA</abbreviation>
-      <espnId>202</espnId>
-      <uid>s:20~l:23~t:202</uid>
       <slug>tulsa-golden-hurricane</slug>
       <primaryColor>#002D72</primaryColor>
       <secondaryColor>#FFC72C</secondaryColor>
+      <tertiaryColor>#FFFFFF</tertiaryColor>
       <mascot>Captain Cane</mascot>
       <homeVenue>Chapman Stadium</homeVenue>
       <venueCity>Tulsa</venueCity>
@@ -850,11 +809,10 @@
       <city>West Point</city>
       <state>NY</state>
       <abbreviation>ARMY</abbreviation>
-      <espnId>349</espnId>
-      <uid>s:20~l:23~t:349</uid>
       <slug>army-black-knights</slug>
       <primaryColor>#B1AA7A</primaryColor>
       <secondaryColor>#000000</secondaryColor>
+      <tertiaryColor>#000000</tertiaryColor>
       <mascot>The Army Mule</mascot>
       <homeVenue>Michie Stadium</homeVenue>
       <venueCity>West Point</venueCity>
@@ -871,11 +829,10 @@
       <city>Evanston</city>
       <state>IL</state>
       <abbreviation>NW</abbreviation>
-      <espnId>77</espnId>
-      <uid>s:20~l:5~t:77</uid>
       <slug>northwestern-wildcats</slug>
       <primaryColor>#4E2A84</primaryColor>
       <secondaryColor>#FFFFFF</secondaryColor>
+      <tertiaryColor>#FFFFFF</tertiaryColor>
       <mascot>Willie the Wildcat</mascot>
       <homeVenue>Ryan Field</homeVenue>
       <venueCity>Evanston</venueCity>
@@ -892,11 +849,10 @@
       <city>Durham</city>
       <state>NC</state>
       <abbreviation>DUKE</abbreviation>
-      <espnId>150</espnId>
-      <uid>s:20~l:1~t:150</uid>
       <slug>duke-blue-devils</slug>
       <primaryColor>#001A57</primaryColor>
       <secondaryColor>#FFFFFF</secondaryColor>
+      <tertiaryColor>#FFFFFF</tertiaryColor>
       <mascot>Blue Devil</mascot>
       <homeVenue>Wallace Wade Stadium</homeVenue>
       <venueCity>Durham</venueCity>
@@ -913,11 +869,10 @@
       <city>Oxford</city>
       <state>MS</state>
       <abbreviation>MISS</abbreviation>
-      <espnId>145</espnId>
-      <uid>s:20~l:8~t:145</uid>
       <slug>ole-miss-rebels</slug>
       <primaryColor>#CE1126</primaryColor>
       <secondaryColor>#14213D</secondaryColor>
+      <tertiaryColor>#FFFFFF</tertiaryColor>
       <mascot>Rebel Bear</mascot>
       <homeVenue>Vaught-Hemingway Stadium</homeVenue>
       <venueCity>Oxford</venueCity>
@@ -934,11 +889,10 @@
       <city>Baton Rouge</city>
       <state>LA</state>
       <abbreviation>LSU</abbreviation>
-      <espnId>99</espnId>
-      <uid>s:20~l:8~t:99</uid>
       <slug>lsu-tigers</slug>
       <primaryColor>#461D7C</primaryColor>
       <secondaryColor>#FDD023</secondaryColor>
+      <tertiaryColor>#FFFFFF</tertiaryColor>
       <mascot>Mike the Tiger</mascot>
       <homeVenue>Tiger Stadium</homeVenue>
       <venueCity>Baton Rouge</venueCity>
@@ -955,11 +909,10 @@
       <city>Mobile</city>
       <state>AL</state>
       <abbreviation>USA</abbreviation>
-      <espnId>6</espnId>
-      <uid>s:20~l:37~t:6</uid>
       <slug>south-alabama-jaguars</slug>
       <primaryColor>#003594</primaryColor>
       <secondaryColor>#D50A0A</secondaryColor>
+      <tertiaryColor>#FFFFFF</tertiaryColor>
       <mascot>South Paw</mascot>
       <homeVenue>Hancock Whitney Stadium</homeVenue>
       <venueCity>Mobile</venueCity>
@@ -976,11 +929,10 @@
       <city>Notre Dame</city>
       <state>IN</state>
       <abbreviation>ND</abbreviation>
-      <espnId>87</espnId>
-      <uid>s:20~l:43~t:87</uid>
       <slug>notre-dame-fighting-irish</slug>
       <primaryColor>#0C2340</primaryColor>
       <secondaryColor>#C9B037</secondaryColor>
+      <tertiaryColor>#FFFFFF</tertiaryColor>
       <mascot>The Leprechaun</mascot>
       <homeVenue>Notre Dame Stadium</homeVenue>
       <venueCity>Notre Dame</venueCity>
@@ -992,7 +944,6 @@
       <largestMetro>South Bend</largestMetro>
     </team>
   </sport>
-
   <sport name="Baseball">
     <!-- MLB Teams -->
     <team>
@@ -1001,11 +952,10 @@
       <city>New York</city>
       <state>NY</state>
       <abbreviation>NYY</abbreviation>
-      <espnId>10</espnId>
-      <uid>s:1~l:10~t:10</uid>
       <slug>new-york-yankees</slug>
       <primaryColor>#132448</primaryColor>
       <secondaryColor>#C4CED4</secondaryColor>
+      <tertiaryColor>#FFFFFF</tertiaryColor>
       <mascot>None</mascot>
       <homeVenue>Yankee Stadium</homeVenue>
       <venueCity>Bronx</venueCity>
@@ -1022,11 +972,10 @@
       <city>Chicago</city>
       <state>IL</state>
       <abbreviation>CWS</abbreviation>
-      <espnId>4</espnId>
-      <uid>s:1~l:10~t:4</uid>
       <slug>chicago-white-sox</slug>
       <primaryColor>#27251F</primaryColor>
       <secondaryColor>#C4CED4</secondaryColor>
+      <tertiaryColor>#FFFFFF</tertiaryColor>
       <mascot>Southpaw</mascot>
       <homeVenue>Guaranteed Rate Field</homeVenue>
       <venueCity>Chicago</venueCity>
@@ -1043,11 +992,10 @@
       <city>Chicago</city>
       <state>IL</state>
       <abbreviation>CHC</abbreviation>
-      <espnId>16</espnId>
-      <uid>s:1~l:10~t:16</uid>
       <slug>chicago-cubs</slug>
       <primaryColor>#0E3386</primaryColor>
       <secondaryColor>#CC3433</secondaryColor>
+      <tertiaryColor>#FFFFFF</tertiaryColor>
       <mascot>Clark the Cub</mascot>
       <homeVenue>Wrigley Field</homeVenue>
       <venueCity>Chicago</venueCity>
@@ -1064,11 +1012,10 @@
       <city>New York</city>
       <state>NY</state>
       <abbreviation>NYM</abbreviation>
-      <espnId>23</espnId>
-      <uid>s:1~l:10~t:23</uid>
       <slug>new-york-mets</slug>
       <primaryColor>#002D72</primaryColor>
       <secondaryColor>#FFB81C</secondaryColor>
+      <tertiaryColor>#FFFFFF</tertiaryColor>
       <mascot>Mr. Met</mascot>
       <homeVenue>Citi Field</homeVenue>
       <venueCity>Queens</venueCity>
@@ -1085,11 +1032,10 @@
       <city>Los Angeles</city>
       <state>CA</state>
       <abbreviation>LAD</abbreviation>
-      <espnId>12</espnId>
-      <uid>s:1~l:10~t:12</uid>
       <slug>los-angeles-dodgers</slug>
       <primaryColor>#005A8C</primaryColor>
       <secondaryColor>#FFB81C</secondaryColor>
+      <tertiaryColor>#FFFFFF</tertiaryColor>
       <mascot>None</mascot>
       <homeVenue>Dodger Stadium</homeVenue>
       <venueCity>Los Angeles</venueCity>
@@ -1106,11 +1052,10 @@
       <city>San Francisco</city>
       <state>CA</state>
       <abbreviation>SFG</abbreviation>
-      <espnId>24</espnId>
-      <uid>s:1~l:10~t:24</uid>
       <slug>san-francisco-giants</slug>
       <primaryColor>#FDB927</primaryColor>
       <secondaryColor>#003B5C</secondaryColor>
+      <tertiaryColor>#000000</tertiaryColor>
       <mascot>None</mascot>
       <homeVenue>Oracle Park</homeVenue>
       <venueCity>San Francisco</venueCity>
@@ -1127,11 +1072,10 @@
       <city>San Diego</city>
       <state>CA</state>
       <abbreviation>SD</abbreviation>
-      <espnId>15</espnId>
-      <uid>s:1~l:10~t:15</uid>
       <slug>san-diego-padres</slug>
       <primaryColor>#002F6C</primaryColor>
       <secondaryColor>#FFC72C</secondaryColor>
+      <tertiaryColor>#FFFFFF</tertiaryColor>
       <mascot>Swinging Friar</mascot>
       <homeVenue>Petco Park</homeVenue>
       <venueCity>San Diego</venueCity>
@@ -1148,11 +1092,10 @@
       <city>Oakland</city>
       <state>CA</state>
       <abbreviation>OAK</abbreviation>
-      <espnId>8</espnId>
-      <uid>s:1~l:10~t:8</uid>
       <slug>oakland-athletics</slug>
       <primaryColor>#003831</primaryColor>
       <secondaryColor>#B5AC37</secondaryColor>
+      <tertiaryColor>#FFFFFF</tertiaryColor>
       <mascot>None</mascot>
       <homeVenue>RingCentral Coliseum</homeVenue>
       <venueCity>Oakland</venueCity>
@@ -1169,11 +1112,10 @@
       <city>Anaheim</city>
       <state>CA</state>
       <abbreviation>LAA</abbreviation>
-      <espnId>13</espnId>
-      <uid>s:1~l:10~t:13</uid>
       <slug>los-angeles-angels</slug>
       <primaryColor>#0072CE</primaryColor>
       <secondaryColor>#BA161E</secondaryColor>
+      <tertiaryColor>#FFFFFF</tertiaryColor>
       <mascot>Angels Win</mascot>
       <homeVenue>Angel Stadium</homeVenue>
       <venueCity>Anaheim</venueCity>
@@ -1190,11 +1132,10 @@
       <city>Seattle</city>
       <state>WA</state>
       <abbreviation>SEA</abbreviation>
-      <espnId>19</espnId>
-      <uid>s:1~l:10~t:19</uid>
       <slug>seattle-mariners</slug>
       <primaryColor>#0C2C56</primaryColor>
       <secondaryColor>#87A96B</secondaryColor>
+      <tertiaryColor>#FFFFFF</tertiaryColor>
       <mascot>Mariner Moose</mascot>
       <homeVenue>T-Mobile Park</homeVenue>
       <venueCity>Seattle</venueCity>
@@ -1205,7 +1146,6 @@
       <division>AL West</division>
       <largestMetro>Seattle-Tacoma-Bellevue</largestMetro>
     </team>
-
     <!-- NCAA Baseball Teams -->
     <team>
       <teamname>Tulane Green Wave</teamname>
@@ -1213,11 +1153,10 @@
       <city>New Orleans</city>
       <state>LA</state>
       <abbreviation>TULANE</abbreviation>
-      <espnId>2655</espnId>
-      <uid>s:2~l:23~t:2655</uid>
       <slug>tulane-green-wave</slug>
       <primaryColor>#00703C</primaryColor>
       <secondaryColor>#85714D</secondaryColor>
+      <tertiaryColor>#FFFFFF</tertiaryColor>
       <mascot>Riptide the Pelican</mascot>
       <homeVenue>Greer Field at Turchin Stadium</homeVenue>
       <venueCity>New Orleans</venueCity>
@@ -1229,7 +1168,6 @@
       <largestMetro>New Orleans-Metairie</largestMetro>
     </team>
   </sport>
-
   <sport name="Women's Volleyball">
     <!-- NCAA Volleyball Teams -->
     <team>
@@ -1238,11 +1176,10 @@
       <city>Indiana</city>
       <state>PA</state>
       <abbreviation>IUP</abbreviation>
-      <espnId>314</espnId>
-      <uid>s:50~l:40~t:314</uid>
       <slug>iup-crimson-hawks</slug>
       <primaryColor>#A41E35</primaryColor>
       <secondaryColor>#FFFFFF</secondaryColor>
+      <tertiaryColor>#FFFFFF</tertiaryColor>
       <mascot>Crimson Hawk</mascot>
       <homeVenue>Kovalchick Complex</homeVenue>
       <venueCity>Indiana</venueCity>

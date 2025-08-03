@@ -1,5 +1,5 @@
 Behind Enemy Lines
-The Northwestern Wildcats takeover NEw Orleans
+The Northwestern Wildcats takeover New Orleans
 
 Northwestern:
 https://en.wikipedia.org/wiki/Northwestern_Wildcats_football
