@@ -1014,7 +1014,7 @@
       <abbreviation>NYM</abbreviation>
       <slug>new-york-mets</slug>
       <primaryColor>#002D72</primaryColor>
-      <secondaryColor>#FFB81C</secondaryColor>
+      <secondaryColor>#FF5910</secondaryColor>
       <tertiaryColor>#FFFFFF</tertiaryColor>
       <mascot>Mr. Met</mascot>
       <homeVenue>Citi Field</homeVenue>
@@ -1035,7 +1035,7 @@
       <slug>los-angeles-dodgers</slug>
       <primaryColor>#005A8C</primaryColor>
       <secondaryColor>#FFB81C</secondaryColor>
-      <tertiaryColor>#FFFFFF</tertiaryColor>
+      <tertiaryColor>#FFB81C</tertiaryColor>
       <mascot>None</mascot>
       <homeVenue>Dodger Stadium</homeVenue>
       <venueCity>Los Angeles</venueCity>
@@ -1135,7 +1135,7 @@
       <slug>seattle-mariners</slug>
       <primaryColor>#0C2C56</primaryColor>
       <secondaryColor>#87A96B</secondaryColor>
-      <tertiaryColor>#FFFFFF</tertiaryColor>
+      <tertiaryColor>#87A96B</tertiaryColor>
       <mascot>Mariner Moose</mascot>
       <homeVenue>T-Mobile Park</homeVenue>
       <venueCity>Seattle</venueCity>

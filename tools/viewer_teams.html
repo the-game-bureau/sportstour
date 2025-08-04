@@ -232,6 +232,13 @@
             border-radius: 6px;
             padding: 16px;
             margin-top: 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .venue-details {
+            flex: 1;
         }
 
         .venue-name {
@@ -247,6 +254,31 @@
 
         .metro-label {
             font-weight: 500;
+        }
+
+        /* News Button */
+        .news-button {
+            background: transparent;
+            border: 1px solid;
+            padding: 8px 12px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border-radius: 4px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            white-space: nowrap;
+            margin-left: 12px;
+            flex-shrink: 0;
+        }
+
+        .news-button:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-1px);
         }
 
         /* Team Metadata */
@@ -479,8 +511,8 @@
          */
         async function loadTeamsData() {
             try {
-                // Attempt to fetch teams.xml file
-                const response = await fetch('teams.xml');
+                // Updated path to look in the data directory relative to the tools directory
+                const response = await fetch('../data/teams.xml');
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }
@@ -613,7 +645,7 @@
                 errorDiv.innerHTML = `
                     <h3>teams.xml file not found</h3>
                     <p>Using fallback data: New Orleans Saints & Tulane Green Wave</p>
-                    <p style="font-size: 0.9rem; margin-top: 10px;">To use your full database, place your teams.xml file in the same directory as this HTML file.</p>
+                    <p style="font-size: 0.9rem; margin-top: 10px;">Expected path: ../data/teams.xml (relative to the HTML file location)</p>
                     <p style="font-size: 0.8rem; margin-top: 5px; color: #999;">Error: ${error.message}</p>
                 `;
                 
@@ -877,8 +909,17 @@
                 </div>
                 
                 <div class="venue-info" style="background-color: ${team.primaryColor}; color: ${textColor};">
-                    <div class="venue-name" style="color: ${textColor};">${team.homeVenue} • ${team.venueCity} • ${formatCapacity(team.capacity)}</div>
-                    <div class="metro-info" style="color: ${textColor};"><span class="metro-label" style="color: ${textColor};">Fanbase Epicenter:</span> ${team.largestMetro || team.city}</div>
+                    <div class="venue-details">
+                        <div class="venue-name" style="color: ${textColor};">${team.homeVenue} • ${team.venueCity} • ${formatCapacity(team.capacity)}</div>
+                        <div class="metro-info" style="color: ${textColor};"><span class="metro-label" style="color: ${textColor};">Fanbase Epicenter:</span> ${team.largestMetro || team.city}</div>
+                    </div>
+                    <a href="https://www.foxsports.com/${team.league.toLowerCase()}/${team.slug}-team" 
+                       target="_blank" 
+                       class="news-button" 
+                       style="color: ${textColor}; border-color: ${textColor};"
+                       title="View ${team.teamname} news on Fox Sports">
+                        News
+                    </a>
                 </div>
                 
                 <div class="team-metadata">
