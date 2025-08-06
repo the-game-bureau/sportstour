@@ -45,7 +45,7 @@ const App = () => {
                 contents: [{ role: "user", parts: [{ text: prompt }] }],
             };
             
-            const apiKey = "AIzaSyCjYVpRM2pUYkmaP6-My3oU36D93T7SJkI";
+            const apiKey = "API_GOES_HERE";
             const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
 
             let response;
