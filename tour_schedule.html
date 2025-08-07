@@ -84,7 +84,7 @@
 
                 <!-- Filters -->
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                    <input id="searchInput" type="text" placeholder="Search teams (e.g. 'Kansas City Chiefs' or 'Chiefs')" class="px-4 py-3 border-0 bg-gray-50 text-sm font-medium focus:bg-white focus:ring-1 focus:ring-black transition-all">
+                    <input id="searchInput" type="text" placeholder="Search teams (by City or Nickname)" class="px-4 py-3 border-0 bg-gray-50 text-sm font-medium focus:bg-white focus:ring-1 focus:ring-black transition-all">
                     
                     <select id="teamSelect" class="px-4 py-3 border-0 bg-gray-50 text-sm font-medium focus:bg-white focus:ring-1 focus:ring-black transition-all">
                         <option value="">All Teams</option>
@@ -148,6 +148,43 @@
         const teamSelect = document.getElementById('teamSelect');
         const clearBtn = document.getElementById('clearBtn');
         const retryBtn = document.getElementById('retryBtn');
+
+        function adjustDateByDays(dateStr, days) {
+            if (!dateStr) return '';
+            try {
+                // Handle format like "Sunday, Sept. 7, 2025"
+                const cleanDate = dateStr.replace(/\./g, '');
+                const parts = cleanDate.split(',');
+                if (parts.length >= 2) {
+                    const dateOnly = parts[1].trim(); // "Sept 7"
+                    const yearPart = parts[2] ? parts[2].trim() : '2025'; // "2025"
+                    const dateParts = dateOnly.split(' ');
+                    if (dateParts.length >= 2) {
+                        const month = dateParts[0];
+                        const day = parseInt(dateParts[1]);
+                        const year = parseInt(yearPart);
+                        
+                        const monthMap = {
+                            'Sept': 8, 'Dec': 11, 'Nov': 10, 'Oct': 9,
+                            'Jan': 0, 'Feb': 1, 'Mar': 2, 'Apr': 3,
+                            'May': 4, 'Jun': 5, 'Jul': 6, 'Aug': 7
+                        };
+                        
+                        const date = new Date(year, monthMap[month] || 0, day);
+                        date.setDate(date.getDate() + days);
+                        
+                        const dayNames = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+                        const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
+                        
+                        return `${dayNames[date.getDay()]}, ${monthNames[date.getMonth()]}. ${date.getDate()}, ${date.getFullYear()}`;
+                    }
+                }
+                return dateStr;
+            } catch (e) {
+                console.log('Date adjustment error:', e, 'for date:', dateStr);
+                return dateStr;
+            }
+        }
 
         async function fetchTeams() {
             try {
@@ -467,7 +504,7 @@
             }
         }
 
-        function getDayBefore(dateStr) {
+        function getDayName(dateStr, dayOffset = 0) {
             if (!dateStr) return 'TBD';
             try {
                 const cleanDate = dateStr.replace(/\./g, '');
@@ -478,7 +515,7 @@
                     if (dateParts.length >= 3) {
                         const month = dateParts[0];
                         const day = parseInt(dateParts[1]);
-                        const year = dateParts[2];
+                        const year = parseInt(dateParts[2]);
                         
                         const monthMap = {
                             'Sept': 8, 'Dec': 11, 'Nov': 10, 'Oct': 9,
@@ -487,12 +524,10 @@
                         };
                         
                         const date = new Date(parseInt(year), monthMap[month], day);
-                        date.setDate(date.getDate() - 1);
+                        date.setDate(date.getDate() + dayOffset);
                         
                         const dayNames = ['SUNDAY', 'MONDAY', 'TUESDAY', 'WEDNESDAY', 'THURSDAY', 'FRIDAY', 'SATURDAY'];
-                        const monthNames = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
-                        
-                        return `${dayNames[date.getDay()]}, ${monthNames[date.getMonth()]} ${date.getDate()}`;
+                        return dayNames[date.getDay()];
                     }
                 }
                 return 'TBD';
@@ -599,14 +634,21 @@
                 gameDate = gameDate.split(' - ')[0];
             }
             
+            // Get tour date (1 day before game date)
+            const tourDate = adjustDateByDays(gameDate, -1);
+            
             const localTime = extractLocalTime(game.localKickoff);
             const hometown = homeTeamInfo.hometown || 'TBD';
+            
+            // Determine day names for tour timeline
+            const tourDay = getDayName(tourDate, 0); // Tour day
+            const gameDay = getDayName(gameDate, 0);   // Game day
             
             return `
                 <div class="bg-white rounded-lg shadow-lg border border-gray-200 overflow-hidden">
                     <div class="bg-gray-100 text-black px-6 py-4 border-b border-gray-300">
                         <div class="text-xs font-semibold tracking-wider uppercase">
-                            TOUR BEGINS: ${gameDate}<br>${localTime} in ${hometown}
+                            TOUR BEGINS: ${tourDate}<br>${localTime} in ${hometown}
                         </div>
                         <div class="text-xs font-medium tracking-wider mt-2 opacity-75">
                             GAME KICKOFF: 24 HOURS LATER
