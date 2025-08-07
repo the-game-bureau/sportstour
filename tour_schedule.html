@@ -768,10 +768,27 @@
             filterGames();
         }
 
+        // Enhanced event handlers with auto-clear functionality
+        function handleTeamSelectChange() {
+            // If a team is selected, clear the search input
+            if (teamSelect.value) {
+                searchInput.value = '';
+            }
+            filterGames();
+        }
+
+        function handleSearchInputChange() {
+            // If user starts typing in search, clear the team dropdown
+            if (searchInput.value) {
+                teamSelect.value = '';
+            }
+            filterGames();
+        }
+
         retryBtn.addEventListener('click', fetchGames);
         clearBtn.addEventListener('click', clearFilters);
-        searchInput.addEventListener('input', filterGames);
-        teamSelect.addEventListener('change', filterGames);
+        searchInput.addEventListener('input', handleSearchInputChange);
+        teamSelect.addEventListener('change', handleTeamSelectChange);
 
         // Tour details toggle functionality
         function toggleTourDetails(gameId) {
