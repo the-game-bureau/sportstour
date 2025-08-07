@@ -38,7 +38,7 @@
                 <!-- Title -->
                 <div class="text-center mb-8">
                     <h1 class="text-4xl font-light text-gray-900 tracking-wide">TOUR SCHEDULE</h1>
-                    <div class="text-sm font-medium text-gray-500 tracking-wider mt-2">Behind Enemy Lines | Walking Tours for Away Team Fans</div>
+                    <div class="text-sm font-medium text-gray-500 tracking-wider mt-2">2025 SEASON</div>
                     <div class="w-16 h-0.5 bg-black mx-auto mt-4"></div>
                 </div>
                 
@@ -113,6 +113,7 @@
         let allTeams = {};
         let filteredGames = [];
 
+        // DOM elements
         const loading = document.getElementById('loading');
         const error = document.getElementById('error');
         const errorMessage = document.getElementById('errorMessage');
@@ -126,6 +127,7 @@
         const clearBtn = document.getElementById('clearBtn');
         const retryBtn = document.getElementById('retryBtn');
 
+        // Fetch teams data
         async function fetchTeams() {
             try {
                 const response = await fetch(TEAMS_XML_URL);
@@ -159,6 +161,7 @@
             }
         }
 
+        // Fetch games data
         async function fetchGames() {
             showLoading();
             
@@ -205,6 +208,7 @@
             }
         }
 
+        // Load sample data if XML fails
         function loadSampleData() {
             console.log('Loading sample data...');
             
@@ -272,6 +276,7 @@
             hideLoading();
         }
 
+        // Populate filter dropdowns
         function populateFilters() {
             const teams = new Set();
             const weeks = new Set();
@@ -299,6 +304,7 @@
             });
         }
 
+        // Filter games
         function filterGames() {
             const searchTerm = searchInput.value.toLowerCase();
             const selectedTeam = teamSelect.value;
@@ -322,10 +328,38 @@
             renderGames();
         }
 
+        // Update game count
         function updateGameCount() {
             gameCount.textContent = `${allGames.length} TOTAL · ${filteredGames.length} SHOWING`;
         }
 
+        // Format date with day of week
+        function formatDateWithDay(dateStr) {
+            if (!dateStr) return 'TBD';
+            try {
+                const cleanDate = dateStr.replace(/\./g, '');
+                const parts = cleanDate.split(',');
+                if (parts.length >= 2) {
+                    const dayOfWeek = parts[0].trim().toUpperCase();
+                    const dateOnly = parts[1].trim();
+                    const dateParts = dateOnly.split(' ');
+                    if (dateParts.length >= 2) {
+                        const monthMap = {
+                            'Sept': 'SEP', 'Dec': 'DEC', 'Nov': 'NOV', 'Oct': 'OCT',
+                            'Jan': 'JAN', 'Feb': 'FEB', 'Mar': 'MAR', 'Apr': 'APR',
+                            'May': 'MAY', 'Jun': 'JUN', 'Jul': 'JUL', 'Aug': 'AUG'
+                        };
+                        const month = monthMap[dateParts[0]] || dateParts[0];
+                        return `${dayOfWeek}, ${month} ${dateParts[1]}`;
+                    }
+                }
+                return formatDate(dateStr);
+            } catch {
+                return formatDate(dateStr);
+            }
+        }
+
+        // Format date
         function formatDate(dateStr) {
             if (!dateStr) return 'TBD';
             try {
@@ -346,6 +380,7 @@
             }
         }
 
+        // Extract local time
         function extractLocalTime(localKickoffStr) {
             if (!localKickoffStr) return 'TBD';
             try {
@@ -356,56 +391,25 @@
             }
         }
 
-        function getDayBefore(dateStr) {
-            if (!dateStr) return 'TBD';
-            try {
-                const cleanDate = dateStr.replace(/\./g, '');
-                const parts = cleanDate.split(',');
-                if (parts.length >= 2) {
-                    const dateOnly = parts[1].trim();
-                    const dateParts = dateOnly.split(' ');
-                    if (dateParts.length >= 3) {
-                        const month = dateParts[0];
-                        const day = parseInt(dateParts[1]);
-                        const year = dateParts[2];
-                        
-                        const monthMap = {
-                            'Sept': 8, 'Dec': 11, 'Nov': 10, 'Oct': 9,
-                            'Jan': 0, 'Feb': 1, 'Mar': 2, 'Apr': 3,
-                            'May': 4, 'Jun': 5, 'Jul': 6, 'Aug': 7
-                        };
-                        
-                        const date = new Date(parseInt(year), monthMap[month], day);
-                        date.setDate(date.getDate() - 1);
-                        
-                        const dayNames = ['SUNDAY', 'MONDAY', 'TUESDAY', 'WEDNESDAY', 'THURSDAY', 'FRIDAY', 'SATURDAY'];
-                        const monthNames = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
-                        
-                        return `${dayNames[date.getDay()]}, ${monthNames[date.getMonth()]} ${date.getDate()}`;
-                    }
-                }
-                return 'TBD';
-            } catch {
-                return 'TBD';
-            }
-        }
-
+        // Get team info
         function getTeamInfo(teamName) {
             return allTeams[teamName] || { name: teamName, logo: '', hometown: '' };
         }
 
+        // Create game card
         function createGameCard(game) {
             const homeTeamInfo = getTeamInfo(game.homeTeam);
             const awayTeamInfo = getTeamInfo(game.awayTeam);
             
             return `
                 <div class="bg-white swiss-shadow swiss-shadow-hover border border-gray-100">
-                    <div class="bg-black text-white px-6 py-3 text-center">
-                        <div class="text-xs font-medium tracking-wider">
-                            TOUR START: ${getDayBefore(game.date)} ${extractLocalTime(game.localKickoff) || 'TBD'} LOCAL TIME
-                        </div>
-                        <div class="text-xs font-medium tracking-wider mt-1">
-                            GAME KICKOFF: 24 HOURS LATER
+                    <div class="bg-black text-white px-6 py-3 flex items-center justify-between">
+                        <span class="text-xs font-medium tracking-wider">${formatDateWithDay(game.date)}</span>
+                        <div class="text-right">
+                            <div class="text-xs font-medium tracking-wider">${formatDate(game.date)}</div>
+                            <div class="text-xs opacity-75 mt-1">
+                                ${game.etKickoff || 'TBD'} ET · ${extractLocalTime(game.localKickoff) || 'TBD'} LOCAL
+                            </div>
                         </div>
                     </div>
                     
@@ -468,6 +472,7 @@
             `;
         }
 
+        // Render games
         function renderGames() {
             if (filteredGames.length === 0) {
                 gamesContainer.classList.add('hidden');
@@ -488,6 +493,7 @@
             });
         }
 
+        // Show/hide functions
         function showLoading() {
             loading.classList.remove('hidden');
             error.classList.add('hidden');
@@ -507,6 +513,7 @@
             errorMessage.textContent = message;
         }
 
+        // Clear filters
         function clearFilters() {
             searchInput.value = '';
             teamSelect.value = '';
@@ -514,6 +521,7 @@
             filterGames();
         }
 
+        // Event listeners
         refreshBtn.addEventListener('click', fetchGames);
         retryBtn.addEventListener('click', fetchGames);
         clearBtn.addEventListener('click', clearFilters);
@@ -521,6 +529,7 @@
         teamSelect.addEventListener('change', filterGames);
         weekSelect.addEventListener('change', filterGames);
 
+        // Initialize
         fetchGames();
     </script>
 </body>
