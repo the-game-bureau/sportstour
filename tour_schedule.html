@@ -84,7 +84,7 @@
 
                 <!-- Filters -->
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                    <input id="searchInput" type="text" placeholder="Search teams (by City or Nickname)" class="px-4 py-3 border-0 bg-gray-50 text-sm font-medium focus:bg-white focus:ring-1 focus:ring-black transition-all">
+                    <input id="searchInput" type="text" placeholder="Search Teams" class="px-4 py-3 border-0 bg-gray-50 text-sm font-medium focus:bg-white focus:ring-1 focus:ring-black transition-all">
                     
                     <select id="teamSelect" class="px-4 py-3 border-0 bg-gray-50 text-sm font-medium focus:bg-white focus:ring-1 focus:ring-black transition-all">
                         <option value="">All Teams</option>
@@ -671,8 +671,49 @@
                         </div>
                     </div>
                     
+                    <!-- Expandable Tour Details Section -->
+                    <div class="tour-details-section hidden bg-gray-50 border-t border-gray-200" id="tour-details-${game.id}">
+                        <div class="px-8 py-6">
+                            <!-- Header with collapse button -->
+                            <div class="flex items-center justify-between mb-6">
+                                <div class="text-sm font-bold tracking-wider uppercase text-gray-900">
+                                    TOUR DETAILS
+                                </div>
+                                <button class="collapse-btn w-8 h-8 flex items-center justify-center text-gray-600 hover:text-gray-900 transition-colors" onclick="toggleTourDetails('${game.id}')">
+                                    <svg class="w-4 h-4 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                            
+                            <!-- Content -->
+                            <div class="space-y-6 text-sm text-gray-700 leading-relaxed">
+                                <div>
+                                    <div class="font-medium text-gray-900 mb-2 tracking-wide uppercase text-xs">Experience Overview</div>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+                                </div>
+                                
+                                <div>
+                                    <div class="font-medium text-gray-900 mb-2 tracking-wide uppercase text-xs">What's Included</div>
+                                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim.</p>
+                                </div>
+                                
+                                <div>
+                                    <div class="font-medium text-gray-900 mb-2 tracking-wide uppercase text-xs">Meeting Details</div>
+                                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto.</p>
+                                </div>
+                                
+                                <div class="pt-4 border-t border-gray-200">
+                                    <button class="bg-black text-white px-8 py-3 text-xs font-bold tracking-wider uppercase hover:bg-gray-800 transition-colors">
+                                        RESERVE YOUR SPOT
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
                     <div class="border-t border-gray-200 flex">
-                        <button class="flex-1 bg-gray-100 hover:bg-gray-200 text-gray-700 py-4 px-6 text-sm font-semibold tracking-wider uppercase transition-colors border-r border-gray-200">
+                        <button class="flex-1 bg-gray-100 hover:bg-gray-200 text-gray-700 py-4 px-6 text-sm font-semibold tracking-wider uppercase transition-colors border-r border-gray-200" onclick="toggleTourDetails('${game.id}')">
                             BUY TOUR TICKETS
                         </button>
                         <a href="${seatgeekUrl}" target="_blank" class="flex-1 text-white py-4 px-6 text-sm font-semibold tracking-wider uppercase transition-colors text-center no-underline hover:opacity-90" style="background-color: ${getTeamSecondaryColor(game.awayTeam)};">
@@ -731,6 +772,33 @@
         clearBtn.addEventListener('click', clearFilters);
         searchInput.addEventListener('input', filterGames);
         teamSelect.addEventListener('change', filterGames);
+
+        // Tour details toggle functionality
+        function toggleTourDetails(gameId) {
+            const detailsSection = document.getElementById(`tour-details-${gameId}`);
+            const isHidden = detailsSection.classList.contains('hidden');
+            
+            if (isHidden) {
+                detailsSection.classList.remove('hidden');
+                // Add smooth slide down animation
+                detailsSection.style.maxHeight = '0px';
+                detailsSection.style.overflow = 'hidden';
+                setTimeout(() => {
+                    detailsSection.style.transition = 'max-height 0.3s ease-out';
+                    detailsSection.style.maxHeight = detailsSection.scrollHeight + 'px';
+                }, 10);
+            } else {
+                // Smooth slide up animation
+                detailsSection.style.transition = 'max-height 0.3s ease-out';
+                detailsSection.style.maxHeight = '0px';
+                setTimeout(() => {
+                    detailsSection.classList.add('hidden');
+                    detailsSection.style.maxHeight = '';
+                    detailsSection.style.transition = '';
+                    detailsSection.style.overflow = '';
+                }, 300);
+            }
+        }
 
         fetchGames();
     </script>
