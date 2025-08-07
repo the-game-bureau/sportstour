@@ -1,5 +1,41 @@
-Behind Enemy Lines
-The Northwestern Wildcats takeover New Orleans
+Behind Enemy Lines: The Wildcats Take Over New Orleans
+A Look at the Connections Between Northwestern, Chicago, and the Crescent City
+
+Welcome to New Orleans! This isn't just a football game; it's a reunion 68 years in the making. When the Northwestern Wildcats and the Tulane Green Wave face off, they rekindle a rivalry that dates back to 1925. But this matchup is about more than just football. It's an opportunity to explore the rich and often surprising ties that connect the shores of Lake Michigan to the Mississippi Delta.
+
+From legendary athletes and coaches to shared cultural traditions in music and food, Chicago and New Orleans have long been intertwined. This script highlights some of the most compelling connections to get you ready for game day.
+
+The Football Matchup
+The history between these two teams is long but sparse. The last time the Wildcats and Green Wave played was in 1956, and the series currently stands at 3-1 in Tulane's favor.
+
+This game, however, offers a unique storyline. It could feature a familiar face under center for Tulane: quarterback Brendan Sullivan, who transferred from Northwestern. His journey adds a personal layer to a rivalry that's been dormant for decades, representing the modern mobility of college sports.
+
+The Chicago Connection to the Big Easy
+The influence of Chicago, where Northwestern University is deeply rooted, is all over New Orleans.
+
+The Bears' Super Bowl Legacy: New Orleans is hallowed ground for Chicago football fans. It’s where the legendary 1985 Chicago Bears, led by coach Mike Ditka and running back Walter Payton, won Super Bowl XX. The Bears' dynasty is forever tied to this city, and with the Bears and Saints playing an upcoming game, the connection remains strong.
+
+A Culinary Exchange: Did you know the famous muffuletta sandwich, a New Orleans icon, made its way to Chicago’s Italian communities? It’s a perfect example of the cultural exchange that happened during The Great Migration, which also brought jazz music north.
+
+The Birth of Jazz: The music of New Orleans icon Louis Armstrong was pivotal in shaping Chicago's jazz scene. Armstrong’s music was often played on WGN Radio, the same station that broadcast Cubs games to generations of Chicago sports fans, creating a powerful cultural bridge between the cities.
+
+The People Who Connect Us
+A host of athletes and coaches have crossed paths between these two great cities, forming a human bridge between the programs.
+
+Zach Strief: An All-American offensive tackle for Northwestern, Strief was drafted by the Saints and went on to become a Super Bowl champion in New Orleans.
+
+Austin Carr: A standout wide receiver for the Wildcats, he later played for the Saints and is a prime example of the talent that has traveled between the two cities.
+
+Other Notable Names: The connections run deep, from NFL stars like Matt Forte (Bears legend) and Pierre Thomas (Saints hero) to coaches like Rick Venturi and Sean Payton, who coached the Saints to their own Super Bowl victory in this city.
+
+A Toast to the Game
+This game is a celebration of history, culture, and competition. Whether you’re cheering on the Wildcats in purple and white or the Green Wave in green and blue, you're part of a story that links Lake Michigan to the Mississippi, jazz to fight songs, and deep-dish pizza to jambalaya.
+
+So, let's raise a glass and toast to the good times. To the Wildcats and the Green Wave: may the best team win, and may the ties that bind these two great cities continue to grow stronger.
+
+What connections do you think are most interesting?
+
+-----------------------------------------------------
 
 Northwestern:
 https://en.wikipedia.org/wiki/Northwestern_Wildcats_football
