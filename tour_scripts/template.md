@@ -199,3 +199,42 @@ Commemorative film reel with tour highlights
 "Behind Enemy Lines: Where passionate hatred meets profound respect, legendary venues live forever, and the best stories are written in enemy territory. Because like the movies, the real drama happens when you're furthest from home."
 Enemy Territory. Common Ground. Uncommon Stories.
 Book your tour at thegamebureau.com
+
+
+Tour Experience Details
+What Actually Happens:
+
+"Behind Enemy Lines Walking Tour" - specify duration (2-3 hours?)
+Include specific activities: "Local sports bars crawl," "Stadium district exploration," "Historic rivalry sites"
+Add tour group size limits ("Max 25 fans per group")
+Mention tour guide expertise ("Led by local sports historians")
+
+Practical Tour Info:
+
+Meeting point specifics ("Downtown sports district," "Hotel lobby pickup available")
+What's included: "Welcome drink," "Team gear," "Photo opportunities"
+Difficulty level: "2-mile walk," "Comfortable shoes recommended"
+Weather contingency: "Rain or shine," "Indoor backup activities"
+
+Local Context:
+
+Rivalry intensity: "Historic matchup since 1967"
+Local fan culture: "Tailgate traditions," "Victory celebrations"
+City highlights: "Best pre-game spots," "Post-game hangouts"
+Safety/respect guidelines: "Friendly rivalry code of conduct"
+
+Value Proposition:
+
+"Experience gameday like a local fan"
+"Insider access to legendary sports venues"
+"Connect with fellow away team supporters"
+"Create memories beyond the final score"
+
+Social Elements:
+
+"Meet other [Team] fans traveling to [City]"
+Group photo opportunities at iconic locations
+Optional post-tour meetups
+Shared transportation to stadium options
+
+Would you like me to focus on restructuring the information hierarchy first, or dive deeper into the tour experience storytelling?

@@ -20,6 +20,40 @@
             to { transform: rotate(360deg); }
         }
         
+        .goalpost-spinner {
+            width: 40px;
+            height: 40px;
+            position: relative;
+            animation: bounce 1.5s ease-in-out infinite;
+        }
+        
+        .goalpost-spinner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 3px;
+            height: 30px;
+            background-color: #374151;
+        }
+        
+        .goalpost-spinner::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 24px;
+            height: 3px;
+            background-color: #374151;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+        
         .swiss-shadow {
             box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
         }
@@ -38,28 +72,22 @@
                 <!-- Title -->
                 <div class="text-center mb-8">
                     <h1 class="text-4xl font-light text-gray-900 tracking-wide">TOUR SCHEDULE</h1>
-                    <div class="text-sm font-medium text-gray-500 tracking-wider mt-2">2025 SEASON</div>
+                    <div class="text-sm font-medium text-gray-500 tracking-wider mt-2">Behind Enemy Lines | Walking Tours for Away Team Fans</div>
+                    <span id="gameCount" class="block text-sm text-gray-600 font-medium mt-3">Loading...</span>
                     <div class="w-16 h-0.5 bg-black mx-auto mt-4"></div>
                 </div>
                 
                 <!-- Controls -->
-                <div class="flex items-center justify-between mb-6">
-                    <button id="refreshBtn" class="bg-black text-white px-6 py-2 text-sm font-medium tracking-wide hover:bg-gray-800 transition-colors">
-                        REFRESH
-                    </button>
-                    <span id="gameCount" class="text-sm text-gray-600 font-medium">Loading...</span>
+                <div class="mb-6">
+                    <!-- Removed refresh button and moved game count above -->
                 </div>
 
                 <!-- Filters -->
-                <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
-                    <input id="searchInput" type="text" placeholder="Search teams" class="px-4 py-3 border-0 bg-gray-50 text-sm font-medium focus:bg-white focus:ring-1 focus:ring-black transition-all">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <input id="searchInput" type="text" placeholder="Search teams (e.g. 'Kansas City Chiefs' or 'Chiefs')" class="px-4 py-3 border-0 bg-gray-50 text-sm font-medium focus:bg-white focus:ring-1 focus:ring-black transition-all">
                     
                     <select id="teamSelect" class="px-4 py-3 border-0 bg-gray-50 text-sm font-medium focus:bg-white focus:ring-1 focus:ring-black transition-all">
                         <option value="">All Teams</option>
-                    </select>
-                    
-                    <select id="weekSelect" class="px-4 py-3 border-0 bg-gray-50 text-sm font-medium focus:bg-white focus:ring-1 focus:ring-black transition-all">
-                        <option value="">All Weeks</option>
                     </select>
                     
                     <button id="clearBtn" class="bg-gray-200 text-gray-700 px-6 py-3 text-sm font-medium tracking-wide hover:bg-gray-300 transition-colors">
@@ -72,7 +100,6 @@
         <!-- Loading -->
         <div id="loading" class="flex items-center justify-center h-64">
             <div class="text-center">
-                <div class="w-8 h-8 border-2 border-black border-t-transparent loading-spinner mx-auto mb-4"></div>
                 <p class="text-sm font-medium text-gray-600 tracking-wide">LOADING SCHEDULE</p>
             </div>
         </div>
@@ -87,7 +114,7 @@
         </div>
 
         <!-- Games Container -->
-        <div id="gamesContainer" class="hidden space-y-8"></div>
+        <div id="gamesContainer" class="hidden space-y-8 max-w-6xl mx-auto"></div>
 
         <!-- No Results -->
         <div id="noResults" class="hidden bg-white swiss-shadow p-12 text-center">
@@ -98,9 +125,7 @@
         <div class="mt-16 text-center text-gray-400">
             <div class="w-16 h-0.5 bg-gray-200 mx-auto mb-4"></div>
             <p class="text-xs font-medium tracking-wider uppercase">
-                Data Sources: 
-                <a href="https://raw.githubusercontent.com/KevinKolb/horsesmouthsportsdata/refs/heads/main/games/games.xml" class="text-black hover:underline">Games</a> · 
-                <a href="https://raw.githubusercontent.com/KevinKolb/horsesmouthsportsdata/refs/heads/main/teams/teams.xml" class="text-black hover:underline">Teams</a>
+                Behind Enemy Lines
             </p>
         </div>
     </div>
@@ -113,7 +138,6 @@
         let allTeams = {};
         let filteredGames = [];
 
-        // DOM elements
         const loading = document.getElementById('loading');
         const error = document.getElementById('error');
         const errorMessage = document.getElementById('errorMessage');
@@ -122,36 +146,51 @@
         const gameCount = document.getElementById('gameCount');
         const searchInput = document.getElementById('searchInput');
         const teamSelect = document.getElementById('teamSelect');
-        const weekSelect = document.getElementById('weekSelect');
-        const refreshBtn = document.getElementById('refreshBtn');
         const clearBtn = document.getElementById('clearBtn');
         const retryBtn = document.getElementById('retryBtn');
 
-        // Fetch teams data
         async function fetchTeams() {
             try {
+                console.log('fetchTeams called, fetching from:', TEAMS_XML_URL);
                 const response = await fetch(TEAMS_XML_URL);
                 if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
                 
                 const xmlText = await response.text();
+                console.log('Teams XML received, length:', xmlText.length);
+                
                 const parser = new DOMParser();
                 const xmlDoc = parser.parseFromString(xmlText, 'text/xml');
                 
-                if (xmlDoc.querySelector('parsererror')) throw new Error('Invalid teams XML format');
+                if (xmlDoc.querySelector('parsererror')) {
+                    console.error('XML parsing error');
+                    throw new Error('Invalid teams XML format');
+                }
                 
                 const teamElements = xmlDoc.querySelectorAll('team');
+                console.log('Found team elements:', teamElements.length);
                 const teamData = {};
                 
-                teamElements.forEach(team => {
+                teamElements.forEach((team, index) => {
+                    // Use the correct selector for team name
                     const name = team.querySelector('basic_info name')?.textContent || '';
+                    const logo = team.querySelector('visual_identity logo_url')?.textContent || '';
+                    const hometown = team.querySelector('location hometown')?.textContent || '';
+                    
+                    if (index < 3) {
+                        console.log(`Team ${index + 1}: name="${name}", hometown="${hometown}"`);
+                    }
+                    
                     if (name) {
                         teamData[name] = {
                             name: name,
-                            logo: team.querySelector('visual_identity logo_url')?.textContent || '',
-                            hometown: team.querySelector('location hometown')?.textContent || ''
+                            logo: logo,
+                            hometown: hometown
                         };
                     }
                 });
+                
+                console.log('Total teams processed:', Object.keys(teamData).length);
+                console.log('First few team names:', Object.keys(teamData).slice(0, 5));
                 
                 allTeams = teamData;
                 return teamData;
@@ -161,7 +200,6 @@
             }
         }
 
-        // Fetch games data
         async function fetchGames() {
             showLoading();
             
@@ -208,7 +246,6 @@
             }
         }
 
-        // Load sample data if XML fails
         function loadSampleData() {
             console.log('Loading sample data...');
             
@@ -236,17 +273,6 @@
             };
 
             allGames = [
-                {
-                    id: 'sample-001',
-                    week: '1',
-                    date: 'Friday, Sept. 5, 2025',
-                    homeTeam: 'Los Angeles Chargers',
-                    awayTeam: 'Kansas City Chiefs',
-                    etKickoff: '8:00p',
-                    localKickoff: '9:00p (BRT)',
-                    network: 'YouTube',
-                    locationNote: 'Sao Paulo'
-                },
                 {
                     id: 'sample-002',
                     week: '1', 
@@ -276,90 +302,141 @@
             hideLoading();
         }
 
-        // Populate filter dropdowns
         function populateFilters() {
             const teams = new Set();
-            const weeks = new Set();
             
             allGames.forEach(game => {
-                if (game.homeTeam) teams.add(game.homeTeam);
-                if (game.awayTeam) teams.add(game.awayTeam);
-                if (game.week) weeks.add(game.week);
+                if (game.awayTeam) {
+                    const awayTeamInfo = getTeamInfo(game.awayTeam);
+                    const cityName = awayTeamInfo.hometown ? awayTeamInfo.hometown.split(',')[0] : game.awayTeam;
+                    teams.add(cityName);
+                }
             });
             
             teamSelect.innerHTML = '<option value="">All Teams</option>';
-            Array.from(teams).sort().forEach(team => {
+            Array.from(teams).sort().forEach(cityName => {
                 const option = document.createElement('option');
-                option.value = team;
-                option.textContent = team;
+                option.value = cityName;
+                option.textContent = cityName;
                 teamSelect.appendChild(option);
-            });
-            
-            weekSelect.innerHTML = '<option value="">All Weeks</option>';
-            Array.from(weeks).sort((a, b) => parseInt(a) - parseInt(b)).forEach(week => {
-                const option = document.createElement('option');
-                option.value = week;
-                option.textContent = `Week ${week}`;
-                weekSelect.appendChild(option);
             });
         }
 
-        // Filter games
         function filterGames() {
             const searchTerm = searchInput.value.toLowerCase();
-            const selectedTeam = teamSelect.value;
-            const selectedWeek = weekSelect.value;
+            const selectedCity = teamSelect.value;
             
             filteredGames = allGames.filter(game => {
+                // Filter out games with location notes
+                if (game.locationNote && game.locationNote.trim() !== '') {
+                    return false;
+                }
+                
+                const awayTeamInfo = getTeamInfo(game.awayTeam);
+                const cityName = awayTeamInfo.hometown ? awayTeamInfo.hometown.split(',')[0] : game.awayTeam;
+                const fullTeamName = game.awayTeam.toLowerCase();
+                
+                // Enhanced search: check full team name, city name, and team nickname
                 const matchesSearch = !searchTerm || 
-                    game.homeTeam?.toLowerCase().includes(searchTerm) ||
-                    game.awayTeam?.toLowerCase().includes(searchTerm);
+                    fullTeamName.includes(searchTerm) ||
+                    cityName.toLowerCase().includes(searchTerm) ||
+                    getTeamNickname(game.awayTeam).toLowerCase().includes(searchTerm);
                 
-                const matchesTeam = !selectedTeam || 
-                    game.homeTeam === selectedTeam || 
-                    game.awayTeam === selectedTeam;
+                const matchesTeam = !selectedCity || 
+                    cityName === selectedCity;
                 
-                const matchesWeek = !selectedWeek || game.week === selectedWeek;
+                return matchesSearch && matchesTeam;
+            });
+            
+            // Sort by week first, then by date and time
+            filteredGames.sort((a, b) => {
+                // First sort by week number
+                const weekA = parseInt(a.week) || 0;
+                const weekB = parseInt(b.week) || 0;
                 
-                return matchesSearch && matchesTeam && matchesWeek;
+                if (weekA !== weekB) {
+                    return weekA - weekB;
+                }
+                
+                // Then sort by date
+                const dateA = parseDateForSorting(a.date);
+                const dateB = parseDateForSorting(b.date);
+                
+                if (dateA.getTime() !== dateB.getTime()) {
+                    return dateA - dateB;
+                }
+                
+                // Finally sort by time
+                const timeA = parseTimeForSorting(a.etKickoff);
+                const timeB = parseTimeForSorting(b.etKickoff);
+                return timeA - timeB;
             });
             
             updateGameCount();
             renderGames();
         }
 
-        // Update game count
-        function updateGameCount() {
-            gameCount.textContent = `${allGames.length} TOTAL · ${filteredGames.length} SHOWING`;
+        function getTeamNickname(teamName) {
+            // Extract the nickname (last word) from team name
+            if (!teamName) return '';
+            const parts = teamName.split(' ');
+            return parts[parts.length - 1] || '';
         }
 
-        // Format date with day of week
-        function formatDateWithDay(dateStr) {
-            if (!dateStr) return 'TBD';
+        function parseDateForSorting(dateStr) {
+            if (!dateStr) return new Date(0);
             try {
+                // Parse "Friday, Sept. 5, 2025" format
                 const cleanDate = dateStr.replace(/\./g, '');
                 const parts = cleanDate.split(',');
                 if (parts.length >= 2) {
-                    const dayOfWeek = parts[0].trim().toUpperCase();
-                    const dateOnly = parts[1].trim();
+                    const dateOnly = parts[1].trim(); // "Sept 5 2025"
                     const dateParts = dateOnly.split(' ');
-                    if (dateParts.length >= 2) {
+                    if (dateParts.length >= 3) {
+                        const month = dateParts[0];
+                        const day = parseInt(dateParts[1]);
+                        const year = parseInt(dateParts[2]);
+                        
                         const monthMap = {
-                            'Sept': 'SEP', 'Dec': 'DEC', 'Nov': 'NOV', 'Oct': 'OCT',
-                            'Jan': 'JAN', 'Feb': 'FEB', 'Mar': 'MAR', 'Apr': 'APR',
-                            'May': 'MAY', 'Jun': 'JUN', 'Jul': 'JUL', 'Aug': 'AUG'
+                            'Sept': 8, 'Dec': 11, 'Nov': 10, 'Oct': 9,
+                            'Jan': 0, 'Feb': 1, 'Mar': 2, 'Apr': 3,
+                            'May': 4, 'Jun': 5, 'Jul': 6, 'Aug': 7
                         };
-                        const month = monthMap[dateParts[0]] || dateParts[0];
-                        return `${dayOfWeek}, ${month} ${dateParts[1]}`;
+                        
+                        return new Date(year, monthMap[month] || 0, day);
                     }
                 }
-                return formatDate(dateStr);
+                return new Date(0);
             } catch {
-                return formatDate(dateStr);
+                return new Date(0);
             }
         }
 
-        // Format date
+        function parseTimeForSorting(timeStr) {
+            if (!timeStr) return 0;
+            try {
+                // Parse "8:00p" format
+                const match = timeStr.match(/(\d{1,2}):(\d{2})([ap])/);
+                if (match) {
+                    let hours = parseInt(match[1]);
+                    const minutes = parseInt(match[2]);
+                    const period = match[3];
+                    
+                    if (period === 'p' && hours !== 12) hours += 12;
+                    if (period === 'a' && hours === 12) hours = 0;
+                    
+                    return hours * 60 + minutes; // Convert to minutes for comparison
+                }
+                return 0;
+            } catch {
+                return 0;
+            }
+        }
+
+        function updateGameCount() {
+            gameCount.textContent = `${allGames.length} TOURS · ${filteredGames.length} SHOWING`;
+        }
+
         function formatDate(dateStr) {
             if (!dateStr) return 'TBD';
             try {
@@ -380,99 +457,190 @@
             }
         }
 
-        // Extract local time
         function extractLocalTime(localKickoffStr) {
             if (!localKickoffStr) return 'TBD';
             try {
-                const timePart = localKickoffStr.split('(')[0].trim();
-                return timePart;
+                // Keep the full time including timezone, e.g. "7:15p (CT)"
+                return localKickoffStr || 'TBD';
             } catch {
-                return localKickoffStr;
+                return 'TBD';
             }
         }
 
-        // Get team info
+        function getDayBefore(dateStr) {
+            if (!dateStr) return 'TBD';
+            try {
+                const cleanDate = dateStr.replace(/\./g, '');
+                const parts = cleanDate.split(',');
+                if (parts.length >= 2) {
+                    const dateOnly = parts[1].trim();
+                    const dateParts = dateOnly.split(' ');
+                    if (dateParts.length >= 3) {
+                        const month = dateParts[0];
+                        const day = parseInt(dateParts[1]);
+                        const year = dateParts[2];
+                        
+                        const monthMap = {
+                            'Sept': 8, 'Dec': 11, 'Nov': 10, 'Oct': 9,
+                            'Jan': 0, 'Feb': 1, 'Mar': 2, 'Apr': 3,
+                            'May': 4, 'Jun': 5, 'Jul': 6, 'Aug': 7
+                        };
+                        
+                        const date = new Date(parseInt(year), monthMap[month], day);
+                        date.setDate(date.getDate() - 1);
+                        
+                        const dayNames = ['SUNDAY', 'MONDAY', 'TUESDAY', 'WEDNESDAY', 'THURSDAY', 'FRIDAY', 'SATURDAY'];
+                        const monthNames = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
+                        
+                        return `${dayNames[date.getDay()]}, ${monthNames[date.getMonth()]} ${date.getDate()}`;
+                    }
+                }
+                return 'TBD';
+            } catch {
+                return 'TBD';
+            }
+        }
+
         function getTeamInfo(teamName) {
             return allTeams[teamName] || { name: teamName, logo: '', hometown: '' };
         }
 
-        // Create game card
+        function getTeamColor(teamName) {
+            const teamColors = {
+                'Arizona Cardinals': '#97233F',
+                'Atlanta Falcons': '#A71930',
+                'Baltimore Ravens': '#241773',
+                'Buffalo Bills': '#00338D',
+                'Carolina Panthers': '#0085CA',
+                'Chicago Bears': '#0B162A',
+                'Cincinnati Bengals': '#FB4F14',
+                'Cleveland Browns': '#311D00',
+                'Dallas Cowboys': '#003594',
+                'Denver Broncos': '#FB4F14',
+                'Detroit Lions': '#0076B6',
+                'Green Bay Packers': '#203731',
+                'Houston Texans': '#03202F',
+                'Indianapolis Colts': '#002C5F',
+                'Jacksonville Jaguars': '#006778',
+                'Kansas City Chiefs': '#E31837',
+                'Las Vegas Raiders': '#000000',
+                'Los Angeles Chargers': '#0080C6',
+                'Los Angeles Rams': '#003594',
+                'Miami Dolphins': '#008E97',
+                'Minnesota Vikings': '#4F2683',
+                'New England Patriots': '#002244',
+                'New Orleans Saints': '#D3BC8D',
+                'New York Giants': '#0B2265',
+                'New York Jets': '#125740',
+                'Philadelphia Eagles': '#004C54',
+                'Pittsburgh Steelers': '#FFB612',
+                'San Francisco 49ers': '#AA0000',
+                'Seattle Seahawks': '#002244',
+                'Tampa Bay Buccaneers': '#D50A0A',
+                'Tennessee Titans': '#0C2340',
+                'Washington Commanders': '#5A1414'
+            };
+            
+            return teamColors[teamName] || '#374151'; // Default gray if team not found
+        }
+
+        function getTeamSecondaryColor(teamName) {
+            const teamSecondaryColors = {
+                'Arizona Cardinals': '#000000',
+                'Atlanta Falcons': '#000000',
+                'Baltimore Ravens': '#9E7C0C',
+                'Buffalo Bills': '#C60C30',
+                'Carolina Panthers': '#101820',
+                'Chicago Bears': '#C83803',
+                'Cincinnati Bengals': '#000000',
+                'Cleveland Browns': '#FF3C00',
+                'Dallas Cowboys': '#869397',
+                'Denver Broncos': '#002244',
+                'Detroit Lions': '#B0B7BC',
+                'Green Bay Packers': '#FFB612',
+                'Houston Texans': '#A71930',
+                'Indianapolis Colts': '#A2AAAD',
+                'Jacksonville Jaguars': '#D7A22A',
+                'Kansas City Chiefs': '#FFB81C',
+                'Las Vegas Raiders': '#A5ACAF',
+                'Los Angeles Chargers': '#FFC20E',
+                'Los Angeles Rams': '#FFA300',
+                'Miami Dolphins': '#FC4C02',
+                'Minnesota Vikings': '#FFC62F',
+                'New England Patriots': '#C60C30',
+                'New Orleans Saints': '#101820',
+                'New York Giants': '#A71930',
+                'New York Jets': '#000000',
+                'Philadelphia Eagles': '#A5ACAF',
+                'Pittsburgh Steelers': '#101820',
+                'San Francisco 49ers': '#B3995D',
+                'Seattle Seahawks': '#69BE28',
+                'Tampa Bay Buccaneers': '#FF7900',
+                'Tennessee Titans': '#4B92DB',
+                'Washington Commanders': '#FFB612'
+            };
+            
+            return teamSecondaryColors[teamName] || '#6B7280'; // Default gray if team not found
+        }
+
         function createGameCard(game) {
             const homeTeamInfo = getTeamInfo(game.homeTeam);
             const awayTeamInfo = getTeamInfo(game.awayTeam);
             
+            // Convert hometown to URL format for SeatGeek
+            const cityForUrl = homeTeamInfo.hometown ? 
+                homeTeamInfo.hometown.split(',')[0].trim().toLowerCase().replace(/\s+/g, '-') : 
+                'new-york';
+            const seatgeekUrl = `https://seatgeek.com/cities/${cityForUrl}`;
+            
+            // Clean up the date - remove extra text after " - "
+            let gameDate = game.date || 'TBD';
+            if (gameDate.includes(' - ')) {
+                gameDate = gameDate.split(' - ')[0];
+            }
+            
+            const localTime = extractLocalTime(game.localKickoff);
+            const hometown = homeTeamInfo.hometown || 'TBD';
+            
             return `
-                <div class="bg-white swiss-shadow swiss-shadow-hover border border-gray-100">
-                    <div class="bg-black text-white px-6 py-3 flex items-center justify-between">
-                        <span class="text-xs font-medium tracking-wider">${formatDateWithDay(game.date)}</span>
-                        <div class="text-right">
-                            <div class="text-xs font-medium tracking-wider">${formatDate(game.date)}</div>
-                            <div class="text-xs opacity-75 mt-1">
-                                ${game.etKickoff || 'TBD'} ET · ${extractLocalTime(game.localKickoff) || 'TBD'} LOCAL
+                <div class="bg-white rounded-lg shadow-lg border border-gray-200 overflow-hidden">
+                    <div class="bg-gray-100 text-black px-6 py-4 border-b border-gray-300">
+                        <div class="text-xs font-semibold tracking-wider uppercase">
+                            TOUR BEGINS: ${gameDate}<br>${localTime} in ${hometown}
+                        </div>
+                        <div class="text-xs font-medium tracking-wider mt-2 opacity-75">
+                            GAME KICKOFF: 24 HOURS LATER
+                        </div>
+                    </div>
+                    
+                    <div class="p-8" style="background: linear-gradient(135deg, ${getTeamColor(game.awayTeam)}, ${getTeamColor(game.awayTeam)}dd); border-bottom: 3px solid ${getTeamColor(game.awayTeam)};">
+                        <div class="text-center">
+                            <div class="text-white tracking-wide drop-shadow-lg">
+                                <div class="text-4xl font-black">
+                                    ${awayTeamInfo.hometown ? awayTeamInfo.hometown.split(',')[0] : 'TBD'}
+                                </div>
+                                <div class="text-2xl font-bold mt-2">
+                                    TAKES OVER
+                                </div>
+                                <div class="text-2xl font-bold mt-2">
+                                    ${homeTeamInfo.hometown ? homeTeamInfo.hometown.split(',')[0] : 'TBD'}
+                                </div>
                             </div>
                         </div>
                     </div>
                     
-                    <div class="p-8">
-                        <div class="flex items-center justify-between">
-                            
-                            <div class="flex items-center space-x-4 flex-1">
-                                ${awayTeamInfo.logo ? `
-                                    <img src="${awayTeamInfo.logo}" alt="${awayTeamInfo.name}" class="w-10 h-10 object-contain" onerror="this.style.display='none'">
-                                ` : ''}
-                                <div class="text-left">
-                                    <div class="font-medium text-gray-900 text-base tracking-wide">
-                                        ${awayTeamInfo.name || 'TBD'}
-                                    </div>
-                                    ${awayTeamInfo.hometown ? `
-                                        <div class="text-xs text-gray-500 font-medium tracking-wider uppercase">${awayTeamInfo.hometown}</div>
-                                    ` : ''}
-                                </div>
-                            </div>
-
-                            <div class="flex-1 text-center px-6">
-                                <div class="space-y-3">
-                                    <div class="text-xs font-medium text-gray-500 tracking-wider uppercase">
-                                        TAKES OVER
-                                    </div>
-                                    ${game.locationNote ? `
-                                        <div class="text-xs text-gray-400 font-medium tracking-wider uppercase">
-                                            ${game.locationNote}
-                                        </div>
-                                    ` : ''}
-                                </div>
-                            </div>
-
-                            <div class="flex items-center space-x-4 flex-1 justify-end">
-                                <div class="text-right">
-                                    <div class="font-medium text-gray-900 text-base tracking-wide">
-                                        ${homeTeamInfo.name || 'TBD'}
-                                    </div>
-                                    ${homeTeamInfo.hometown ? `
-                                        <div class="text-xs text-gray-500 font-medium tracking-wider uppercase">${homeTeamInfo.hometown}</div>
-                                    ` : ''}
-                                </div>
-                                ${homeTeamInfo.logo ? `
-                                    <img src="${homeTeamInfo.logo}" alt="${homeTeamInfo.name}" class="w-10 h-10 object-contain" onerror="this.style.display='none'">
-                                ` : ''}
-                            </div>
-                            
-                        </div>
-                    </div>
-                    
-                    <div class="border-t border-gray-100 flex">
-                        <button class="flex-1 bg-gray-50 hover:bg-gray-100 text-gray-700 py-4 px-6 text-sm font-medium tracking-wider uppercase transition-colors border-r border-gray-100">
+                    <div class="border-t border-gray-200 flex">
+                        <button class="flex-1 bg-gray-100 hover:bg-gray-200 text-gray-700 py-4 px-6 text-sm font-semibold tracking-wider uppercase transition-colors border-r border-gray-200">
                             BUY TOUR TICKETS
                         </button>
-                        <button class="flex-1 bg-black hover:bg-gray-800 text-white py-4 px-6 text-sm font-medium tracking-wider uppercase transition-colors">
-                            BUY GAME TICKETS
-                        </button>
+                        <a href="${seatgeekUrl}" target="_blank" class="flex-1 text-white py-4 px-6 text-sm font-semibold tracking-wider uppercase transition-colors text-center no-underline hover:opacity-90" style="background-color: ${getTeamSecondaryColor(game.awayTeam)};">
+                            GAME TICKETS AND MORE
+                        </a>
                     </div>
                 </div>
             `;
         }
 
-        // Render games
         function renderGames() {
             if (filteredGames.length === 0) {
                 gamesContainer.classList.add('hidden');
@@ -487,13 +655,11 @@
             
             filteredGames.forEach(game => {
                 const gameCard = document.createElement('div');
-                gameCard.className = 'max-w-2xl mx-auto';
                 gameCard.innerHTML = createGameCard(game);
                 gamesContainer.appendChild(gameCard);
             });
         }
 
-        // Show/hide functions
         function showLoading() {
             loading.classList.remove('hidden');
             error.classList.add('hidden');
@@ -513,23 +679,17 @@
             errorMessage.textContent = message;
         }
 
-        // Clear filters
         function clearFilters() {
             searchInput.value = '';
             teamSelect.value = '';
-            weekSelect.value = '';
             filterGames();
         }
 
-        // Event listeners
-        refreshBtn.addEventListener('click', fetchGames);
         retryBtn.addEventListener('click', fetchGames);
         clearBtn.addEventListener('click', clearFilters);
         searchInput.addEventListener('input', filterGames);
         teamSelect.addEventListener('change', filterGames);
-        weekSelect.addEventListener('change', filterGames);
 
-        // Initialize
         fetchGames();
     </script>
 </body>
