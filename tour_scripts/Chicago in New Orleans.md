@@ -50,18 +50,18 @@ This game:
 - Brendan Sullivan QB
 
 People Ties:
-- Rick Venturi
-- Austin Carr
-- Zach Strief
-- Matt Forte
-- Sean Payton
-- Pierre Thomas
-- Louis Armstrong
+- Rick Venturi - Saints interim coach
+- Austin Carr - Saints receiver
+- Zach Strief - Saints Offensive lineman
+- Matt Forte - Tulane Running Back
+- Sean Payton - Bears Strike QB and Saints head coach
+- Pierre Thomas - Saints legend, Chicago native?
+- Louis Armstrong - Born in NEw Orleans, lived in Chicago
 - Pope https://hnoc.org/publishing/first-draft/from-the-french-quarter-to-the-vatican
 - Patrick Durkin https://tulanegreenwave.com/sports/football/roster/patrick-durkin/16192
-- Mike Ditka
+- Mike Ditka - Steak house in New Orleans, Chicago legend
 - Walter Payton all time rushing yardage against the Saints https://www.facebook.com/watch/?v=396093612059878 
-- Jay and Joel Hilgenberg
+- Jay and Joel Hilgenberg - Saints and Bears players, brothers
 - Common Players
 
 
@@ -299,3 +299,240 @@ Whether you're wearing Northwestern Purple or Tulane Green, you're part of a sto
 ---
 
 *This tour celebrates the rich connections between Northwestern University, Chicago, and New Orleans. It's a reminder that American culture is built on these kinds of connections - people, places, food, music, and sports creating bonds that transcend geography and time.*
+
+
+# Behind Enemy Lines: Northwestern Takes New Orleans
+## A Game Day Eve Walking Tour for Wildcats in the Big Easy
+*"Enemy Territory. Common Ground. Uncommon Stories."*
+
+---
+
+## **TOUR OVERVIEW**
+- **Duration:** 3 hours (7 PM - 10 PM)
+- **Distance:** 2.5 miles through the French Quarter & Downtown
+- **Timing:** Exactly 24 hours before kickoff
+- **Group Size:** 15-25 Wildcats fans
+- **Meeting Point:** Jackson Square (near St. Louis Cathedral)
+- **Ending Point:** Pat O'Brien's for the Hurricane Toast
+- **Booking:** thegamebureau.com | missioncontrol@thegamebureau.com
+
+---
+
+## **OPENING RALLY POINT: The 24-Hour Truce**
+*Jackson Square - 7:00 PM*
+
+### **The Mission Briefing**
+
+"Welcome to New Orleans, Northwestern fans! I'm your guide, and like Owen Wilson in Behind Enemy Lines, you've just parachuted into hostile territory. But unlike that movie, I'm here to help you survive AND thrive in the Big Easy. 
+
+While tomorrow we'll be mortal enemies for about four hours when the Wildcats face the Green Wave, right now I'm calling an official 24-hour truce. Consider me your diplomatic ambassador – I'll show you why New Orleans is obviously superior to Chicago... I mean, different from Chicago. 
+
+This isn't just any game – it's a reunion 68 years in the making! The last time these teams met was 1956, when Eisenhower was president and your grandparents were probably listening to the game on the radio. Tonight, we're going to discover the shocking truth: Chicago and New Orleans are more connected than a jazz trumpet to Louis Armstrong's lips.
+
+Your mission, should you choose to accept it, is to survive 24 hours in enemy territory while discovering that the real enemy might just become your favorite road trip. This tour will self-destruct... well, never. But your sobriety might by the end of the night!"
+
+---
+
+## **STOP 1: The Historical Rivalry Point - "The Genesis"**
+*St. Louis Cathedral Steps - 7:15 PM*
+
+### **The Series History Showdown**
+
+"Welcome to where it all began – not the cathedral, though that's been here since 1727, which is about 150 years before Northwestern even existed. No, this is where we establish dominance. See, Tulane has been playing football since 1893. Northwestern? 1882. So you've got us by 11 years, which explains why the series record is 3-1 in OUR favor. 
+
+The last time you played here was 1956. Eisenhower was president, Elvis was scandalizing parents, and your team left with another L. Fun fact: The old Tulane Stadium, where your grandfathers got their hearts broken, used to be right where the Superdome is now. That's right – we tore down your house of horrors and built an even BIGGER house of horrors. 
+
+Like Brad Pitt in Moneyball said, 'It's about getting on base.' Well, you haven't even gotten to first base with us since the Korean War!"
+
+**Former Venue Ghost Story:** "Tulane Stadium hosted three Super Bowls before we demolished it. The ghosts of Northwestern's 1956 defeat probably still haunt that ground. Some say on quiet nights near the Superdome, you can still hear the echoes of Wildcats crying."
+
+---
+
+## **STOP 2: Congo Square - "Where Jazz Killed Your Polka"**
+*Louis Armstrong Park - 7:30 PM*
+
+### **The Cultural Crossroads**
+
+"This is Congo Square, the birthplace of jazz. You're welcome, Chicago. See, Louis Armstrong left here in 1922 and basically taught your city what real music sounds like. Before that, what did you have? Polka? 
+
+Armstrong's music played on WGN Radio – yes, the same station that broadcasts your eternally disappointing Cubs games. So basically, New Orleans gave Chicago both its best music AND its soundtrack for losing. You're welcome for that cultural upgrade.
+
+The Great Migration? That was just New Orleans musicians taking pity on Chicago and bringing some soul to your frozen wasteland. Your Green Mill jazz club? Inspired by what happened right here. Like Casablanca, everybody came to New Orleans first... then they realized Chicago needed help."
+
+**Interactive Element:** *Play Armstrong's "West End Blues" on phone*
+"This was recorded in Chicago in 1928. Notice how it sounds like New Orleans? That's because you can take the jazz out of New Orleans, but you can't take New Orleans out of jazz."
+
+---
+
+## **STOP 3: Central Grocery - "The Muffuletta Mafia"**
+*923 Decatur Street - 7:50 PM*
+
+### **The Food Fight**
+
+"Time for the taste test! This is Central Grocery, home of the ORIGINAL muffuletta since 1906. Not that knockoff stuff you call a muffuletta in Chicago. See that sign? It doesn't say 'Chicago-style' anywhere on it because there's only ONE style – the right style.
+
+Your Italian beef? That's just a muffuletta that got lost in a blizzard and forgot what vegetables were. Like Julia Child would say if she were here, 'This is cuisine. What you have in Chicago is... sustenance.'
+
+The old Central Grocery almost got destroyed by Hurricane Ida, but unlike Chicago's original Maxwell Street, we actually saved our food landmarks. Because we understand that some things are sacred – like not putting ketchup on a hot dog OR calling a submarine sandwich a muffuletta when it's made north of Memphis."
+
+**The Challenge:** "I dare you to try this and then tell me Chicago does Italian food better. Go ahead. I'll wait. Actually, I'll film it for when you admit defeat."
+
+---
+
+## **STOP 4: Preservation Hall - "The Music Venue Massacre"**
+*726 St. Peter Street - 8:15 PM*
+
+### **The Sound of Victory**
+
+"Welcome to Preservation Hall, keeping jazz alive since 1961. You know what Chicago venue was keeping music alive in 1961? Oh right, most of them got torn down for parking lots. 
+
+This tiny room has hosted more legends than Wrigley Field has seen World Series wins. And unlike your United Center, we don't need jumbotrons to create atmosphere. Like Almost Famous, the magic happens in intimate spaces, not corporate arenas.
+
+Your Northwestern Wildcat Marching Band plays 'Go U Northwestern'? Cute. We have second-line parades that make more noise with three instruments than your entire band. And our musicians don't need sheet music – they've got more soul in their pinky finger than your entire wind section."
+
+**Former Venue Burn:** "The old Dew Drop Inn on LaSalle Street – that's where your Chicago blues heroes came to learn from the masters. It's gone now, but its spirit lives on every time a Chicago musician admits New Orleans did it first and better."
+
+---
+
+## **STOP 5: The Roosevelt Hotel/Sazerac Bar - "The Super Bowl Shrine"**
+*123 Baronne Street - 8:35 PM*
+
+### **The Athletic Shrine of Bears Past**
+
+"Welcome to the Sazerac Bar, birthplace of the Sazerac cocktail and the place where we need to address the elephant – or should I say Bear – in the room. Yes, your precious 1985 Chicago Bears won Super Bowl XX in our city. 
+
+*Pause for effect*
+
+That's right, the greatest moment in Chicago sports history? Happened in NEW ORLEANS. You're welcome for the venue. Mike Ditka, Walter Payton, the Super Bowl Shuffle – all of it reached its climax right here in our city. Your greatest triumph is forever linked to our hospitality.
+
+Like Field of Dreams, you built it... but you had to come HERE to win it. 
+
+And about that Saints-Bears record? Let's just say Walter Payton might have the all-time rushing record against the Saints, but at least we gave him somewhere nice to set it. The old Tulane Stadium hosted plenty of Bears heartbreak before that one moment of glory."
+
+**The Stat Attack:** "Bears Super Bowl wins in New Orleans: 1. Bears Super Bowl wins in Chicago: 0. Any questions?"
+
+---
+
+## **STOP 6: Magazine Street/The Transfer Portal - "The Brendan Sullivan Situation"**
+*Walking toward Tulane area - 8:55 PM*
+
+### **The Defector's Tale**
+
+"Now we need to talk about tomorrow's starting quarterback situation. Brendan Sullivan. YOUR former quarterback. Now OUR quarterback. Like Jerry Maguire said, 'Show me the money!' Apparently, we showed him something better – a chance to actually win games.
+
+He transferred from Northwestern to Tulane. That's like upgrading from a flip phone to an iPhone. From deep dish to actual pizza. From Lake Michigan to the Gulf of Mexico. The kid made a business decision, and that decision was: 'I'd rather be in New Orleans.'
+
+This is where the old Tulane Stadium used to stand, where we trained champions while you were still trying to figure out forward passes. Sullivan saw the light – literally, because we have sunshine here, not that gray depression you call weather."
+
+**The Betrayal Scale:** "On a scale of 1 to Benedict Arnold, Sullivan's at about a 7. But can you blame him? He went from playing in 30-degree weather to 70-degree weather. From Old Style beer to Abita. That's not betrayal; that's evolution."
+
+---
+
+## **STOP 7: Ditka's Restaurant - "The Iron Mike Irony"**
+*Quick walk-by at 4845 Magazine Street - 9:10 PM*
+
+### **The Chicago Legend Who Chose New Orleans**
+
+"Even your most legendary coach couldn't resist New Orleans! Mike Ditka opened a restaurant HERE. Not a second Chicago location – a New Orleans location. Why? Because even Da Coach knows where the real food and football culture lives.
+
+Before he was your savior, he was a Saints tight end. That's right – Ditka was OURS first. We trained him, shaped him, and then sent him north to give you your one moment of glory. You're welcome for that, too.
+
+Like The Godfather says, 'Keep your friends close and your enemies closer.' Ditka kept New Orleans so close he literally put his name on a building here."
+
+**The Economic Reality:** "Your greatest coach pays New Orleans taxes. Let that sink in. Every time you celebrate 1985, remember that Ditka is down here, serving gumbo and counting Louisiana money."
+
+---
+
+## **STOP 8: The Innovation Hub - "The Brain Drain"**
+*Downtown/Business District - 9:25 PM*
+
+### **The Economic Smackdown**
+
+"Let's talk economics. You have winter. We have Mardi Gras. You have deep dish. We have actual culture. You have Northwestern's tuition bills. We have Tulane's tuition bills that at least come with better weather.
+
+Half of Chicago moves here every winter. It's called 'seasonal migration,' also known as 'people with sense.' Your tech companies? Opening offices here because turns out, coders work better when they're not freezing to death. Like Wall Street – the money follows the smart moves, and the smart move is south."
+
+**Cost of Living Burn:** "You pay $2000/month to freeze in a studio apartment. We pay that to live in a historic home with a courtyard. But sure, tell me more about Chicago's 'superior quality of life' while you're scraping ice off your windshield."
+
+---
+
+## **STOP 9: Pat O'Brien's - "The Hurricane Peace Treaty"**
+*718 St. Peter Street - 9:45 PM*
+
+### **The Final Countdown**
+
+"Here we are at Pat O'Brien's, home of the Hurricane cocktail and your final chance at dignity before tomorrow's destruction. This bar has been here since 1933, which means it's seen plenty of visiting fans come in confident and leave humbled. The old Pat O's location on Royal Street? That's where your grandfathers drowned their sorrows in 1956.
+
+Like Bogart said in Casablanca, 'Here's looking at you, kid.' And tomorrow, we'll be looking at you... in the rearview mirror of the win column."
+
+**The Peace Treaty Toast Structure:**
+
+*Raise Hurricane glasses*
+
+"The Bogart Moment: Here's looking at you, Wildcats. You traveled far, you came in peace, and tomorrow you'll leave in pieces.
+
+The Genuine Respect: Your academic rankings are... actually pretty impressive. There, I said it.
+
+The Prediction: Tomorrow's score? Let's just say you'll need more Hurricanes than this.
+
+The Unity Moment: But tonight, we can all agree on one thing – at least you're not Michigan.
+
+The Final Toast: To Northwestern and Tulane! To Chicago and New Orleans! To jazz and blues! To deep dish and thin crust! To 68 years of waiting! And to the universal truth that brings us all together – sports is the last place where we can hate each other and still share a drink after!"
+
+---
+
+## **THE WRAP-UP: Mission Debrief**
+*10:00 PM - Tour Concludes*
+
+### **Your Survival Kit for Tomorrow**
+
+"Congratulations, Wildcats! You've survived Behind Enemy Lines. You've learned that:
+- Your greatest victories happened in our city
+- Your best musicians learned from our musicians  
+- Your quarterback defected to our team
+- Your legendary coach owns a restaurant here
+- And despite all that, we still let you drink in our bars
+
+Tomorrow, the truce ends. Tomorrow, we're enemies. But tonight? Tonight you're our guests, and Southern hospitality demands we show you a good time before we destroy you on the field.
+
+Remember: Enemy Territory. Common Ground. Uncommon Stories.
+
+Now go forth, enjoy the French Quarter, and try not to think about how Brendan Sullivan knows our playbook. See you tomorrow at Yulman Stadium, where your 68-year wait for revenge will turn into a 69-year wait.
+
+WHO DAT gonna beat them Cats? WE DAT!"
+
+---
+
+## **TOUR LOGISTICS & BOOKING**
+
+### **What's Included:**
+- 3-hour guided walking tour with local sports historian
+- Welcome Hurricane at Pat O'Brien's
+- Historical photos of old venues on guide's tablet
+- "Behind Enemy Lines" survivor certificate
+- Group photo at each major stop
+- List of Northwestern-friendly bars (both of them)
+
+### **What to Bring:**
+- Comfortable walking shoes
+- Purple pride (you'll need it)
+- Sense of humor (essential)
+- Bail money (just kidding... mostly)
+
+### **Premium "Director's Cut" Add-Ons:**
+- Pre-tour screening of 1985 Bears Super Bowl highlights
+- Professional photographer for the full tour
+- VIP skip-the-line access at Pat O'Brien's
+- "Where Are They Now?" - locations of all former venues
+- Personalized video recap of your tour
+
+### **Book Your Tour:**
+**Website:** thegamebureau.com  
+**Email:** missioncontrol@thegamebureau.com  
+**Subject Line:** "Send Help - Wildcats Behind Enemy Lines"
+
+*"Because the best stories are written in enemy territory, and the best enemies become the best friends... after the game."*
+
+---
+
+*Legal Disclaimer: The Game Bureau is not responsible for hurt feelings, damaged purple pride, or the inevitable realization that New Orleans is actually amazing. Brendan Sullivan jersey burning not included but can be arranged. Hurricane hangovers are your own responsibility.*
