@@ -209,20 +209,21 @@
                 const teamData = {};
                 
                 teamElements.forEach((team, index) => {
-                    // Use the correct selector for team name
-                    const name = team.querySelector('basic_info name')?.textContent || '';
-                    const logo = team.querySelector('visual_identity logo_url')?.textContent || '';
-                    const hometown = team.querySelector('location hometown')?.textContent || '';
+                    // Parse team data from the actual XML structure
+                    const name = team.querySelector('name')?.textContent?.trim() || '';
+                    const location = team.querySelector('location')?.textContent?.trim() || '';
+                    const logoElement = team.querySelector('logos logo');
+                    const logo = logoElement?.getAttribute('url') || '';
                     
                     if (index < 3) {
-                        console.log(`Team ${index + 1}: name="${name}", hometown="${hometown}"`);
+                        console.log(`Team ${index + 1}: name="${name}", location="${location}"`);
                     }
                     
                     if (name) {
                         teamData[name] = {
                             name: name,
                             logo: logo,
-                            hometown: hometown
+                            hometown: location
                         };
                     }
                 });
@@ -236,6 +237,30 @@
                 console.error('Error fetching teams:', err);
                 return {};
             }
+        }
+
+        function convertTimeIfEleven(timeStr) {
+            if (!timeStr) return timeStr;
+            
+            // Check if time is 11:00p or 11:XXp
+            const elevenPmPattern = /^11:\d{2}p$/i;
+            if (elevenPmPattern.test(timeStr.trim())) {
+                return 'TBD';
+            }
+            
+            return timeStr;
+        }
+
+        function convertLocalTimeIfEleven(localTimeStr) {
+            if (!localTimeStr) return localTimeStr;
+            
+            // Check if the local time contains 11:XXp
+            const elevenPmPattern = /11:\d{2}p/i;
+            if (elevenPmPattern.test(localTimeStr)) {
+                return 'TBD';
+            }
+            
+            return localTimeStr;
         }
 
         async function fetchGames() {
@@ -257,21 +282,79 @@
                 const gameData = [];
                 
                 gameElements.forEach(game => {
-                    const weekElement = game.closest('week');
-                    const dateElement = game.closest('date');
+                    // Parse attributes from the XML
+                    const week = game.getAttribute('week') || '';
+                    const startDate = game.getAttribute('start_date') || '';
+                    const homeTeam = game.getAttribute('home_team') || '';
+                    const awayTeam = game.getAttribute('away_team') || '';
+                    const venue = game.getAttribute('venue') || '';
+                    const notes = game.getAttribute('notes') || '';
                     
-                    gameData.push({
-                        id: game.getAttribute('id') || Math.random().toString(36),
-                        week: weekElement?.getAttribute('number') || '',
-                        date: dateElement?.getAttribute('value') || '',
-                        homeTeam: game.querySelector('teams home_team')?.textContent || '',
-                        awayTeam: game.querySelector('teams away_team')?.textContent || '',
-                        etKickoff: game.querySelector('times et_kickoff')?.textContent || '',
-                        localKickoff: game.querySelector('times local_kickoff')?.textContent || '',
-                        network: game.querySelector('network')?.textContent || '',
-                        locationNote: game.querySelector('location_note')?.textContent || ''
-                    });
+                    // Convert ISO date to readable format
+                    let formattedDate = '';
+                    let etKickoff = '';
+                    let localKickoff = '';
+                    
+                    if (startDate) {
+                        try {
+                            const date = new Date(startDate);
+                            
+                            // Format: "Sunday, Sept. 7, 2025"
+                            const dayNames = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+                            const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
+                            
+                            formattedDate = `${dayNames[date.getDay()]}, ${monthNames[date.getMonth()]}. ${date.getDate()}, ${date.getFullYear()}`;
+                            
+                            // Extract time in ET
+                            const hours = date.getUTCHours();
+                            const minutes = date.getUTCMinutes();
+                            
+                            // Convert UTC to ET (assuming UTC times in data)
+                            let etHours = hours - 5; // EST offset
+                            if (etHours < 0) etHours += 24;
+                            
+                            // Format time
+                            let displayHours = etHours;
+                            const period = displayHours >= 12 ? 'p' : 'a';
+                            if (displayHours > 12) displayHours -= 12;
+                            if (displayHours === 0) displayHours = 12;
+                            
+                            const timeStr = `${displayHours}:${minutes.toString().padStart(2, '0')}${period}`;
+                            etKickoff = timeStr;
+                            localKickoff = `${timeStr} (ET)`;
+                            
+                        } catch (e) {
+                            console.log('Date parsing error:', e, 'for date:', startDate);
+                            formattedDate = 'TBD';
+                            etKickoff = 'TBD';
+                            localKickoff = 'TBD';
+                        }
+                    }
+                    
+                    // Convert 11pm kickoffs to TBD
+                    const convertedEtKickoff = convertTimeIfEleven(etKickoff);
+                    const convertedLocalKickoff = convertLocalTimeIfEleven(localKickoff);
+                    
+                    // Skip games with flex scheduling notes (these are TBD times)
+                    const shouldSkip = notes && notes.toLowerCase().includes('flex');
+                    
+                    if (!shouldSkip) {
+                        gameData.push({
+                            id: game.getAttribute('id') || Math.random().toString(36),
+                            week: week,
+                            date: formattedDate,
+                            homeTeam: homeTeam,
+                            awayTeam: awayTeam,
+                            etKickoff: convertedEtKickoff,
+                            localKickoff: convertedLocalKickoff,
+                            network: '', // No network info in this format
+                            locationNote: notes || ''
+                        });
+                    }
                 });
+                
+                console.log('Games processed:', gameData.length);
+                console.log('Sample game:', gameData[0]);
                 
                 allGames = gameData;
                 populateFilters();
@@ -451,7 +534,7 @@
         }
 
         function parseTimeForSorting(timeStr) {
-            if (!timeStr) return 0;
+            if (!timeStr || timeStr === 'TBD') return 0;
             try {
                 // Parse "8:00p" format
                 const match = timeStr.match(/(\d{1,2}):(\d{2})([ap])/);
@@ -817,6 +900,9 @@
                 }, 300);
             }
         }
+
+        // Make toggleTourDetails available globally
+        window.toggleTourDetails = toggleTourDetails;
 
         fetchGames();
     </script>
